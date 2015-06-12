@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="fdb2a0e6-d5fb-44c8-a055-dc34e45317b3" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://localhost:44302/kombit/service" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="a5ef63ed-b19a-402a-ab15-de2b0931675b" SourceId="1" SourceUrl="http://localhost:26925/kombit/service?wsdl=wsdl0" />
+    <MetadataFile FileName="TokenConsumerService1.wsdl" MetadataType="Wsdl" ID="fe561c3c-bc74-4e60-a832-6f2afcf85c9c" SourceId="1" SourceUrl="http://localhost:26925/kombit/service?wsdl" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="0c05d089-c8f2-48e1-b931-c036b498d02d" SourceId="1" SourceUrl="http://localhost:26925/kombit/service?xsd=xsd0" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="ac276840-ef7b-4127-bbd9-0daf3109ff01" SourceId="1" SourceUrl="http://localhost:26925/kombit/service?xsd=xsd1" />
+    <MetadataFile FileName="service21.xsd" MetadataType="Schema" ID="27baf6c7-30d5-4646-a1c4-f921b719cecd" SourceId="1" SourceUrl="http://localhost:26925/kombit/service?xsd=xsd2" />
+    <MetadataFile FileName="service2.xsd" MetadataType="Schema" ID="7acc2803-bbbc-4333-8847-29fc8da01c56" SourceId="1" SourceUrl="http://localhost:26925/kombit/service?xsd=xsd3" />
+    <MetadataFile FileName="service23.xsd" MetadataType="Schema" ID="b3de2349-f941-4220-a6af-2e0ed0782207" SourceId="1" SourceUrl="http://localhost:26925/kombit/service?xsd=xsd4" />
+    <MetadataFile FileName="service22.xsd" MetadataType="Schema" ID="099f31e7-d985-4a97-806a-6873e67a04d8" SourceId="1" SourceUrl="http://localhost:26925/kombit/service?xsd=xsd5" />
+    <MetadataFile FileName="service.disco" MetadataType="Disco" ID="6b9b4f69-41b0-466c-b382-99638eeca08e" SourceId="1" SourceUrl="http://localhost:26925/kombit/service?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

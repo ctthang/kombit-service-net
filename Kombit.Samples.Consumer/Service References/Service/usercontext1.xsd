@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://service.kombit.dk/" elementFormDefault="qualified" targetNamespace="http://service.kombit.dk/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="structure" type="xs:string" />
+</xs:schema>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="urn:liberty:sb:2006-08" elementFormDefault="qualified" targetNamespace="urn:liberty:sb:2006-08" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:26925/kombit/service?xsd=xsd3" namespace="urn:liberty:sb:profile" />
+  <xs:element name="Framework" type="tns:LibertyFrameworkHeader" />
+  <xs:complexType name="LibertyFrameworkHeader">
+    <xs:attribute name="version" type="xs:string" />
+    <xs:attribute xmlns:q1="urn:liberty:sb:profile" ref="q1:profile" />
+  </xs:complexType>
+</xs:schema>

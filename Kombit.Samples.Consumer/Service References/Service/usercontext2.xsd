@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="urn:liberty:sb:profile" elementFormDefault="qualified" targetNamespace="urn:liberty:sb:profile" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:attribute name="profile" type="xs:string" />
+</xs:schema>

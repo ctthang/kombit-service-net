@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<bpp:PrivilegeList xmlns:bpp="http://itst.dk/oiosaml/basic_privilege_profile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <PrivilegeGroup Scope="urn:dk:gov:saml:cvrNumberIdentifier:12345678">
+    <Privilege>http://sapa.test-kombit.dk/roles/usersystemrole/withDR/1</Privilege>
+    <Constraint Name="http://organisation.test-kombit.dk/constraints/KLE">2</Constraint>
+    <Constraint Name="http://organisation.test-kombit.dk/constraints/Sensitivity">High</Constraint>
+  </PrivilegeGroup>
+  <PrivilegeGroup Scope="urn:dk:gov:saml:cvrNumberIdentifier:12345678">
+    <Privilege>http://sapa.test-kombit.dk/roles/usersystemrole/withDR/2</Privilege>
+    <Constraint Name="http://organisation.test-kombit.dk/constraints/KLE-NEW">1</Constraint>
+    <Constraint Name="http://organisation.test-kombit.dk/constraints/Sensitivity">High</Constraint>
+  </PrivilegeGroup>
+  <PrivilegeGroup Scope="urn:dk:gov:saml:cvrNumberIdentifier:87654321">
+    <Privilege>http://sapa.test-kombit.dk/roles/usersystemrole/noDR/1</Privilege>
+  </PrivilegeGroup>
+  <PrivilegeGroup Scope="urn:dk:gov:saml:cvrNumberIdentifier:87654321">
+    <Privilege>http://sapa.test-kombit.dk/roles/usersystemrole/noDR/2</Privilege>
+  </PrivilegeGroup>
+  <PrivilegeGroup Scope="urn:dk:gov:saml:cvrNumberIdentifier:98765432">
+    <Privilege>http://sapa.test-kombit.dk/roles/usersystemrole/noDR/2</Privilege>
+  </PrivilegeGroup>
+  <PrivilegeGroup Scope="urn:dk:gov:saml:cvrNumberIdentifier:12121212">
+    <Privilege>http://sapa.test-kombit.dk/roles/usersystemrole/withDR/3</Privilege>
+    <Constraint Name="http://organisation.test-kombit.dk/constraints/Kop">1</Constraint>
+    <Constraint Name="http://organisation.test-kombit.dk/constraints/Sensitivity">Medium</Constraint>
+  </PrivilegeGroup>
+</bpp:PrivilegeList>
+
+<!--<?xml version="1.0" encoding="UTF-8"?>
+<bpp:PrivilegeList xmlns:bpp="http://itst.dk/oiosaml/basic_privilege_profile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <PrivilegeGroup Scope="urn:dk:gov:saml:cvrNumberIdentifier:12345678">
+    <Privilege>http://sapa.test-kombit.dk/roles/usersystemrole/withDR/1</Privilege>
+    <Constraint Name="http://organisation.test-kombit.dk/constraints/KLE">2</Constraint>
+    <Constraint Name="http://organisation.test-kombit.dk/constraints/Sensitivity">High</Constraint>
+  </PrivilegeGroup>
+  <PrivilegeGroup Scope="urn:dk:gov:saml:cvrNumberIdentifier:12345678">
+    <Privilege>http://sapa.test-kombit.dk/roles/usersystemrole/withDR/2</Privilege>
+    <Constraint Name="http://organisation.test-kombit.dk/constraints/KLE-NEW">1</Constraint>
+    <Constraint Name="http://organisation.test-kombit.dk/constraints/Sensitivity">High</Constraint>
+  </PrivilegeGroup>
+  <PrivilegeGroup Scope="urn:dk:gov:saml:cvrNumberIdentifier:87654321">
+    <Privilege>http://sapa.test-kombit.dk/roles/usersystemrole/noDR/1</Privilege>
+  </PrivilegeGroup>
+  <PrivilegeGroup Scope="urn:dk:gov:saml:cvrNumberIdentifier:87654321">
+    <Privilege>http://sapa.test-kombit.dk/roles/usersystemrole/noDR/2</Privilege>
+  </PrivilegeGroup>
+  <PrivilegeGroup Scope="urn:dk:gov:saml:cvrNumberIdentifier:12121212">
+    <Privilege>http://sapa.test-kombit.dk/roles/usersystemrole/withDR/3</Privilege>
+    <Constraint Name="http://organisation.test-kombit.dk/constraints/Kop">1</Constraint>
+    <Constraint Name="http://organisation.test-kombit.dk/constraints/Sensitivity">Medium</Constraint>
+  </PrivilegeGroup>
+</bpp:PrivilegeList>-->
+

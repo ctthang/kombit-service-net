@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://kombit.samples.local/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://kombit.samples.local/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://kombit.samples.local/Imports">
+      <xsd:import schemaLocation="http://localhost:26925/kombit/service?xsd=xsd0" namespace="http://kombit.samples.local/" />
+      <xsd:import schemaLocation="http://localhost:26925/kombit/service?xsd=xsd2" namespace="urn:liberty:sb:2006-08" />
+      <xsd:import schemaLocation="http://localhost:26925/kombit/service?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Kombit.Samples.Common.Binding.Data" />
+      <xsd:import schemaLocation="http://localhost:26925/kombit/service?xsd=xsd1" namespace="http://service.kombit.dk/" />
+      <xsd:import schemaLocation="http://localhost:26925/kombit/service?xsd=xsd3" namespace="urn:liberty:sb:profile" />
+      <xsd:import schemaLocation="http://localhost:26925/kombit/service?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="Ping">
+    <wsdl:part name="parameters" element="tns:Ping" />
+  </wsdl:message>
+  <wsdl:message name="Ping_Headers">
+    <wsdl:part xmlns:q1="urn:liberty:sb:2006-08" name="Framework" element="q1:Framework" />
+  </wsdl:message>
+  <wsdl:message name="PingResponse">
+    <wsdl:part name="parameters" element="tns:PingResponse" />
+  </wsdl:message>
+  <wsdl:message name="PingResponse_Headers">
+    <wsdl:part xmlns:q2="urn:liberty:sb:2006-08" name="Framework" element="q2:Framework" />
+  </wsdl:message>
+  <wsdl:message name="Provider_structure_FrameworkFaultFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/Kombit.Samples.Common.Binding.Data" name="detail" element="q3:FrameworkFault" />
+  </wsdl:message>
+  <wsdl:portType name="Provider">
+    <wsdl:operation name="structure">
+      <wsdl:input wsam:Action="http://kombit.samples.local/pingRequest" name="Ping" message="tns:Ping" />
+      <wsdl:output wsam:Action="http://kombit.samples.local/PingResponse" name="PingResponse" message="tns:PingResponse" />
+      <wsdl:fault wsam:Action="http://kombit.samples.local/Provider/structureFrameworkFaultFault" name="FrameworkFaultFault" message="tns:Provider_structure_FrameworkFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
