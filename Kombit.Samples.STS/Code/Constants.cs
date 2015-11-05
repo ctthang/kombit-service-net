@@ -39,7 +39,8 @@ namespace Kombit.Samples.STS.Code
     /// <summary>
     /// Base address of STS service
     /// </summary>
-        public const string BaseAddress = "https://localhost:44301/";
+        //public const string BaseAddress = "https://localhost:44301/";
+        public static string BaseAddress = ConfigurationManager.AppSettings["BaseAddress"];
 #endif
 #if !DEBUG
         public static string BaseAddress = ConfigurationManager.AppSettings["BaseAddress"];

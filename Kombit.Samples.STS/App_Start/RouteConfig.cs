@@ -26,7 +26,7 @@ namespace Kombit.Samples.STS
             routes.Add(new ServiceRoute(
                 "kombit/sts",
                 new WsTrustServiceHostFactory(),
-                typeof (WsTrustServiceConfiguration)));
+                typeof(WsTrustServiceConfiguration)));
         }
 
         public class DateConstraint : IRouteConstraint

@@ -30,7 +30,7 @@ namespace Kombit.Samples.Service.Code
         public override ServiceHostBase CreateServiceHost(string constructorString, Uri[] baseAddresses)
         {
             var host = new ServiceHost(typeof (Samples.Service.Code.Service), baseAddresses);
-            AddMetadataEndpoint(host);
+            EnableMexEndpoint(baseAddresses, host);
 
             var credential = new ServiceCredentials();
             credential.ServiceCertificate.Certificate = Constants.ServiceServiceCertificate;
@@ -95,6 +95,33 @@ namespace Kombit.Samples.Service.Code
             host.AddServiceEndpoint(ServiceMetadataBehavior.MexContractName,
                 MetadataExchangeBindings.CreateMexHttpBinding(),
                 "mex");
+        }
+        /// <summary>
+        ///     This method is to enable mex endpoint
+        /// </summary>
+        /// <param name="baseAddresses"></param>
+        /// <param name="host"></param>
+        private static void EnableMexEndpoint(Uri[] baseAddresses, ServiceHost host)
+        {
+            var metadataBehavior = host.Description.Behaviors.Find<ServiceMetadataBehavior>();
+            if (metadataBehavior == null)
+            {
+                metadataBehavior = new ServiceMetadataBehavior();
+                host.Description.Behaviors.Add(metadataBehavior);
+            }
+            foreach (var baseAddress in baseAddresses)
+            {
+                if (baseAddress.Scheme.Equals("https", StringComparison.OrdinalIgnoreCase))
+                {
+                    metadataBehavior.HttpsGetEnabled = true;
+                    metadataBehavior.HttpsGetUrl = new Uri(baseAddress.OriginalString + "/mex");
+                }
+                else
+                {
+                    metadataBehavior.HttpGetEnabled = true;
+                    metadataBehavior.HttpGetUrl = new Uri(baseAddress.OriginalString + "/mex");
+                }
+            }
         }
 
         /// <summary>

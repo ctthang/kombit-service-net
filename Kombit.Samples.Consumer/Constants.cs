@@ -8,13 +8,15 @@ namespace Kombit.Samples.Consumer
     public static class Constants
     {
 #if DEBUG
-        public const string StsBaseAddress = "https://localhost:44301/";
+        //public const string StsBaseAddress = "https://localhost:44301/";
+        public static string StsBaseAddress = ConfigurationManager.AppSettings["StsBaseAddress"];
 #endif
 #if !DEBUG
         public static string StsBaseAddress = ConfigurationManager.AppSettings["StsBaseAddress"];
 #endif
 #if DEBUG
-        public const string ServiceBaseAddress = "https://localhost:44302/";
+        //public const string ServiceBaseAddress = "https://localhost:44302/";
+        public static string ServiceBaseAddress = ConfigurationManager.AppSettings["ServiceBaseAddress"];
 #endif
 #if !DEBUG
         public static string ServiceBaseAddress = ConfigurationManager.AppSettings["ServiceBaseAddress"];
@@ -92,6 +94,11 @@ namespace Kombit.Samples.Consumer
                 string certificateThumbprint = ConfigurationManager.AppSettings["AValidOnBehalfOfCertificateThumbprint"];
                 return CertificateLoader.LoadCertificateFromMyStore(certificateThumbprint);
             }
+        }
+
+        public static string AnvenderContext
+        {
+            get { return ConfigurationManager.AppSettings["AnvenderContext"]; }
         }
 
         public static string BppValue
