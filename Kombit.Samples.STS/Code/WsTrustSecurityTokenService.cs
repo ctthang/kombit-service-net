@@ -95,8 +95,8 @@ namespace Kombit.Samples.STS.Code
                     .Equals(Constants.DummyAppliesToError + eventId, StringComparison.InvariantCultureIgnoreCase))
                 return;
 
-            var faultMessage = new StsFaultMessage() { EventId = "" + eventId, Message = string.Format(Constants.DummyErrorMessagePattern, message) };
-            throw new FaultException<StsFaultMessage>(faultMessage, new FaultReason(string.Format(Constants.DummyDetailErrorMessagePattern, message)));
+            var faultMessage = new StsFaultDetail() {Message = string.Format(Constants.DummyErrorMessagePattern, message) };
+            throw new FaultException<StsFaultDetail>(faultMessage, new FaultReason(string.Format(Constants.DummyDetailErrorMessagePattern, message)), new FaultCode(Convert.ToString(eventId)));
         }
 
         /// <summary>

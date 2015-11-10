@@ -157,25 +157,6 @@
     <None Include="Service References\Service\service23.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Sts\Kombit.Samples.Consumer.Sts.RequestSecurityTokenResponseCollectionType.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\Sts\Kombit.Samples.Consumer.Sts.Trust13IssueResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\Sts\mex.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\Sts\mex1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\Sts\mex2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\Sts\mex21.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\Sts\SecurityTokenService.wsdl" />
     <None Include="Service References\Service\TokenConsumerService1.wsdl" />
     <None Include="Service References\Service\usercontext.wsdl" />
     <None Include="Service References\Service\usercontext.xsd">
@@ -196,6 +177,25 @@
     <None Include="Service References\Service\usercontext23.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\Sts\Kombit.Samples.Consumer.Sts.RequestSecurityTokenResponseCollectionType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Sts\Kombit.Samples.Consumer.Sts.Trust13IssueResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Sts\mex.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Sts\mex1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Sts\mex2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Sts\mex3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Sts\SecurityTokenService.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
@@ -204,8 +204,8 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\Sts\" />
     <WCFMetadataStorage Include="Service References\Service\" />
+    <WCFMetadataStorage Include="Service References\Sts\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\Service\configuration91.svcinfo" />
@@ -224,14 +224,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="readme.txt" />
-    <None Include="Service References\Service\service.disco" />
     <None Include="Service References\Sts\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <None Include="Service References\Sts\configuration.svcinfo" />
     <None Include="Service References\Sts\configuration91.svcinfo" />
-    <None Include="Service References\Sts\mex.disco" />
+    <None Include="Service References\Service\service.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

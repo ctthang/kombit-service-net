@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:trust="http://docs.oasis-open.org/ws-sx/ws-trust/200512" xmlns:tns="http://schemas.microsoft.com/ws/2008/06/identity/securitytokenservice" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SecurityTokenService" targetNamespace="http://schemas.microsoft.com/ws/2008/06/identity/securitytokenservice" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://schemas.microsoft.com/ws/2008/06/identity/securitytokenservice" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:trust="http://docs.oasis-open.org/ws-sx/ws-trust/200512" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SecurityTokenService" targetNamespace="http://schemas.microsoft.com/ws/2008/06/identity/securitytokenservice" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsp:Policy wsu:Id="MutualCertificateWithMessageSecurityBinding_IWSTrust13Sync_policy">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -25,7 +25,7 @@
             </sp:RecipientToken>
             <sp:AlgorithmSuite>
               <wsp:Policy>
-                <sp:Basic256 />
+                <sp:Basic128Sha256 />
               </wsp:Policy>
             </sp:AlgorithmSuite>
             <sp:Layout>
@@ -105,10 +105,10 @@
   </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://schemas.microsoft.com/ws/2008/06/identity/securitytokenservice/Imports">
-      <xsd:import schemaLocation="https://localhost:44301/kombit/sts/mex?xsd=xsd0" namespace="http://schemas.microsoft.com/Message" />
-      <xsd:import schemaLocation="https://localhost:44301/kombit/sts/mex?xsd=xsd2" namespace="http://kombit.sample.dk/fault" />
-      <xsd:import schemaLocation="https://localhost:44301/kombit/sts/mex?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="https://localhost:44301/kombit/sts/mex?xsd=xsd3" namespace="http://docs.oasis-open.org/ws-sx/ws-trust/200512" />
+      <xsd:import schemaLocation="https://adgangsstyring.projekt-stoettesystemerne.dk/identifysample/kombit/sts/mex?xsd=xsd0" namespace="http://schemas.microsoft.com/Message" />
+      <xsd:import schemaLocation="https://adgangsstyring.projekt-stoettesystemerne.dk/identifysample/kombit/sts/mex?xsd=xsd2" namespace="http://kombit.sample.dk/fault" />
+      <xsd:import schemaLocation="https://adgangsstyring.projekt-stoettesystemerne.dk/identifysample/kombit/sts/mex?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://adgangsstyring.projekt-stoettesystemerne.dk/identifysample/kombit/sts/mex?xsd=xsd3" namespace="http://docs.oasis-open.org/ws-sx/ws-trust/200512" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IWSTrust13Sync_Trust13Issue_InputMessage">
@@ -148,13 +148,13 @@
   </wsdl:binding>
   <wsdl:service name="SecurityTokenService">
     <wsdl:port name="MutualCertificateWithMessageSecurityBinding_IWSTrust13Sync" binding="tns:MutualCertificateWithMessageSecurityBinding_IWSTrust13Sync">
-      <soap12:address location="https://localhost:44301/kombit/sts/certificate" />
+      <soap12:address location="https://adgangsstyring.projekt-stoettesystemerne.dk/identifysample/kombit/sts/certificate" />
       <wsa10:EndpointReference>
-        <wsa10:Address>https://localhost:44301/kombit/sts/certificate</wsa10:Address>
+        <wsa10:Address>https://adgangsstyring.projekt-stoettesystemerne.dk/identifysample/kombit/sts/certificate</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>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</X509Certificate>
+              <X509Certificate>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</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>

@@ -6,15 +6,12 @@ using System.Web;
 
 namespace Kombit.Samples.STS.Code
 {
-    [DataContract(Namespace = "http://kombit.sample.dk/fault")]
+    [DataContract(Namespace = "https://sts.kombit.dk/fault")]
 
-    public class StsFaultMessage
+    public class StsFaultDetail
     {
-        [DataMember]
-        public string EventId { get; set; }
 
         [DataMember]
-
         public string Message { get; set; }
 
     }

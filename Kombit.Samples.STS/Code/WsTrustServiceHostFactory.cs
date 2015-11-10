@@ -130,9 +130,9 @@ namespace Kombit.Samples.STS.Code
                 {
                     var faultDescription = new FaultDescription(operation.Name)
                     {
-                        Name = "StsFaultMessage",
-                        DetailType = typeof(StsFaultMessage),
-                        Namespace = "http://kombit.sample.dk/fault",
+                        Name = "StsFaultDetail",
+                        DetailType = typeof(StsFaultDetail),
+                        Namespace = "https://sts.kombit.dk/fault",
                         ProtectionLevel = ProtectionLevel.Sign
                     };
                     operation.Faults.Add(faultDescription);
