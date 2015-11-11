@@ -8,15 +8,15 @@ namespace Kombit.Samples.Consumer
     public static class Constants
     {
 #if DEBUG
-        //public const string StsBaseAddress = "https://localhost:44301/";
-        public static string StsBaseAddress = ConfigurationManager.AppSettings["StsBaseAddress"];
+        public const string StsBaseAddress = "https://localhost:44301/";
+        //public static string StsBaseAddress = ConfigurationManager.AppSettings["StsBaseAddress"];
 #endif
 #if !DEBUG
         public static string StsBaseAddress = ConfigurationManager.AppSettings["StsBaseAddress"];
 #endif
 #if DEBUG
-        //public const string ServiceBaseAddress = "https://localhost:44302/";
-        public static string ServiceBaseAddress = ConfigurationManager.AppSettings["ServiceBaseAddress"];
+        public const string ServiceBaseAddress = "https://localhost:44302/";
+        //public static string ServiceBaseAddress = ConfigurationManager.AppSettings["ServiceBaseAddress"];
 #endif
 #if !DEBUG
         public static string ServiceBaseAddress = ConfigurationManager.AppSettings["ServiceBaseAddress"];
