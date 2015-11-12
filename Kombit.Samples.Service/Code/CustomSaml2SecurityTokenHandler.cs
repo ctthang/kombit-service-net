@@ -49,15 +49,16 @@ namespace Kombit.Samples.Service.Code
         /// <param name="confirmationData"></param>
         protected override void ValidateConfirmationData(Saml2SubjectConfirmationData confirmationData)
         {
-            try
-            {
-                base.ValidateConfirmationData(confirmationData);
-            }
-            catch (Exception ex)
-            {
-                if (!ex.Message.ToLower(CultureInfo.InvariantCulture).Contains("4157"))
-                    throw;
-            }
+            return;
+            //try
+            //{
+            //    base.ValidateConfirmationData(confirmationData);
+            //}
+            //catch (Exception ex)
+            //{
+            //    if (!ex.Message.ToLower(CultureInfo.InvariantCulture).Contains("4157"))
+            //        throw;
+            //}
         }
 
         /// <summary>
