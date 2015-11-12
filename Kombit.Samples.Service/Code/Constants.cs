@@ -15,8 +15,8 @@ namespace Kombit.Samples.Service.Code
     public static class Constants
     {
 #if DEBUG
-        public const string ServiceAddress = "https://localhost:44302/kombit/service";
-        //public static string ServiceAddress = ConfigurationManager.AppSettings["ServiceAddress"];
+        //public const string ServiceAddress = "https://localhost:44302/kombit/service";
+        public static string ServiceAddress = ConfigurationManager.AppSettings["ServiceAddress"];
 #endif
 #if !DEBUG
         public static string ServiceAddress = ConfigurationManager.AppSettings["ServiceAddress"];

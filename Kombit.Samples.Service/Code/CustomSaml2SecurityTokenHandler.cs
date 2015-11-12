@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Globalization;
 using System.IdentityModel.Tokens;
 using System.Security.Claims;
 using System.Xml;
@@ -48,14 +49,13 @@ namespace Kombit.Samples.Service.Code
         /// <param name="confirmationData"></param>
         protected override void ValidateConfirmationData(Saml2SubjectConfirmationData confirmationData)
         {
-            //return;
             try
             {
                 base.ValidateConfirmationData(confirmationData);
             }
             catch (Exception ex)
             {
-                if ((!ex.Message.Contains("ID4157")) || (confirmationData.Recipient == null))
+                if (!ex.Message.ToLower(CultureInfo.InvariantCulture).Contains("4157"))
                     throw;
             }
         }
