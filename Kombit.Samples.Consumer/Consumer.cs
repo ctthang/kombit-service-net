@@ -129,7 +129,7 @@ namespace Kombit.Samples.Consumer
         public void SendRstWithWrongFormatWillReturnErrorResponse()
         {
             //Send request to issue security token from Samples.STS
-            Assert.Throws<FaultException<ExceptionDetail>>(
+            Assert.Throws<FaultException>(
                 () =>
                     ConnectionHelper.SendRequestSecurityTokenRequest(Constants.ServiceAddressUri.AbsoluteUri, null,
                         Constants.ClientCertificate, ModifyMessageBody));
