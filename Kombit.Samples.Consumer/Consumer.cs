@@ -61,7 +61,7 @@ namespace Kombit.Samples.Consumer
             var isErrorThrown = false;
             try
             {
-                ConnectionHelper.SendRequestSecurityTokenRequest(appliesTo + expectedErrorEventId, null, true,
+                ConnectionHelper.SendRequestSecurityTokenRequest(appliesTo + expectedErrorEventId, null,
                     Constants.ClientCertificate, null);
             }
             catch (FaultException e)
@@ -95,8 +95,7 @@ namespace Kombit.Samples.Consumer
         {
             //Send request to issue security token from Samples.STS
             var token = ConnectionHelper.SendRequestSecurityTokenRequest(Constants.ServiceAddressUri.AbsoluteUri,
-                null, true,
-                Constants.ClientCertificate, null);
+                null, Constants.ClientCertificate, null);
 
             ValidateIssuedToken(token, Constants.ServiceAddressUri.AbsoluteUri,
                 new List<Saml2Attribute>()
@@ -133,7 +132,6 @@ namespace Kombit.Samples.Consumer
             Assert.Throws<FaultException<ExceptionDetail>>(
                 () =>
                     ConnectionHelper.SendRequestSecurityTokenRequest(Constants.ServiceAddressUri.AbsoluteUri, null,
-                        true,
                         Constants.ClientCertificate, ModifyMessageBody));
         }
 
@@ -147,7 +145,6 @@ namespace Kombit.Samples.Consumer
             Assert.Throws<MessageSecurityException>(
                 () =>
                     ConnectionHelper.SendRequestSecurityTokenRequest(Constants.ServiceAddressUri.AbsoluteUri, null,
-                        true,
                         Constants.ClientCertificate, null,
                         () =>
                             new CustomTextMessageBindingElement(
@@ -168,9 +165,9 @@ namespace Kombit.Samples.Consumer
                 new CustomTextMessageBindingElement(
                     messageEncoderFactory => new CustomTextMessageEncoderFactory(messageEncoderFactory,
                         replayMessageModifier.Modify));
-            ConnectionHelper.SendRequestSecurityTokenRequest(Constants.ServiceAddressUri.AbsoluteUri, null, true,
+            ConnectionHelper.SendRequestSecurityTokenRequest(Constants.ServiceAddressUri.AbsoluteUri, null, 
                 Constants.ClientCertificate, null, () => customTextMessageBindingElement);
-            ConnectionHelper.SendRequestSecurityTokenRequest(Constants.ServiceAddressUri.AbsoluteUri, null, true,
+            ConnectionHelper.SendRequestSecurityTokenRequest(Constants.ServiceAddressUri.AbsoluteUri, null, 
                 Constants.ClientCertificate, null, () => customTextMessageBindingElement);
         }
 
@@ -188,9 +185,9 @@ namespace Kombit.Samples.Consumer
                     new CustomTextMessageBindingElement(
                         messageEncoderFactory => new CustomTextMessageEncoderFactory(messageEncoderFactory,
                             replayMessageModifier.Modify));
-                ConnectionHelper.SendRequestSecurityTokenRequest(Constants.ServiceAddressUri.AbsoluteUri, null, true,
+                ConnectionHelper.SendRequestSecurityTokenRequest(Constants.ServiceAddressUri.AbsoluteUri, null,
                     Constants.ClientCertificate, null, () => customTextMessageBindingElement);
-                ConnectionHelper.SendRequestSecurityTokenRequest(Constants.ServiceAddressUri.AbsoluteUri, null, true,
+                ConnectionHelper.SendRequestSecurityTokenRequest(Constants.ServiceAddressUri.AbsoluteUri, null, 
                     Constants.ClientCertificate, null, () => customTextMessageBindingElement);
             });
         }
@@ -207,7 +204,7 @@ namespace Kombit.Samples.Consumer
                 new CustomTextMessageBindingElement(
                     messageEncoderFactory => new CustomTextMessageEncoderFactory(messageEncoderFactory,
                         MessageModifier.DelaySending));
-            ConnectionHelper.SendRequestSecurityTokenRequest(Constants.ServiceAddressUri.AbsoluteUri, null, true,
+            ConnectionHelper.SendRequestSecurityTokenRequest(Constants.ServiceAddressUri.AbsoluteUri, null, 
                 Constants.ClientCertificate, null, () => customTextMessageBindingElement, 3);
             // Clockskew is 8 seconds, sleep 10 second -> duration = 3 second: still valid
         }
@@ -225,7 +222,7 @@ namespace Kombit.Samples.Consumer
                     new CustomTextMessageBindingElement(
                         messageEncoderFactory => new CustomTextMessageEncoderFactory(messageEncoderFactory,
                             MessageModifier.DelaySending));
-                ConnectionHelper.SendRequestSecurityTokenRequest(Constants.ServiceAddressUri.AbsoluteUri, null, true,
+                ConnectionHelper.SendRequestSecurityTokenRequest(Constants.ServiceAddressUri.AbsoluteUri, null,
                     Constants.ClientCertificate, null, () => customTextMessageBindingElement, 1);
                 // Clockskew is 8 seconds, sleep 10 second -> duration = 1 second: invalid
             });
@@ -240,7 +237,7 @@ namespace Kombit.Samples.Consumer
             var originalTokenElement =
                 new SecurityTokenElement(new X509SecurityToken(Constants.AValidOnBehalfOfCertificate));
             var token = ConnectionHelper.SendRequestSecurityTokenRequest(Constants.ServiceAddressUri.AbsoluteUri,
-                originalTokenElement, true,
+                originalTokenElement, 
                 Constants.ClientCertificate, null);
 
             //Verify the issued token responsed from STS service
@@ -262,7 +259,7 @@ namespace Kombit.Samples.Consumer
             var originalToken = GenerateBootstrapToken();
             //Send request to issue security token from Samples.STS
             var token = ConnectionHelper.SendRequestSecurityTokenRequest(Constants.ServiceAddressUri.AbsoluteUri,
-                new SecurityTokenElement(originalToken), true,
+                new SecurityTokenElement(originalToken), 
                 Constants.ClientCertificate, null);
 
             ValidateIssuedToken(token, Constants.ServiceAddressUri.AbsoluteUri,
@@ -335,7 +332,7 @@ namespace Kombit.Samples.Consumer
         /// <returns></returns>
         private SecurityToken GenerateBootstrapToken()
         {
-            return ConnectionHelper.SendRequestSecurityTokenRequest("https://kombit.consumer.local", null, false,
+            return ConnectionHelper.SendRequestSecurityTokenRequest(Constants.BootstraptokenServiceBaseAddress, null,
                 Constants.AValidOnBehalfOfCertificate, null);
         }
 

@@ -22,6 +22,8 @@ namespace Kombit.Samples.Consumer
         public static string ServiceBaseAddress = ConfigurationManager.AppSettings["ServiceBaseAddress"];
 #endif
 
+        public static string BootstraptokenServiceBaseAddress =
+            ConfigurationManager.AppSettings["BootstraptokenServiceBaseAddress"];
         public static SigningAlgorithmMethod HeaderSigningAlgorithm
         {
             get

@@ -25,8 +25,7 @@ namespace Kombit.Samples.Consumer
         /// <param name="messageEncodingElementFactory"></param>
         /// <param name="timestampDuration"></param>
         /// <returns></returns>
-        public static SecurityToken SendRequestSecurityTokenRequest(string appliesTo, SecurityTokenElement onBehalfOf,
-            bool haveContextClaims, X509Certificate2 clientCertificate, Func<Message, Message> messesagModifier,
+        public static SecurityToken SendRequestSecurityTokenRequest(string appliesTo, SecurityTokenElement onBehalfOf, X509Certificate2 clientCertificate, Func<Message, Message> messesagModifier,
             Func<MessageEncodingBindingElement> messageEncodingElementFactory = null, int timestampDuration = 0)
         {
             var rst = new RequestSecurityToken
@@ -39,11 +38,8 @@ namespace Kombit.Samples.Consumer
                 UseKey = new UseKey(new X509SecurityToken(clientCertificate))
             };
             rst.OnBehalfOf = onBehalfOf;
-            if (haveContextClaims)
-            {
-                rst.Claims.Dialect = "http://docs.oasis-open.org/wsfed/authorization/200706/authclaims";
-                rst.Claims.Add(new RequestClaim("dk:gov:saml:attribute:CvrNumberIdentifier", false, Constants.AnvenderContext));
-            }
+            rst.Claims.Dialect = "http://docs.oasis-open.org/wsfed/authorization/200706/authclaims";
+            rst.Claims.Add(new RequestClaim("dk:gov:saml:attribute:CvrNumberIdentifier", false, Constants.AnvenderContext));
             var client = GenerateStsCertificateClientChannel(clientCertificate, messesagModifier,
                 messageEncodingElementFactory, timestampDuration);
             SecurityToken token;
