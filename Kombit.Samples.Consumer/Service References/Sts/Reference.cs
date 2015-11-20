@@ -16,27 +16,13 @@ namespace Kombit.Samples.Consumer.Sts {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://kombit.sample.dk/fault")]
-    public partial class StsFaultMessage : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string eventIdField;
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://sts.kombit.dk/fault")]
+    public partial class StsFaultDetail : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string messageField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
-        public string EventId {
-            get {
-                return this.eventIdField;
-            }
-            set {
-                this.eventIdField = value;
-                this.RaisePropertyChanged("EventId");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
         public string Message {
             get {
                 return this.messageField;
@@ -229,7 +215,7 @@ namespace Kombit.Samples.Consumer.Sts {
         
         // CODEGEN: Generating message contract since the operation Trust13Issue is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.Sign, Action="http://docs.oasis-open.org/ws-sx/ws-trust/200512/RST/Issue", ReplyAction="http://docs.oasis-open.org/ws-sx/ws-trust/200512/RSTRC/IssueFinal")]
-        [System.ServiceModel.FaultContractAttribute(typeof(Kombit.Samples.Consumer.Sts.StsFaultMessage), Action="Trust13Issue", ProtectionLevel=System.Net.Security.ProtectionLevel.Sign, Name="StsFaultMessage", Namespace="http://kombit.sample.dk/fault")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Kombit.Samples.Consumer.Sts.StsFaultDetail), Action="Trust13Issue", ProtectionLevel=System.Net.Security.ProtectionLevel.Sign, Name="StsFaultDetail", Namespace="https://sts.kombit.dk/fault")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Kombit.Samples.Consumer.Sts.Trust13IssueResponse Trust13Issue(Kombit.Samples.Consumer.Sts.Trust13IssueRequest request);
         

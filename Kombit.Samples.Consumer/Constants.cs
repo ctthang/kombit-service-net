@@ -36,16 +36,25 @@ namespace Kombit.Samples.Consumer
             }
         }
 
+        /// <summary>
+        /// Indicate sts issue endpoint address
+        /// </summary>
         public static Uri StsCertificateEndpointUri
         {
             get { return new Uri(StsBaseAddress + ConfigurationManager.AppSettings["StsCertificateEndpoint"]); }
         }
 
+        /// <summary>
+        /// Indicate sts mex endpoint address
+        /// </summary>
         public static Uri StsMexEndpointUri
         {
             get { return new Uri(StsBaseAddress + ConfigurationManager.AppSettings["StsMexEndpoint"]); }
         }
 
+        /// <summary>
+        /// Indicate sts service certificate
+        /// </summary>
         public static X509Certificate2 StsServiceCertificate
         {
             get
@@ -55,16 +64,25 @@ namespace Kombit.Samples.Consumer
             }
         }
 
+        /// <summary>
+        /// Indicate sts service endpoint's identity
+        /// </summary>
         public static string StsServiceEndpointIdentity
         {
             get { return ConfigurationManager.AppSettings["StsServiceCertificateDNSIdentity"]; }
         }
 
+        /// <summary>
+        /// Indicate service address which will is secured by the issued token
+        /// </summary>
         public static Uri ServiceAddressUri
         {
             get { return new Uri(ServiceBaseAddress + ConfigurationManager.AppSettings["ServiceAddress"]); }
         }
 
+        /// <summary>
+        /// Indicate service certificate's thumbprint
+        /// </summary>
         public static X509Certificate2 ServiceServiceCertificate
         {
             get
@@ -75,11 +93,18 @@ namespace Kombit.Samples.Consumer
             }
         }
 
+        /// <summary>
+        /// Indicate service endpoint's identity
+        /// </summary>
         public static string ServiceServiceEndpointIdentity
         {
             get { return ConfigurationManager.AppSettings["ServiceServiceCertificateDNSIdentity"]; }
         }
 
+
+        /// <summary>
+        /// A client certificate used for requesting to sts service
+        /// </summary>
         public static X509Certificate2 ClientCertificate
         {
             get
@@ -89,6 +114,9 @@ namespace Kombit.Samples.Consumer
             }
         }
 
+        /// <summary>
+        /// A certificate used for requesting a bootstrap token from sts 
+        /// </summary>
         public static X509Certificate2 AValidOnBehalfOfCertificate
         {
             get
@@ -98,6 +126,9 @@ namespace Kombit.Samples.Consumer
             }
         }
 
+        /// <summary>
+        /// A avender context of the authenticated user
+        /// </summary>
         public static string AnvenderContext
         {
             get { return ConfigurationManager.AppSettings["AnvenderContext"]; }

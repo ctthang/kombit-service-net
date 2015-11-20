@@ -28,6 +28,14 @@ namespace Kombit.Samples.Consumer
         public static SecurityToken SendRequestSecurityTokenRequest(string appliesTo, SecurityTokenElement onBehalfOf, X509Certificate2 clientCertificate, Func<Message, Message> messesagModifier,
             Func<MessageEncodingBindingElement> messageEncodingElementFactory = null, int timestampDuration = 0)
         {
+            return SendRequestSecurityTokenRequest(appliesTo, onBehalfOf, clientCertificate, Constants.AnvenderContext, messesagModifier,
+                messageEncodingElementFactory, timestampDuration);
+        }
+
+        public static SecurityToken SendRequestSecurityTokenRequest(string appliesTo, SecurityTokenElement onBehalfOf,
+            X509Certificate2 clientCertificate, string cvr, Func<Message, Message> messesagModifier,
+            Func<MessageEncodingBindingElement> messageEncodingElementFactory = null, int timestampDuration = 0)
+        {
             var rst = new RequestSecurityToken
             {
                 AppliesTo = new EndpointReference(appliesTo),
@@ -38,8 +46,12 @@ namespace Kombit.Samples.Consumer
                 UseKey = new UseKey(new X509SecurityToken(clientCertificate))
             };
             rst.OnBehalfOf = onBehalfOf;
-            rst.Claims.Dialect = "http://docs.oasis-open.org/wsfed/authorization/200706/authclaims";
-            rst.Claims.Add(new RequestClaim("dk:gov:saml:attribute:CvrNumberIdentifier", false, Constants.AnvenderContext));
+            if (!string.IsNullOrEmpty(cvr))
+            {
+                rst.Claims.Dialect = "http://docs.oasis-open.org/wsfed/authorization/200706/authclaims";
+                rst.Claims.Add(new RequestClaim("dk:gov:saml:attribute:CvrNumberIdentifier", false, cvr));
+            }
+            
             var client = GenerateStsCertificateClientChannel(clientCertificate, messesagModifier,
                 messageEncodingElementFactory, timestampDuration);
             SecurityToken token;
@@ -54,6 +66,7 @@ namespace Kombit.Samples.Consumer
                 throw;
             }
             return token;
+            
         }
 
         /// <summary>

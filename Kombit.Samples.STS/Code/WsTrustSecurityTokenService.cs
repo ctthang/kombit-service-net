@@ -37,22 +37,7 @@ namespace Kombit.Samples.STS.Code
         protected override Scope GetScope(ClaimsPrincipal principal, RequestSecurityToken request)
         {
             Logging.Instance.Debug("request.AppliesTo = " + request.AppliesTo);
-            CheckIfErrorShouldBeThrown(request.AppliesTo, KombitEventIds.CommonRuntimeError,
-                KombitErrorMessages.CommonRuntimeError);
-            CheckIfErrorShouldBeThrown(request.AppliesTo, KombitEventIds.ConnectionResolutionError,
-                KombitErrorMessages.ConnectionResolutionError);
-            CheckIfErrorShouldBeThrown(request.AppliesTo, KombitEventIds.MalformedRequestError,
-                KombitErrorMessages.MalformedRequestError);
-            CheckIfErrorShouldBeThrown(request.AppliesTo, KombitEventIds.PathResolutionError,
-                KombitErrorMessages.PathResolutionError);
-            CheckIfErrorShouldBeThrown(request.AppliesTo, KombitEventIds.AuditUserRequestError,
-                KombitErrorMessages.AuditUserRequestError);
-            CheckIfErrorShouldBeThrown(request.AppliesTo, KombitEventIds.NotSupportedException,
-                KombitErrorMessages.NotSupportedException);
-            CheckIfErrorShouldBeThrown(request.AppliesTo, KombitEventIds.ConfigurationError,
-                KombitErrorMessages.ConfigurationError);
-            CheckIfErrorShouldBeThrown(request.AppliesTo, KombitEventIds.DatabaseError,
-                KombitErrorMessages.DatabaseError);
+            CheckIfErrorShouldBeThrown(request.AppliesTo);
 
             var scope = new Scope(request.AppliesTo.Uri.AbsoluteUri, Constants.SigningCredentials);
             scope.TokenEncryptionRequired = false;
@@ -86,17 +71,14 @@ namespace Kombit.Samples.STS.Code
         ///     error types
         /// </summary>
         /// <param name="appliesTo"></param>
-        /// <param name="eventId"></param>
-        /// <param name="message"></param>
-        private static void CheckIfErrorShouldBeThrown(EndpointReference appliesTo, int eventId, string message)
+        private static void CheckIfErrorShouldBeThrown(EndpointReference appliesTo)
         {
-            if (
-                !appliesTo.Uri.AbsoluteUri.Trim(new char[] {'/'})
-                    .Equals(Constants.DummyAppliesToError + eventId, StringComparison.InvariantCultureIgnoreCase))
-                return;
-
-            var faultMessage = new StsFaultDetail() {Message = string.Format(Constants.DummyErrorMessagePattern, message) };
-            throw new FaultException<StsFaultDetail>(faultMessage, new FaultReason(string.Format(Constants.DummyDetailErrorMessagePattern, message)), new FaultCode(Convert.ToString(eventId)));
+            if (appliesTo.Uri.AbsoluteUri.Equals("https://consumer.kombit.dk/noconnectionfound",
+                StringComparison.InvariantCultureIgnoreCase))
+            {
+                throw new FaultException(string.Format("Path resolution: no connection '{0}' found", appliesTo.Uri.AbsoluteUri),
+                    new FaultCode("5002"));
+            }
         }
 
         /// <summary>
@@ -117,15 +99,27 @@ namespace Kombit.Samples.STS.Code
                 throw new ArgumentException(
                     "Missing requestor claim, please make sure that the request is using certificate authentication");
             }
+            if (requestorClaim.Value.Equals(Constants.StsServiceCertificate.Thumbprint))
+            {
+                throw new FaultException(string.Format("No mapped user exists for thumbprint '{0}'", requestorClaim.Value),
+                    new FaultCode("5607"));
+            }
             var claimsIdentity =
                 new ClaimsIdentity(AuthenticationTypes.X509, ClaimTypes.Name, ClaimTypes.Role);
 
+            var missingCvr = true;
             foreach (var claim in principal.Claims)
             {
                 if (claim.Type == ClaimTypes.NameIdentifier)
                     claimsIdentity.AddClaim(claim);
+                if (claim.Type == "dk:gov:saml:attribute:CvrNumberIdentifier")
+                    missingCvr = false;
             }
-
+            if (missingCvr)
+            {
+                throw new FaultException(string.Format("It is expected that the received STR must contain a CVR claim. Please check to make sure it includes the CVR claim."),
+                    new FaultCode("5015"));
+            }
             claimsIdentity.AddClaim(
                 new Claim("http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationinstant",
                     XmlConvert.ToString(DateTime.UtcNow, "yyyy-MM-ddTHH:mm:ss.fffZ"),

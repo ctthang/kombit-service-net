@@ -27,47 +27,74 @@ namespace Kombit.Samples.Consumer
         ///     A test to make sure that STS will return correct error and those are handled correctly on client side
         /// </summary>
         [Fact]
-        public void HandleErrorWhenIssueToken()
+        public void HandleCommonErrorsWhenIssueToken()
         {
-            SendIssueRequestWhichWillBeFailed(KombitConstants.DummyAppliesToError, KombitEventIds.CommonRuntimeError,
-                KombitErrorMessages.CommonRuntimeError);
-            SendIssueRequestWhichWillBeFailed(KombitConstants.DummyAppliesToError,
-                KombitEventIds.ConnectionResolutionError,
-                KombitErrorMessages.ConnectionResolutionError);
-            SendIssueRequestWhichWillBeFailed(KombitConstants.DummyAppliesToError, KombitEventIds.MalformedRequestError,
-                KombitErrorMessages.MalformedRequestError);
-            SendIssueRequestWhichWillBeFailed(KombitConstants.DummyAppliesToError, KombitEventIds.PathResolutionError,
-                KombitErrorMessages.PathResolutionError);
-            SendIssueRequestWhichWillBeFailed(KombitConstants.DummyAppliesToError, KombitEventIds.AuditUserRequestError,
-                KombitErrorMessages.AuditUserRequestError);
-            SendIssueRequestWhichWillBeFailed(KombitConstants.DummyAppliesToError, KombitEventIds.NotSupportedException,
-                KombitErrorMessages.NotSupportedException);
-            SendIssueRequestWhichWillBeFailed(KombitConstants.DummyAppliesToError, KombitEventIds.ConfigurationError,
-                KombitErrorMessages.ConfigurationError);
-            SendIssueRequestWhichWillBeFailed(KombitConstants.DummyAppliesToError, KombitEventIds.DatabaseError,
-                KombitErrorMessages.DatabaseError);
+            SendIssueRequestWhichWillReceiveConnectionNotFoundError();
+            SendIssueRequestWhichWillBeFailedBecauseOfAuthentication();
+            SendIssueRequestWhichWillBeFailedBecauseOfInvaidRst();
         }
 
         /// <summary>
-        ///     a helper method to validate response from STS in case of receiving known errors
+        /// A test to demonstrate how client handles common errors such as STS cannot find any connection corresponding to the request
         /// </summary>
-        /// <param name="appliesTo"></param>
-        /// <param name="expectedErrorEventId"></param>
-        /// <param name="expectedErrorMessage"></param>
-        private void SendIssueRequestWhichWillBeFailed(string appliesTo, int expectedErrorEventId,
-            string expectedErrorMessage)
+        public void SendIssueRequestWhichWillReceiveConnectionNotFoundError()
         {
-            //Send request to issue security token from Samples.STS
             var isErrorThrown = false;
             try
             {
-                ConnectionHelper.SendRequestSecurityTokenRequest(appliesTo + expectedErrorEventId, null,
+                ConnectionHelper.SendRequestSecurityTokenRequest("https://consumer.kombit.dk/noconnectionfound", null,
                     Constants.ClientCertificate, null);
             }
             catch (FaultException e)
             {
                 isErrorThrown = true;
-                Assert.True(e.Message.IndexOf(expectedErrorMessage, StringComparison.Ordinal) > 0);
+                Assert.Equal(e.Code.Name, "5002");
+                Assert.True(e.Message.Contains("Path resolution: no connection"));
+                Assert.True(e.Message.IndexOf("https://consumer.kombit.dk/noconnectionfound", StringComparison.Ordinal) > 0);
+            }
+
+            Assert.True(isErrorThrown);
+        }
+
+        /// <summary>
+        /// A test to demonstrate how client handles common errors such as authentication check is failed
+        /// </summary>
+        public void SendIssueRequestWhichWillBeFailedBecauseOfAuthentication()
+        {
+            var isErrorThrown = false;
+            try
+            {
+                ConnectionHelper.SendRequestSecurityTokenRequest(Constants.ServiceAddressUri.AbsoluteUri, null,
+                    Constants.StsServiceCertificate, null);
+            }
+            catch (FaultException e)
+            {
+                isErrorThrown = true;
+                Assert.Equal(e.Code.Name, "5607");
+                Assert.True(e.Message.Contains("No mapped user exists for thumbprint"));
+                Assert.True(
+                    e.Message.IndexOf(Constants.StsServiceCertificate.Thumbprint, StringComparison.Ordinal) > 0);
+            }
+
+            Assert.True(isErrorThrown);
+        }
+
+        /// <summary>
+        /// A test to demonstrate how client handles common errors such as a Rst contains an invalid CVR
+        /// </summary>
+        public void SendIssueRequestWhichWillBeFailedBecauseOfInvaidRst()
+        {
+            var isErrorThrown = false;
+            try
+            {
+                ConnectionHelper.SendRequestSecurityTokenRequest(Constants.ServiceAddressUri.AbsoluteUri, null,
+                    Constants.ClientCertificate, string.Empty, null);
+            }
+            catch (FaultException e)
+            {
+                isErrorThrown = true;
+                Assert.Equal(e.Code.Name, "5015");
+                Assert.True(e.Message.Contains("It is expected that the received STR must contain a CVR claim. Please check to make sure it includes the CVR claim."));
             }
 
             Assert.True(isErrorThrown);

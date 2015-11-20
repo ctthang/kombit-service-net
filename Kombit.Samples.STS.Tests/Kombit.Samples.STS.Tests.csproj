@@ -37,8 +37,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Kombit.Samples.Common">
-      <HintPath>..\packages\Kombit.Samples.Common.1.0.0.0\lib\net45\Kombit.Samples.Common.dll</HintPath>
+    <Reference Include="Kombit.Samples.Common, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Kombit.Samples.Common.1.0.0.2\lib\net45\Kombit.Samples.Common.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Moq">
       <HintPath>..\packages\Moq.4.2.1502.0911\lib\net40\Moq.dll</HintPath>

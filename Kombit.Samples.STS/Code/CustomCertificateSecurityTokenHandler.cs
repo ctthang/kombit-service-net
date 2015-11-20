@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.IdentityModel.Tokens;
 using System.Linq;
 using System.Security.Claims;
+using System.ServiceModel;
 using Kombit.Samples.Common;
 
 #endregion
@@ -32,10 +33,11 @@ namespace Kombit.Samples.STS.Code
             var clientCert = ((X509SecurityToken) token).Certificate;
             Logging.Instance.Debug(String.Format("Client certificate thumbprint: {0}", clientCert.Thumbprint));
 
+
             //Validate if a client certificate is a valid one in local store (in this sample, it will just simply compare with a predefined certificate
             if ((string.IsNullOrEmpty(clientCert.Thumbprint)) ||
                 ((!clientCert.Thumbprint.Equals(Constants.AValidClientCertificate.Thumbprint))
-                 && (!clientCert.Thumbprint.Equals(Constants.AValidOnBehalfOfCertificate.Thumbprint))))
+                 && (!clientCert.Thumbprint.Equals(Constants.AValidOnBehalfOfCertificate.Thumbprint)) && (!clientCert.Thumbprint.Equals(Constants.StsServiceCertificate.Thumbprint))))
             {
                 Logging.Instance.Error("Invalid client credentials");
                 throw new InvalidOperationException("Invalid client credentials. Expected " +
