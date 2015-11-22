@@ -159,7 +159,8 @@
     <Compile Include="Code\Constants.cs" />
     <Compile Include="Code\CustomNormalOnBehalfOfSaml2TokenHandler.cs" />
     <Compile Include="Code\CustomSaml2SecurityTokenHandler.cs" />
-    <Compile Include="Code\StsFaultDetail.cs" />
+    <Compile Include="Code\ExceptionThownHandler.cs" />
+    <Compile Include="Code\KombitExceptionThrownHandler.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Code\CustomCertificateSecurityTokenHandler.cs" />
     <Compile Include="Code\DecoratedEndpointBehavior.cs" />

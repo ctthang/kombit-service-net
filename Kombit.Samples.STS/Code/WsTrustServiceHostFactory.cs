@@ -45,6 +45,7 @@ namespace Kombit.Samples.STS.Code
             myAuthProperties.CertificateValidationMode = X509CertificateValidationMode.ChainTrust;
             myAuthProperties.RevocationMode = X509RevocationMode.NoCheck;
             GenerateEndpoints(host);
+            host.Description.Behaviors.Add(new KombitExceptionThrownHandler());
             return host;
         }
 
@@ -60,7 +61,7 @@ namespace Kombit.Samples.STS.Code
             if (debug == null)
             {
                 host.Description.Behaviors.Add(
-                    new ServiceDebugBehavior() {IncludeExceptionDetailInFaults = true});
+                    new ServiceDebugBehavior() { IncludeExceptionDetailInFaults = true });
             }
             else
             {
@@ -121,29 +122,13 @@ namespace Kombit.Samples.STS.Code
             }
 
             ServiceEndpoint endpoint = host.AddServiceEndpoint(
-                typeof (IWSTrust13SyncContract),
+                typeof(IWSTrust13SyncContract),
                 binding,
                 "/certificate");
-            foreach (var operation in endpoint.Contract.Operations)
-            {
-                if (operation.Name == "Trust13Issue")
-                {
-                    var faultDescription = new FaultDescription(operation.Name)
-                    {
-                        Name = "StsFaultDetail",
-                        DetailType = typeof(StsFaultDetail),
-                        Namespace = "https://sts.kombit.dk/fault",
-                        ProtectionLevel = ProtectionLevel.Sign
-                    };
-                    operation.Faults.Add(faultDescription);
-                }
-            }
             endpoint.Contract.ProtectionLevel = ProtectionLevel.Sign;
             endpoint.Behaviors.Add(new DecoratedEndpointBehavior());
             if (Constants.EnableSoapMessageLog)
                 endpoint.Behaviors.Add(new HookLogMessageBehavior());
-
-            
         }
     }
 }

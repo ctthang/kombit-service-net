@@ -115,9 +115,9 @@ namespace Kombit.Samples.STS.Code
                 if (claim.Type == "dk:gov:saml:attribute:CvrNumberIdentifier")
                     missingCvr = false;
             }
-            if (missingCvr)
+            if ((request.Claims == null) || (!request.Claims.Any()))
             {
-                throw new FaultException(string.Format("It is expected that the received STR must contain a CVR claim. Please check to make sure it includes the CVR claim."),
+                throw new FaultException("It is expected that the received STR must contain a CVR claim. Please check to make sure it includes the CVR claim.",
                     new FaultCode("5015"));
             }
             claimsIdentity.AddClaim(
