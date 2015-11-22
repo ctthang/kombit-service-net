@@ -22,10 +22,8 @@
     <MetadataSource Address="https://adgangsstyring.projekt-stoettesystemerne.dk/identifysample/kombit/sts/mex?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="mex.xsd" MetadataType="Schema" ID="95e78d01-393b-48d2-8604-51905a780375" SourceId="1" SourceUrl="https://adgangsstyring.projekt-stoettesystemerne.dk/identifysample/kombit/sts/mex?xsd=xsd2" />
-    <MetadataFile FileName="mex1.xsd" MetadataType="Schema" ID="774b80ac-b5e6-4d80-945b-3dfc47123abc" SourceId="1" SourceUrl="https://adgangsstyring.projekt-stoettesystemerne.dk/identifysample/kombit/sts/mex?xsd=xsd3" />
-    <MetadataFile FileName="SecurityTokenService.wsdl" MetadataType="Wsdl" ID="f3d4dd7d-78e9-4816-b008-fc278e73502b" SourceId="1" SourceUrl="https://adgangsstyring.projekt-stoettesystemerne.dk/identifysample/kombit/sts/mex?wsdl" />
     <MetadataFile FileName="mex2.xsd" MetadataType="Schema" ID="deeafc08-55c6-4cb7-944c-646a02b104bd" SourceId="1" SourceUrl="https://adgangsstyring.projekt-stoettesystemerne.dk/identifysample/kombit/sts/mex?xsd=xsd0" />
+    <MetadataFile FileName="SecurityTokenService.wsdl" MetadataType="Wsdl" ID="f3d4dd7d-78e9-4816-b008-fc278e73502b" SourceId="1" SourceUrl="https://adgangsstyring.projekt-stoettesystemerne.dk/identifysample/kombit/sts/mex?wsdl" />
     <MetadataFile FileName="mex3.xsd" MetadataType="Schema" ID="bd43ef34-92d6-4acb-ae8d-bfef0b170a92" SourceId="1" SourceUrl="https://adgangsstyring.projekt-stoettesystemerne.dk/identifysample/kombit/sts/mex?xsd=xsd1" />
   </Metadata>
   <Extensions>

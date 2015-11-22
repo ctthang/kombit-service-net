@@ -184,12 +184,6 @@
     <None Include="Service References\Sts\Kombit.Samples.Consumer.Sts.Trust13IssueResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\Sts\mex.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\Sts\mex1.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Service References\Sts\mex2.xsd">
       <SubType>Designer</SubType>
     </None>

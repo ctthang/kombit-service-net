@@ -11,25 +11,66 @@
 namespace Kombit.Samples.Consumer.Sts {
     
     
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://schemas.microsoft.com/ws/2008/06/identity/securitytokenservice", ConfigurationName="Sts.IWSTrust13Sync")]
+    public interface IWSTrust13Sync {
+        
+        // CODEGEN: Generating message contract since the operation Trust13Issue is neither RPC nor document wrapped.
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.Sign, Action="http://docs.oasis-open.org/ws-sx/ws-trust/200512/RST/Issue", ReplyAction="http://docs.oasis-open.org/ws-sx/ws-trust/200512/RSTRC/IssueFinal")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Kombit.Samples.Consumer.Sts.Trust13IssueResponse Trust13Issue(Kombit.Samples.Consumer.Sts.Trust13IssueRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.Sign, Action="http://docs.oasis-open.org/ws-sx/ws-trust/200512/RST/Issue", ReplyAction="http://docs.oasis-open.org/ws-sx/ws-trust/200512/RSTRC/IssueFinal")]
+        System.Threading.Tasks.Task<Kombit.Samples.Consumer.Sts.Trust13IssueResponse> Trust13IssueAsync(Kombit.Samples.Consumer.Sts.Trust13IssueRequest request);
+    }
+    
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34209")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://sts.kombit.dk/fault")]
-    public partial class StsFaultDetail : object, System.ComponentModel.INotifyPropertyChanged {
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://docs.oasis-open.org/ws-sx/ws-trust/200512")]
+    public partial class RequestSecurityTokenType : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private string messageField;
+        private System.Xml.XmlElement[] itemsField;
+        
+        private string contextField;
+        
+        private System.Xml.XmlAttribute[] anyAttrField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
-        public string Message {
+        [System.Xml.Serialization.XmlAnyElementAttribute(Order=0)]
+        public System.Xml.XmlElement[] Items {
             get {
-                return this.messageField;
+                return this.itemsField;
             }
             set {
-                this.messageField = value;
-                this.RaisePropertyChanged("Message");
+                this.itemsField = value;
+                this.RaisePropertyChanged("Items");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="anyURI")]
+        public string Context {
+            get {
+                return this.contextField;
+            }
+            set {
+                this.contextField = value;
+                this.RaisePropertyChanged("Context");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAnyAttributeAttribute()]
+        public System.Xml.XmlAttribute[] AnyAttr {
+            get {
+                return this.anyAttrField;
+            }
+            set {
+                this.anyAttrField = value;
+                this.RaisePropertyChanged("AnyAttr");
             }
         }
         
@@ -147,80 +188,6 @@ namespace Kombit.Samples.Consumer.Sts {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34209")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://docs.oasis-open.org/ws-sx/ws-trust/200512")]
-    public partial class RequestSecurityTokenType : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private System.Xml.XmlElement[] itemsField;
-        
-        private string contextField;
-        
-        private System.Xml.XmlAttribute[] anyAttrField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAnyElementAttribute(Order=0)]
-        public System.Xml.XmlElement[] Items {
-            get {
-                return this.itemsField;
-            }
-            set {
-                this.itemsField = value;
-                this.RaisePropertyChanged("Items");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="anyURI")]
-        public string Context {
-            get {
-                return this.contextField;
-            }
-            set {
-                this.contextField = value;
-                this.RaisePropertyChanged("Context");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAnyAttributeAttribute()]
-        public System.Xml.XmlAttribute[] AnyAttr {
-            get {
-                return this.anyAttrField;
-            }
-            set {
-                this.anyAttrField = value;
-                this.RaisePropertyChanged("AnyAttr");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://schemas.microsoft.com/ws/2008/06/identity/securitytokenservice", ConfigurationName="Sts.IWSTrust13Sync")]
-    public interface IWSTrust13Sync {
-        
-        // CODEGEN: Generating message contract since the operation Trust13Issue is neither RPC nor document wrapped.
-        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.Sign, Action="http://docs.oasis-open.org/ws-sx/ws-trust/200512/RST/Issue", ReplyAction="http://docs.oasis-open.org/ws-sx/ws-trust/200512/RSTRC/IssueFinal")]
-        [System.ServiceModel.FaultContractAttribute(typeof(Kombit.Samples.Consumer.Sts.StsFaultDetail), Action="Trust13Issue", ProtectionLevel=System.Net.Security.ProtectionLevel.Sign, Name="StsFaultDetail", Namespace="https://sts.kombit.dk/fault")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        Kombit.Samples.Consumer.Sts.Trust13IssueResponse Trust13Issue(Kombit.Samples.Consumer.Sts.Trust13IssueRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.Sign, Action="http://docs.oasis-open.org/ws-sx/ws-trust/200512/RST/Issue", ReplyAction="http://docs.oasis-open.org/ws-sx/ws-trust/200512/RSTRC/IssueFinal")]
-        System.Threading.Tasks.Task<Kombit.Samples.Consumer.Sts.Trust13IssueResponse> Trust13IssueAsync(Kombit.Samples.Consumer.Sts.Trust13IssueRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
