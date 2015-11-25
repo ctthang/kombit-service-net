@@ -184,13 +184,7 @@
     <None Include="Service References\Sts\Kombit.Samples.Consumer.Sts.Trust13IssueResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\Sts\mex2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\Sts\mex3.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\Sts\SecurityTokenService.wsdl" />
+    <None Include="Service References\Sts\SecurityTokenService1.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
@@ -219,6 +213,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="readme.txt" />
+    <None Include="Service References\Sts\mex.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Sts\mex1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\Sts\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>

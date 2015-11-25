@@ -89,8 +89,8 @@
   </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://schemas.microsoft.com/ws/2008/06/identity/securitytokenservice/Imports">
-      <xsd:import schemaLocation="https://adgangsstyring.projekt-stoettesystemerne.dk/identifysample/kombit/sts/mex?xsd=xsd0" namespace="http://schemas.microsoft.com/Message" />
-      <xsd:import schemaLocation="https://adgangsstyring.projekt-stoettesystemerne.dk/identifysample/kombit/sts/mex?xsd=xsd1" namespace="http://docs.oasis-open.org/ws-sx/ws-trust/200512" />
+      <xsd:import schemaLocation="https://adgangsstyring.projekt-stoettesystemerne.dk/sts/kombit/sts/mex?xsd=xsd0" namespace="http://schemas.microsoft.com/Message" />
+      <xsd:import schemaLocation="https://adgangsstyring.projekt-stoettesystemerne.dk/sts/kombit/sts/mex?xsd=xsd1" namespace="http://docs.oasis-open.org/ws-sx/ws-trust/200512" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IWSTrust13Sync_Trust13Issue_InputMessage">
@@ -122,9 +122,9 @@
   </wsdl:binding>
   <wsdl:service name="SecurityTokenService">
     <wsdl:port name="MutualCertificateWithMessageSecurityBinding_IWSTrust13Sync" binding="tns:MutualCertificateWithMessageSecurityBinding_IWSTrust13Sync">
-      <soap12:address location="https://adgangsstyring.projekt-stoettesystemerne.dk/identifysample/kombit/sts/certificate" />
+      <soap12:address location="https://adgangsstyring.projekt-stoettesystemerne.dk/sts/kombit/sts/certificate" />
       <wsa10:EndpointReference>
-        <wsa10:Address>https://adgangsstyring.projekt-stoettesystemerne.dk/identifysample/kombit/sts/certificate</wsa10:Address>
+        <wsa10:Address>https://adgangsstyring.projekt-stoettesystemerne.dk/sts/kombit/sts/certificate</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
