@@ -62,7 +62,8 @@ namespace Kombit.Samples.STS.Tests
                 RequestType = RequestTypes.Issue,
                 TokenType = Common.WSTrust13.Constants.TokenTypes.OasisWssSaml2TokenProfile11
             };
-
+            rst.Claims.Dialect = "http://docs.oasis-open.org/wsfed/authorization/200706/authclaims";
+            rst.Claims.Add(new RequestClaim("dk:gov:saml:attribute:CvrNumberIdentifier", false, "12345678"));
             var outputClaimsIdentity = service.CallGetOutputClaimsIdentity(claimPrincipal, rst);
             Assert.True(outputClaimsIdentity != null);
             Assert.True(outputClaimsIdentity.Claims != null);
