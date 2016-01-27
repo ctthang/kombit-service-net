@@ -1,1 +1,95 @@
-{"Id":"kombit service bus","Anvenderkontekster":[{"Aktiveringstidspunkt":{"Sluttidspunkt":"2016-06-30T13:59:59Z","Starttidspunkt":"2015-03-31T17:00:00Z"},"Cvr":"01234569"},{"Aktiveringstidspunkt":{"Sluttidspunkt":"9999-12-31T16:59:59.9999999Z","Starttidspunkt":"0001-01-01T00:00:00Z"},"Cvr":"01234567"}],"OcesCertifikater":["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"],"RoleAssignments":[{"Id":"8E9CD080-8246-4AA7-A33D-BE9C667510D3","Anvenderkontekst":"01234569","Dataafgraensningsvaerdier":[{"DataafgraensningstypeId":"http://sdev43pro.safewhere.local/constraints/DRV1a","Values":["22"]}],"ServiceId":"https://adgangsstyring.projekt-stoettesystemerne.dk/servicesample/kombit/service","ServicesystemrolleId":"https://sdev43pro.safewhere.local/roles/servicesystemrole/role1","IssuedAnvenderkontekst":null},{"Id":"5B8DB21E-D6CB-4049-A54F-F1D52A0829AA","Anvenderkontekst":"01234567","Dataafgraensningsvaerdier":[{"DataafgraensningstypeId":"http://sdev43pro.safewhere.local/constraints/DRV2a","Values":["33","34"]}],"ServiceId":"https://adgangsstyring.projekt-stoettesystemerne.dk/servicesample/kombit/service","ServicesystemrolleId":"https://sdev43pro.safewhere.local/roles/servicesystemrole/role2","IssuedAnvenderkontekst":null},{"Id":"8FAEB289-7C47-4E8C-B1E3-984EE65329A7","Anvenderkontekst":"01234567","Dataafgraensningsvaerdier":[{"DataafgraensningstypeId":"http://sdev43pro.safewhere.local/constraints/DRV3b","Values":["123"]}],"ServiceId":"https://adgangsstyring.projekt-stoettesystemerne.dk/servicesample/kombit/service","ServicesystemrolleId":"https://sdev43pro.safewhere.local/roles/servicesystemrole/role3","IssuedAnvenderkontekst":null},{"Id":"258ad12e-28d1-46d7-b128-e917a9515f43","Anvenderkontekst":"01234569","Dataafgraensningsvaerdier":[{"DataafgraensningstypeId":"http://sdev43pro.safewhere.local/constraints/DRV1a","Values":["22"]}],"ServiceId":"https://adgangsstyring.projekt-stoettesystemerne.dk:8181/Service/Service","ServicesystemrolleId":"https://sdev43pro.safewhere.local/roles/servicesystemrole/role1","IssuedAnvenderkontekst":null},{"Id":"dfe77a86-46ce-45ed-8ebc-76c47900e220","Anvenderkontekst":"01234567","Dataafgraensningsvaerdier":[{"DataafgraensningstypeId":"http://sdev43pro.safewhere.local/constraints/DRV2a","Values":["33","34"]}],"ServiceId":"https://https://adgangsstyring.projekt-stoettesystemerne.dk:8181/Service/Service","ServicesystemrolleId":"https://sdev43pro.safewhere.local/roles/servicesystemrole/role2","IssuedAnvenderkontekst":null},{"Id":"855dc372-71e0-49d0-b517-42ce37bbcb89","Anvenderkontekst":"01234567","Dataafgraensningsvaerdier":[{"DataafgraensningstypeId":"http://sdev43pro.safewhere.local/constraints/DRV3b","Values":["123"]}],"ServiceId":"https://adgangsstyring.projekt-stoettesystemerne.dk:8181/Service/Service","ServicesystemrolleId":"https://sdev43pro.safewhere.local/roles/servicesystemrole/role3","IssuedAnvenderkontekst":null}],"ImpersonationAssignments":[{"Anvenderkontekst":"01234567","OcesCertificate":"MIIGNDCCBRygAwIBAgIETBJt6DANBgkqhkiG9w0BAQsFADBIMQswCQYDVQQGEwJE\nSzESMBAGA1UECgwJVFJVU1QyNDA4MSUwIwYDVQQDDBxUUlVTVDI0MDggU3lzdGVt\ndGVzdCBWSUlJIENBMB4XDTE0MDMyNDEyNDA0M1oXDTE3MDMyNDEyMzkwOFowgYMx\nCzAJBgNVBAYTAkRLMScwJQYDVQQKDB5ORVRTIERBTklEIEEvUyAvLyBDVlI6MzA4\nMDg0NjAxSzAgBgNVBAUTGUNWUjozMDgwODQ2MC1VSUQ6MjUzNTE3MzgwJwYDVQQD\nDCBORVRTIERBTklEIEEvUyAtIFRVIFZPQ0VTIGd5bGRpZzCCASIwDQYJKoZIhvcN\nAQEBBQADggEPADCCAQoCggEBAJoe9UsBtUHUbW/I77XZhSOfdLH1yLf9Nfcvyr1G\n9B1mej9OdzmAWn6fHm/ayZNG18g4Q3UUawCffph/rsbdA7qDqn0m74iUkGsNcXUU\neyGUiJYUeOvzlEpBAnBniQJKEFEorOhDFqEFBk2Sfl9RIoPgEgM25WbnX+bMaidB\neOsuWBbnhyBBsRyqO8f3EEhwhBX9MGwn4uue09NCLgw62HelyQ8EvrXgNL9LzwUt\nLn6KlLD5lgyJI4nzHr4w04pI/Z5CuqWmV7IoA7V/nr8xWUkRGNt2es7L9XBVEN69\nSeXP1Mg5IibsIX65EVHVyblk48oSCmKuzMUM2AW+kz6EtQ8CAwEAAaOCAugwggLk\nMA4GA1UdDwEB/wQEAwIEsDCBlAYIKwYBBQUHAQEEgYcwgYQwOwYIKwYBBQUHMAGG\nL2h0dHA6Ly9vY3NwLnN5c3RlbXRlc3Q4LnRydXN0MjQwOC5jb20vcmVzcG9uZGVy\nMEUGCCsGAQUFBzAChjlodHRwOi8vdi5haWEuc3lzdGVtdGVzdDgudHJ1c3QyNDA4\nLmNvbS9zeXN0ZW10ZXN0OC1jYS5jZXIwggEgBgNVHSAEggEXMIIBEzCCAQ8GDSsG\nAQQBgfRRAgQGAwQwgf0wLwYIKwYBBQUHAgEWI2h0dHA6Ly93d3cudHJ1c3QyNDA4\nLmNvbS9yZXBvc2l0b3J5MIHJBggrBgEFBQcCAjCBvDAMFgVEYW5JRDADAgEBGoGr\nRGFuSUQgdGVzdCBjZXJ0aWZpa2F0ZXIgZnJhIGRlbm5lIENBIHVkc3RlZGVzIHVu\nZGVyIE9JRCAxLjMuNi4xLjQuMS4zMTMxMy4yLjQuNi4zLjQuIERhbklEIHRlc3Qg\nY2VydGlmaWNhdGVzIGZyb20gdGhpcyBDQSBhcmUgaXNzdWVkIHVuZGVyIE9JRCAx\nLjMuNi4xLjQuMS4zMTMxMy4yLjQuNi4zLjQuMB4GA1UdEQQXMBWBE3R1LXN1cHBv\ncnRAZGFuaWQuZGswgasGA1UdHwSBozCBoDA6oDigNoY0aHR0cDovL2NybC5zeXN0\nZW10ZXN0OC50cnVzdDI0MDguY29tL3N5c3RlbXRlc3Q4LmNybDBioGCgXqRcMFox\nCzAJBgNVBAYTAkRLMRIwEAYDVQQKDAlUUlVTVDI0MDgxJTAjBgNVBAMMHFRSVVNU\nMjQwOCBTeXN0ZW10ZXN0IFZJSUkgQ0ExEDAOBgNVBAMMB0NSTDE2NjYwHwYDVR0j\nBBgwFoAUlhs2EzsiKcI9+ef5k+vGyz4SXwQwHQYDVR0OBBYEFJkaQjzszJqwFiTo\nZiRGmYQrk1w0MAkGA1UdEwQCMAAwDQYJKoZIhvcNAQELBQADggEBAM7023pMr/wc\nocte4vUBjE1dBIrW6n4RYxebzs80zC7WVyZbDvKAAuomq/tMPes822ilhWVasH0W\npk7JJMoDoqa3DYLCOKtvE6GhZCAghKpzPbnmGyOpvEclWRxruwEMSPNK2Y+OGZux\nhk/5G7uylxoBhuW9Sb2hAAOZlxZ92dBJG/SwelPjeTHhWdy/zojT3OsZHOi/wYdM\n05uMIrSe3WrnlpJLowcFk1JPXLfIGPDbY/y/T/jmVWosO2Gi2kGZ4e8djNq+VMmN\ntvw7spmc45CIaIU/pT4WF5sjrK4RoEX05sFDJrDMGYRDhc0q1LdnPPrpPEsr2zbE\n6nb7TZG4MU0=","Aktiveringstidspunkt":{"Sluttidspunkt":"2016-06-30T13:59:59Z","Starttidspunkt":"2015-03-31T17:00:00Z"}}]}
+{
+	"Id" : "kombit service bus",
+	"Anvenderkontekster" : [{
+			"Aktiveringstidspunkt" : {
+				"Sluttidspunkt" : "2025-06-30T13:59:59Z",
+				"Starttidspunkt" : "2015-03-31T17:00:00Z"
+			},
+			"Cvr" : "01234569"
+		}, {
+			"Aktiveringstidspunkt" : {
+				"Sluttidspunkt" : "9999-12-31T16:59:59.9999999Z",
+				"Starttidspunkt" : "0001-01-01T00:00:00Z"
+			},
+			"Cvr" : "01234567"
+		}
+	],
+	"OcesCertifikater" : ["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"],
+	"RoleAssignments" : [{
+			"Id" : "8E9CD080-8246-4AA7-A33D-BE9C667510D3",
+			"Anvenderkontekst" : "01234569",
+			"Dataafgraensningsvaerdier" : [{
+					"DataafgraensningstypeId" : "http://adgangsstyring.projekt-stoettesystemerne.dk/constraints/DRV1a",
+					"Values" : ["22"]
+				}
+			],
+			"ServiceId" : "https://adgangsstyring.projekt-stoettesystemerne.dk/servicesample/kombit/service",
+			"ServicesystemrolleId" : "https://adgangsstyring.projekt-stoettesystemerne.dk/roles/servicesystemrole/role1",
+			"IssuedAnvenderkontekst" : null
+		}, {
+			"Id" : "5B8DB21E-D6CB-4049-A54F-F1D52A0829AA",
+			"Anvenderkontekst" : "01234567",
+			"Dataafgraensningsvaerdier" : [{
+					"DataafgraensningstypeId" : "http://adgangsstyring.projekt-stoettesystemerne.dk/constraints/DRV2a",
+					"Values" : ["33", "34"]
+				}
+			],
+			"ServiceId" : "https://adgangsstyring.projekt-stoettesystemerne.dk/servicesample/kombit/service",
+			"ServicesystemrolleId" : "https://adgangsstyring.projekt-stoettesystemerne.dk/roles/servicesystemrole/role2",
+			"IssuedAnvenderkontekst" : null
+		}, {
+			"Id" : "8FAEB289-7C47-4E8C-B1E3-984EE65329A7",
+			"Anvenderkontekst" : "01234567",
+			"Dataafgraensningsvaerdier" : [{
+					"DataafgraensningstypeId" : "http://adgangsstyring.projekt-stoettesystemerne.dk/constraints/DRV3b",
+					"Values" : ["123"]
+				}
+			],
+			"ServiceId" : "https://adgangsstyring.projekt-stoettesystemerne.dk/servicesample/kombit/service",
+			"ServicesystemrolleId" : "https://adgangsstyring.projekt-stoettesystemerne.dk/roles/servicesystemrole/role3",
+			"IssuedAnvenderkontekst" : null
+		}, {
+			"Id" : "258ad12e-28d1-46d7-b128-e917a9515f43",
+			"Anvenderkontekst" : "01234569",
+			"Dataafgraensningsvaerdier" : [{
+					"DataafgraensningstypeId" : "http://adgangsstyring.projekt-stoettesystemerne.dk/constraints/DRV1a",
+					"Values" : ["22"]
+				}
+			],
+			"ServiceId" : "https://adgangsstyring.projekt-stoettesystemerne.dk:8181/Service/Service",
+			"ServicesystemrolleId" : "https://adgangsstyring.projekt-stoettesystemerne.dk/roles/servicesystemrole/role1",
+			"IssuedAnvenderkontekst" : null
+		}, {
+			"Id" : "dfe77a86-46ce-45ed-8ebc-76c47900e220",
+			"Anvenderkontekst" : "01234567",
+			"Dataafgraensningsvaerdier" : [{
+					"DataafgraensningstypeId" : "http://adgangsstyring.projekt-stoettesystemerne.dk/constraints/DRV2a",
+					"Values" : ["33", "34"]
+				}
+			],
+			"ServiceId" : "https://adgangsstyring.projekt-stoettesystemerne.dk:8181/Service/Service",
+			"ServicesystemrolleId" : "https://adgangsstyring.projekt-stoettesystemerne.dk/roles/servicesystemrole/role2",
+			"IssuedAnvenderkontekst" : null
+		}, {
+			"Id" : "855dc372-71e0-49d0-b517-42ce37bbcb89",
+			"Anvenderkontekst" : "01234567",
+			"Dataafgraensningsvaerdier" : [{
+					"DataafgraensningstypeId" : "http://adgangsstyring.projekt-stoettesystemerne.dk/constraints/DRV3b",
+					"Values" : ["123"]
+				}
+			],
+			"ServiceId" : "https://adgangsstyring.projekt-stoettesystemerne.dk:8181/Service/Service",
+			"ServicesystemrolleId" : "https://adgangsstyring.projekt-stoettesystemerne.dk/roles/servicesystemrole/role3",
+			"IssuedAnvenderkontekst" : null
+		}
+	],
+	"ImpersonationAssignments" : [{
+			"Anvenderkontekst" : "01234567",
+			"OcesCertificate" : "MIIGNDCCBRygAwIBAgIETBJt6DANBgkqhkiG9w0BAQsFADBIMQswCQYDVQQGEwJE\nSzESMBAGA1UECgwJVFJVU1QyNDA4MSUwIwYDVQQDDBxUUlVTVDI0MDggU3lzdGVt\ndGVzdCBWSUlJIENBMB4XDTE0MDMyNDEyNDA0M1oXDTE3MDMyNDEyMzkwOFowgYMx\nCzAJBgNVBAYTAkRLMScwJQYDVQQKDB5ORVRTIERBTklEIEEvUyAvLyBDVlI6MzA4\nMDg0NjAxSzAgBgNVBAUTGUNWUjozMDgwODQ2MC1VSUQ6MjUzNTE3MzgwJwYDVQQD\nDCBORVRTIERBTklEIEEvUyAtIFRVIFZPQ0VTIGd5bGRpZzCCASIwDQYJKoZIhvcN\nAQEBBQADggEPADCCAQoCggEBAJoe9UsBtUHUbW/I77XZhSOfdLH1yLf9Nfcvyr1G\n9B1mej9OdzmAWn6fHm/ayZNG18g4Q3UUawCffph/rsbdA7qDqn0m74iUkGsNcXUU\neyGUiJYUeOvzlEpBAnBniQJKEFEorOhDFqEFBk2Sfl9RIoPgEgM25WbnX+bMaidB\neOsuWBbnhyBBsRyqO8f3EEhwhBX9MGwn4uue09NCLgw62HelyQ8EvrXgNL9LzwUt\nLn6KlLD5lgyJI4nzHr4w04pI/Z5CuqWmV7IoA7V/nr8xWUkRGNt2es7L9XBVEN69\nSeXP1Mg5IibsIX65EVHVyblk48oSCmKuzMUM2AW+kz6EtQ8CAwEAAaOCAugwggLk\nMA4GA1UdDwEB/wQEAwIEsDCBlAYIKwYBBQUHAQEEgYcwgYQwOwYIKwYBBQUHMAGG\nL2h0dHA6Ly9vY3NwLnN5c3RlbXRlc3Q4LnRydXN0MjQwOC5jb20vcmVzcG9uZGVy\nMEUGCCsGAQUFBzAChjlodHRwOi8vdi5haWEuc3lzdGVtdGVzdDgudHJ1c3QyNDA4\nLmNvbS9zeXN0ZW10ZXN0OC1jYS5jZXIwggEgBgNVHSAEggEXMIIBEzCCAQ8GDSsG\nAQQBgfRRAgQGAwQwgf0wLwYIKwYBBQUHAgEWI2h0dHA6Ly93d3cudHJ1c3QyNDA4\nLmNvbS9yZXBvc2l0b3J5MIHJBggrBgEFBQcCAjCBvDAMFgVEYW5JRDADAgEBGoGr\nRGFuSUQgdGVzdCBjZXJ0aWZpa2F0ZXIgZnJhIGRlbm5lIENBIHVkc3RlZGVzIHVu\nZGVyIE9JRCAxLjMuNi4xLjQuMS4zMTMxMy4yLjQuNi4zLjQuIERhbklEIHRlc3Qg\nY2VydGlmaWNhdGVzIGZyb20gdGhpcyBDQSBhcmUgaXNzdWVkIHVuZGVyIE9JRCAx\nLjMuNi4xLjQuMS4zMTMxMy4yLjQuNi4zLjQuMB4GA1UdEQQXMBWBE3R1LXN1cHBv\ncnRAZGFuaWQuZGswgasGA1UdHwSBozCBoDA6oDigNoY0aHR0cDovL2NybC5zeXN0\nZW10ZXN0OC50cnVzdDI0MDguY29tL3N5c3RlbXRlc3Q4LmNybDBioGCgXqRcMFox\nCzAJBgNVBAYTAkRLMRIwEAYDVQQKDAlUUlVTVDI0MDgxJTAjBgNVBAMMHFRSVVNU\nMjQwOCBTeXN0ZW10ZXN0IFZJSUkgQ0ExEDAOBgNVBAMMB0NSTDE2NjYwHwYDVR0j\nBBgwFoAUlhs2EzsiKcI9+ef5k+vGyz4SXwQwHQYDVR0OBBYEFJkaQjzszJqwFiTo\nZiRGmYQrk1w0MAkGA1UdEwQCMAAwDQYJKoZIhvcNAQELBQADggEBAM7023pMr/wc\nocte4vUBjE1dBIrW6n4RYxebzs80zC7WVyZbDvKAAuomq/tMPes822ilhWVasH0W\npk7JJMoDoqa3DYLCOKtvE6GhZCAghKpzPbnmGyOpvEclWRxruwEMSPNK2Y+OGZux\nhk/5G7uylxoBhuW9Sb2hAAOZlxZ92dBJG/SwelPjeTHhWdy/zojT3OsZHOi/wYdM\n05uMIrSe3WrnlpJLowcFk1JPXLfIGPDbY/y/T/jmVWosO2Gi2kGZ4e8djNq+VMmN\ntvw7spmc45CIaIU/pT4WF5sjrK4RoEX05sFDJrDMGYRDhc0q1LdnPPrpPEsr2zbE\n6nb7TZG4MU0=",
+			"Aktiveringstidspunkt" : {
+				"Sluttidspunkt" : "2025-06-30T13:59:59Z",
+				"Starttidspunkt" : "2015-03-31T17:00:00Z"
+			}
+		}
+	]
+}
