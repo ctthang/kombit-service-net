@@ -31,6 +31,28 @@
 			"ServiceId" : "https://adgangsstyring.projekt-stoettesystemerne.dk:8181/Service/Service",
 			"ServicesystemrolleId" : "https://adgangsstyring.projekt-stoettesystemerne.dk/roles/servicesystemrole/role1",
 			"IssuedAnvenderkontekst" : null
+		},{
+			"Id" : "391b0e0e-0fbf-46d4-bdaf-c1c6be0be314",
+			"Anvenderkontekst" : "01234567",
+			"Dataafgraensningsvaerdier" : [{
+					"DataafgraensningstypeId" : "http://adgangsstyring.projekt-stoettesystemerne.dk/constraints/DRV1a",
+					"Values" : ["123", "456"]
+				}
+			],
+			"ServiceId" : "https://service.projekt-stoettesystemerne.dk/kombit/service",
+			"ServicesystemrolleId" : "https://adgangsstyring.projekt-stoettesystemerne.dk/roles/servicesystemrole/role1",
+			"IssuedAnvenderkontekst" : null
+		}, {
+			"Id" : "1d1bbb73-4b2b-4957-a4ef-7936ec73ccc5",
+			"Anvenderkontekst" : "01234567",
+			"Dataafgraensningsvaerdier" : [{
+					"DataafgraensningstypeId" : "http://adgangsstyring.projekt-stoettesystemerne.dk/constraints/DRV1a",
+					"Values" : ["123", "456"]
+				}
+			],
+			"ServiceId" : "https://service.projekt-stoettesystemerne.dk:8181/Service/Service",
+			"ServicesystemrolleId" : "https://adgangsstyring.projekt-stoettesystemerne.dk/roles/servicesystemrole/role1",
+			"IssuedAnvenderkontekst" : null
 		}
 	],
 	"ImpersonationAssignments" : []
