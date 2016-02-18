@@ -57,7 +57,7 @@ namespace Kombit.Samples.Consumer
         public static ArraySegment<byte> DelaySending(ArraySegment<byte> encodedMessage, BufferManager bufferManager,
             int messageOffset)
         {
-            Thread.Sleep(10000); // sleep 10 seconds
+            Thread.Sleep(302000); // sleep 10 seconds
 
             return encodedMessage;
         }

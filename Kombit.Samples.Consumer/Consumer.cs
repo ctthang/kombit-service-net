@@ -65,7 +65,7 @@ namespace Kombit.Samples.Consumer
             try
             {
                 ConnectionHelper.SendRequestSecurityTokenRequest(Constants.ServiceAddressUri.AbsoluteUri, null,
-                    Constants.StsServiceCertificate, null);
+                    Constants.AnInvalidClientCertificate, null);
             }
             catch (FaultException e)
             {
@@ -73,7 +73,7 @@ namespace Kombit.Samples.Consumer
                 Assert.Equal(e.Code.Name, "5607");
                 Assert.True(e.Message.Contains("No mapped user exists for thumbprint"));
                 Assert.True(
-                    e.Message.IndexOf(Constants.StsServiceCertificate.Thumbprint, StringComparison.Ordinal) > 0);
+                    e.Message.IndexOf(Constants.AnInvalidClientCertificate.Thumbprint, StringComparison.Ordinal) > 0);
             }
 
             Assert.True(isErrorThrown);

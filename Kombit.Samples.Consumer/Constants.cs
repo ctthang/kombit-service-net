@@ -126,6 +126,19 @@ namespace Kombit.Samples.Consumer
             }
         }
 
+         /// <summary>
+        /// A client certificate used for requesting to sts service
+        /// </summary>
+        public static X509Certificate2 AnInvalidClientCertificate
+        {
+            get
+            {
+                string certificateThumbprint = ConfigurationManager.AppSettings["AnInvalidClientCertificateThumbprint"];
+                return CertificateLoader.LoadCertificateFromMyStore(certificateThumbprint);
+            }
+        }
+
+        
         /// <summary>
         /// A avender context of the authenticated user
         /// </summary>
