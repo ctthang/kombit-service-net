@@ -54,10 +54,25 @@ namespace Kombit.Samples.Consumer
         /// <param name="bufferManager">Buffer manager object</param>
         /// <param name="messageOffset">Offset of the message</param>
         /// <returns></returns>
-        public static ArraySegment<byte> DelaySending(ArraySegment<byte> encodedMessage, BufferManager bufferManager,
+        public static ArraySegment<byte> DelaySendingForValidTimeStampTestCase(ArraySegment<byte> encodedMessage, BufferManager bufferManager,
             int messageOffset)
         {
-            Thread.Sleep(302000); // sleep 10 seconds
+            Thread.Sleep(10000); // sleep 10 seconds
+
+            return encodedMessage;
+        }
+
+        /// <summary>
+        ///     This modifier suspends a running thread for 5 mins + 2 seconds which effectively makes the message expire.
+        /// </summary>
+        /// <param name="encodedMessage">The untouched message</param>
+        /// <param name="bufferManager">Buffer manager object</param>
+        /// <param name="messageOffset">Offset of the message</param>
+        /// <returns></returns>
+        public static ArraySegment<byte> DelaySendingForExpireTestCase(ArraySegment<byte> encodedMessage, BufferManager bufferManager,
+            int messageOffset)
+        {
+            Thread.Sleep(302000); // sleep 5 mins + 2 seconds
 
             return encodedMessage;
         }

@@ -230,7 +230,7 @@ namespace Kombit.Samples.Consumer
             var customTextMessageBindingElement =
                 new CustomTextMessageBindingElement(
                     messageEncoderFactory => new CustomTextMessageEncoderFactory(messageEncoderFactory,
-                        MessageModifier.DelaySending));
+                        MessageModifier.DelaySendingForValidTimeStampTestCase));
             ConnectionHelper.SendRequestSecurityTokenRequest(Constants.ServiceAddressUri.AbsoluteUri, null, 
                 Constants.ClientCertificate, null, () => customTextMessageBindingElement, 3);
             // Clockskew is 8 seconds, sleep 10 second -> duration = 3 second: still valid
@@ -248,10 +248,10 @@ namespace Kombit.Samples.Consumer
                 var customTextMessageBindingElement =
                     new CustomTextMessageBindingElement(
                         messageEncoderFactory => new CustomTextMessageEncoderFactory(messageEncoderFactory,
-                            MessageModifier.DelaySending));
+                            MessageModifier.DelaySendingForExpireTestCase));
                 ConnectionHelper.SendRequestSecurityTokenRequest(Constants.ServiceAddressUri.AbsoluteUri, null,
                     Constants.ClientCertificate, null, () => customTextMessageBindingElement, 1);
-                // Clockskew is 8 seconds, sleep 10 second -> duration = 1 second: invalid
+                // Clockskew is 8 seconds, sleep 5 minutes 2 seconds -> duration = 1 second: invalid
             });
         }
 
