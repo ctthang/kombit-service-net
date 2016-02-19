@@ -4,7 +4,10 @@ This is a soap service that simulates processing requests (RST) and sending resp
 The service accepts issue requests where the input is a security token request (RST) and will return a response with an security token (RSTR).
 
 # Prerequisites
-This document requires that the following prerequisites are satisfied:- Setting up the .Net-based samples according to the guide “All_guideline_setup sites IIS.docx”- Logging is done to the folder c:\temp. This folder must exist for logging to work.
+This document requires that the following prerequisites are satisfied:
+
+- Setting up the .Net-based samples according to the guide “All_guideline_setup sites IIS.docx”
+- Logging is done to the folder c:\temp. This folder must exist for logging to work.
 
 # Configuring The Test Stub
 
@@ -16,12 +19,14 @@ This document requires that the following prerequisites are satisfied:- Settin
 	- Certificate endpoint used for processing RST messages and accepts a certificate credential over the HTTP protocol.
 
 ## IIS Web Site
-This guideline assumes that the url of the STS Test Stub is:[https://adgangsstyringeksempler.test-stoettesystemerne.dk/STS/](https://adgangsstyringeksempler.test-stoettesystemerne.dk/STS/)
+This guideline assumes that the url of the STS Test Stub is:
+[https://adgangsstyringeksempler.test-stoettesystemerne.dk/STS/](https://adgangsstyringeksempler.test-stoettesystemerne.dk/STS/)
 
 ## Detailed Configuration
 Some changes to the properties in the configuration file STS\web.config may be required:
 - BaseAddress: the production address which deploy sts service
-- StsServiceCertificateThumbprint: thumbprint of the certificate used by this STS Test stub as the service certificate for the certificate-endpoint. In this sample, the public part of the token signing certificate is located in the Certifcates folder.- StsSigningCertificateThumbprint: thumbprint of a certificate which is used to sign the message. In this sample, the public part of the token signing certificate is located in the Certifcates folder.
+- StsServiceCertificateThumbprint: thumbprint of the certificate used by this STS Test stub as the service certificate for the certificate-endpoint. In this sample, the public part of the token signing certificate is located in the Certifcates folder.
+- StsSigningCertificateThumbprint: thumbprint of a certificate which is used to sign the message. In this sample, the public part of the token signing certificate is located in the Certifcates folder.
 - SigningAlgorithm: a signing algorithm used to sign assertion.
 - HeaderSigningAlgorithm: a signing algorithm used to sign header of soap message
 - AValidClientCertificateThumbprint: thumbprint of a certificate which is used to imitate a valid client credential which will be accepted to receive a security token
@@ -37,9 +42,14 @@ The unit tests have two main sets of test cases:
 - One set tests the WsTrustSecurityTokenService class.
 - One set tests the WsTrustServiceConfiguration class.
 
-# Using The STS Test StubBrowsing the following URL will present a greeting page, that shows how to invoke the service.[https://adgangsstyringeksempler.test-stoettesystemerne.dk/STS](https://adgangsstyringeksempler.test-stoettesystemerne.dk/STS).
-Sample code which also demonstrates can be found in the class:
-```Kombit.Samples.Consumer.Consumer```The following test case demonstrates how to call the STS and then use the issued token to call a service:
-```SendRstAndThenExecuteServiceServiceSuccessfully```
+# Using The STS Test Stub
+Browsing the following URL will present a greeting page, that shows how to invoke the service:
+[https://adgangsstyringeksempler.test-stoettesystemerne.dk/STS](https://adgangsstyringeksempler.test-stoettesystemerne.dk/STS).
 
-EOF
+Sample code which also demonstrates can be found in the class:
+`Kombit.Samples.Consumer.Consumer`
+
+The following test case demonstrates how to call the STS and then use the issued token to call a service:
+`SendRstAndThenExecuteServiceServiceSuccessfully`
+
+EOF
