@@ -20,7 +20,8 @@ This document requires that the following prerequisites are satisfied:
 
 ## IIS Web Site
 This guideline assumes that the url of the STS Test Stub is:
-[https://adgangsstyringeksempler.projekt-stoettesystemerne.dk/STS](https://adgangsstyringeksempler.projekt-stoettesystemerne.dk/STS).
+[https://adgangsstyringeksempler.projekt-stoettesystemerne.dk/STS](https://adgangsstyringeksempler.projekt-stoettesystemerne.dk/STS)
+
 
 ## Detailed Configuration
 Some changes to the properties in the configuration file STS\web.config may be required:
@@ -44,7 +45,7 @@ The unit tests have two main sets of test cases:
 
 # Using The STS Test Stub
 Browsing the following URL will present a greeting page, that shows how to invoke the service:
-[https://adgangsstyringeksempler.projekt-stoettesystemerne.dk/STS](https://adgangsstyringeksempler.projekt-stoettesystemerne.dk/STS).
+[https://adgangsstyringeksempler.projekt-stoettesystemerne.dk/STS](https://adgangsstyringeksempler.projekt-stoettesystemerne.dk/STS)
 
 Sample code which also demonstrates can be found in the class:
 `Kombit.Samples.Consumer.Consumer`
