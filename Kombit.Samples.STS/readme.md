@@ -20,8 +20,7 @@ This document requires that the following prerequisites are satisfied:
 
 ## IIS Web Site
 This guideline assumes that the url of the STS Test Stub is:
-
-[https://adgangsstyringeksempler.projekt-stoettesystemerne.dk/STS/](https://adgangsstyringeksempler.projekt-stoettesystemerne.dk/STS/)
+[https://adgangsstyringeksempler.projekt-stoettesystemerne.dk/STS](https://adgangsstyringeksempler.projekt-stoettesystemerne.dk/STS).
 
 ## Detailed Configuration
 Some changes to the properties in the configuration file STS\web.config may be required:
