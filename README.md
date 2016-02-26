@@ -12,7 +12,7 @@ This document requires that the following prerequisites are satisfied:
 * Setting up the .Net-based samples according to the guide “All_guideline_setup sites IIS.docx”* Logging is done to the folder c:\temp. This folder must exist for logging to work.
 
 ## <a name=“service”></a>The Service
-### <a name=“iiswebsite”></a>IIS websiteThis guideline assumes that the URL of the service is:[https://adgangsstyringeksempler.projekt-stoettesystemerne.dk/Service](https://adgangsstyringeksempler.projekt-stoettesystemerne.dk/Service)
+### <a name=“iiswebsite”></a>IIS websiteThis guideline assumes that the URL of the service is:<br/>[https://adgangsstyringeksempler.projekt-stoettesystemerne.dk/Service](https://adgangsstyringeksempler.projekt-stoettesystemerne.dk/Service)
 
 ### <a name=“serviceconfiguration”></a>ConfigurationSome changes to the properties in the configuration file Service\web.config may be required:
 * `ServiceAddress` The address where this service is deployed. 
