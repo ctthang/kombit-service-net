@@ -12,16 +12,11 @@ This document requires that the following prerequisites are satisfied:
 * Setting up the .Net-based samples according to the guide “All_guideline_setup sites IIS.docx”* Logging is done to the folder c:\temp. This folder must exist for logging to work.
 
 ## <a name=“service”></a>The Service
-### <a name=“iiswebsite”></a>IIS websiteThis guideline assumes that the URL of the service is:
-[https://adgangsstyringeksempler.projekt-stoettesystemerne.dk/Service](https://adgangsstyringeksempler.projekt-stoettesystemerne.dk/Service)
+### <a name=“iiswebsite”></a>IIS websiteThis guideline assumes that the URL of the service is:[https://adgangsstyringeksempler.projekt-stoettesystemerne.dk/Service](https://adgangsstyringeksempler.projekt-stoettesystemerne.dk/Service)
 
 ### <a name=“serviceconfiguration”></a>ConfigurationSome changes to the properties in the configuration file Service\web.config may be required:
 * `ServiceAddress` The address where this service is deployed. 
-* `ServiceServiceCertificateThumbprint` The thumprint of a certificate which is used as service certificate for the service endpoint.
-	* In this sample, the supplied certificate `KombitTestSigningCertificate.p12` is used.
-	* The certificate must exist in LocalMachine\My* `StsSigningCertificateThumbprint` The thumprint of the certificate that is used by the STS to sign tokens.
-	* In this sample, the supplied certificate `Projektmiljø-adgangsstyring-T (funktionscertifikat).cer` is used.
-	* The certificate must exist in `LocalMachine\TrustedPeople`
+* `ServiceServiceCertificateThumbprint` The thumprint of a certificate which is used as service certificate for the service endpoint. The certificate must exist in `LocalMachine\My`* `StsSigningCertificateThumbprint` The thumprint of the certificate that is used by the STS to sign tokens. The certificate must exist in `LocalMachine\TrustedPeople`
 * `ResponseMessage` The response message from the Ping-method on the service.
 * `SoapMessageLogLocation` a folder to store all the received request to this service and its response to client.
 * `serilog:minimum-level` specify the level of logging.  Log files are stored in the `Logs\` folder. 
@@ -54,6 +49,7 @@ Some changes to the properties in the configuration file:
 * `SoapMessageLogLocation` a folder to store all the soap message sent and received to sts and service.
 * `serilog:minimum-level` specify the level of logging.  Log files are stored in the `Logs\` folder.
 
-## <a name=“testing”></a>Calling The Service Using the Anvendersystem (User Context)Open a browser and browse to:[https://adgangsstyringeksempler.projekt-stoettesystemerne.dk/Service](https://adgangsstyringeksempler.projekt-stoettesystemerne.dk/Service)To be greeted with a welcome page.Sample code which demonstrates how to call the service can be found in the class:
+## <a name=“testing”></a>Calling The Service Using the Anvendersystem (User Context)Open the following address in a browser:
+[https://adgangsstyringeksempler.projekt-stoettesystemerne.dk/Service](https://adgangsstyringeksempler.projekt-stoettesystemerne.dk/Service)To be greeted with a welcome page.Sample code which demonstrates how to call the service can be found in the class:
 `Kombit.Samples.Consumer.Consumer`The following test case demonstrates how to call the STS and then use the issued token to call a service:
 `SendRstAndThenExecuteServiceServiceSuccessfully`
