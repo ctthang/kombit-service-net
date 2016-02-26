@@ -6,24 +6,37 @@ The following document describes how to configure the .Net-based sample service.
 
 * C#* Microsoft.Net framework v4.5* Microsoft Windows Server Operating System* Microsoft Internet Information Systems (IIS)* X509v3 Certificates* Windows Communications Foundation (WCF)* SOAP protocol* WS-Trust XML protocol
 
-## <a name=“prerequisites”></a>Prerequisites
-This document requires that the following prerequisites are satisfied:
-
-* Setting up the .Net-based samples according to the guide “All_guideline_setup sites IIS.docx”* Logging is done to the folder c:\temp. This folder must exist for logging to work.
-
 ## <a name=“service”></a>The Service
-### <a name=“iiswebsite”></a>IIS websiteThis guideline assumes that the URL of the service is:<br/>[https://adgangsstyringeksempler.projekt-stoettesystemerne.dk/Service](https://adgangsstyringeksempler.projekt-stoettesystemerne.dk/Service)
+Before the sample service can be configured, the necessary prerequisites to run the sample must be in place. This includes:
 
-### <a name=“serviceconfiguration”></a>ConfigurationSome changes to the properties in the configuration file Service\web.config may be required:
+* Windows Server 2012R2* Web Role* IIS installed* ASP.Net v5* .Net v4.5
+
+In addition, Visual Studio 2015 is required to build the sample.
+
+## <a name=“setup”></a>Setup
+To build and configure the sample service, do the following:
+
+1. Open the solution `Kombit.Samples.Service.sln` and build it.
+2. Create the folder `c:\temp` that will be used for logging, and grant `Network Service` full control to the folder.
+3. Copy the folder `Kombit.Samples.Service` that was supplied with this sample to `C:\inetpub\`, so the full path becomes `C:\inetpub\Kombit.Samples.Service`
+5. In IIS Manager, create a new web application:
+	1. The `Site name` should be `service.projekt-stoettesystemerne.dk`
+	2. The `Physical path`should be `C:\inetpub\Kombit.Samples.Service`
+	3. The `Binding type` should be `HTTPS`
+	4. The `Host name` should be `service.projekt-stoettesystemerne.dk`
+	5. Select an appropriate SSL certificate, that matches the host name chosen in the previous step
+6. Set the application pool identity of the created website to `Network Service`
+
+The sample service is now build and configured, and ready to be tested.
+
+### <a name=“configurationparameters”></a>Configuration ParametersSome changes to the properties in the configuration file `Kombit.Samples.Service\web.config` may be required:
 * `ServiceAddress` The address where this service is deployed. 
 * `ServiceServiceCertificateThumbprint` The thumprint of a certificate which is used as service certificate for the service endpoint. The certificate must exist in `LocalMachine\My`* `StsSigningCertificateThumbprint` The thumprint of the certificate that is used by the STS to sign tokens. The certificate must exist in `LocalMachine\TrustedPeople`
 * `ResponseMessage` The response message from the Ping-method on the service.
-* `SoapMessageLogLocation` a folder to store all the received request to this service and its response to client.
-* `serilog:minimum-level` specify the level of logging.  Log files are stored in the `Logs\` folder. 
 
 ## <a name=“anvendersystem”></a>The Anvendersystem (Service Consumer)
 The Anvendersystem is implemented as a set of unit tests that can be found in the project:<br/>
-`Kombit.Samples.Consumer`These are also located in the folder:<br/>`Kombit.Samples\Tests\Kombit.Samples.Consumer`The purpose of the test cases is to simulate how to send an RST issue request and process the response from a WS-Trust service, this includes:* How to generate security token request 
+`Kombit.Samples.Consumer`The purpose of the test cases is to simulate how to send an RST issue request and process the response from a WS-Trust service, this includes:* How to generate security token request 
 * How to sign the security token request.
 * How to send the request to WS-Trust service.
 * In the sample, we test it against our STS test stub.
@@ -34,14 +47,16 @@ It also simulates how to use the issued token to send a request to the service a
 
 ### <a name=“consumerconfiguration”></a>Configuration
 Some changes to the properties in the configuration file:<br/>
-`Tests\Kombit.Samples.Consumer\Kombit.Samples.Consumer.dll.config`May be required, depending on the specific environment where the tests are executed.* `BaseAddress` the address where STS and Anvendersystem (user context) is deployed.
+`\Kombit.Samples.Consumer\Kombit.Samples.Consumer.dll.config`May be required, depending on the specific environment where the tests are executed.* `StsBaseAddress` the address where STS and Anvendersystem (user context) is deployed.
 * `AValidClientCertificateThumbprint` the thumprint of a certificate that is assigned to an Anvendersystem on  the STS. This certificate must be located in `LocalMachine\My`
 * `StsServiceCertificateThumbprint` thumprint of a certificate which is used as service certificate for certificate endpoint. This certificate must be located in `LocalMachine\My`
 * `StsServiceCertificateDNSIdentity` The DNS identity of the STS service certificate. This is the DNS identity of the certificate that is referred to by `StsServiceCertificateThumbprint`.
 * `StsCertificateEndpoint` the STS certificate endpoint address.
 * `StsMexEndpoint` The MEX endpoint address of the STS
+* `AnvenderContext` The Anvenderkontekst to use for the RequestSecurityToken request sent to the STS.
 * `AValidOnBehalfOfCertificateThumbprint` The thumbprint of a certificate which is used for proxy-OnBehalfOf element or used as client certificate to request OnBehalfOf token.
-* `ServiceAddress` The address of a service which will accept requests authenticated by a token issued by the STS. In this sample this is the address of deployed service.
+* `ServiceBaseAddress` The address of a service which will accept requests authenticated by a token issued by the STS. In this sample this is the address of deployed service.
+* `ServiceAddress` The relative path of the service.
 * `ServiceServiceCertificateThumbprint` the service certificate of the above service. The certificate must be  located in LocalMachine\My.
 * `ServiceServiceCertificateDNSIdentity` the DNS identity of service endpoint. This is the DNS identity of the certificate that is referred to by `ServiceServiceCertificateThumbprint`.
 * `ExpectedResponseMessage` The expected response message from the service.
@@ -49,7 +64,8 @@ Some changes to the properties in the configuration file:<br/>
 * `SoapMessageLogLocation` a folder to store all SOAP messages sent and received to and from the STS and the service.
 * `serilog:minimum-level` specifies the logging level. Log files are stored in the `Logs\` folder.
  
-## Calling The Service Using the Anvendersystem (User Context)Open the following address in a browser:<br/>
-[https://adgangsstyringeksempler.projekt-stoettesystemerne.dk/Service](https://adgangsstyringeksempler.projekt-stoettesystemerne.dk/Service)To be greeted with a welcome page.Sample code which demonstrates how to call the service can be found in the class:<br/>
+## Calling The Service Using the Anvendersystem (Service Consumer)
+
+Sample code which demonstrates how to call the service can be found in the class:<br/>
 `Kombit.Samples.Consumer.Consumer`The following test case demonstrates how to call the STS and then use the issued token to call a service:<br/>
 `SendRstAndThenExecuteServiceServiceSuccessfully`
