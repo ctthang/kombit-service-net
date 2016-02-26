@@ -22,8 +22,8 @@ This document requires that the following prerequisites are satisfied:
 * `serilog:minimum-level` specify the level of logging.  Log files are stored in the `Logs\` folder. 
 
 ## <a name=“anvendersystem”></a>The Anvendersystem (Service Consumer)
-The Anvendersystem is implemented as a set of unit tests that can be found in the project:
-`Kombit.Samples.Consumer`These are also located in the folder:`Kombit.Samples\Tests\Kombit.Samples.Consumer`The purpose of the test cases is to simulate how to send an RST issue request and process the response from a WS-Trust service, this includes:* How to generate security token request 
+The Anvendersystem is implemented as a set of unit tests that can be found in the project:<br/>
+`Kombit.Samples.Consumer`These are also located in the folder:<br/>`Kombit.Samples\Tests\Kombit.Samples.Consumer`The purpose of the test cases is to simulate how to send an RST issue request and process the response from a WS-Trust service, this includes:* How to generate security token request 
 * How to sign the security token request.
 * How to send the request to WS-Trust service.
 * In the sample, we test it against our STS test stub.
@@ -33,7 +33,7 @@ The Anvendersystem is implemented as a set of unit tests that can be found in th
 It also simulates how to use the issued token to send a request to the service and process the response from the service. This includes:* How to send the request to the service with an issued token.* How to process the response from this web service.
 
 ### <a name=“consumerconfiguration”></a>Configuration
-Some changes to the properties in the configuration file:
+Some changes to the properties in the configuration file:<br/>
 `Tests\Kombit.Samples.Consumer\Kombit.Samples.Consumer.dll.config`May be required, depending on the specific environment where the tests are executed.* `BaseAddress` the address where STS and Anvendersystem (user context) is deployed.
 * `AValidClientCertificateThumbprint` the thumprint of a certificate that is assigned to an Anvendersystem on  the STS. This certificate must be located in `LocalMachine\My`
 * `StsServiceCertificateThumbprint` thumprint of a certificate which is used as service certificate for certificate endpoint. This certificate must be located in `LocalMachine\My`
@@ -49,7 +49,7 @@ Some changes to the properties in the configuration file:
 * `SoapMessageLogLocation` a folder to store all SOAP messages sent and received to and from the STS and the service.
 * `serilog:minimum-level` specifies the logging level. Log files are stored in the `Logs\` folder.
  
-## Calling The Service Using the Anvendersystem (User Context)Open the following address in a browser:
+## Calling The Service Using the Anvendersystem (User Context)Open the following address in a browser:<br/>
 [https://adgangsstyringeksempler.projekt-stoettesystemerne.dk/Service](https://adgangsstyringeksempler.projekt-stoettesystemerne.dk/Service)To be greeted with a welcome page.Sample code which demonstrates how to call the service can be found in the class:<br/>
 `Kombit.Samples.Consumer.Consumer`The following test case demonstrates how to call the STS and then use the issued token to call a service:<br/>
 `SendRstAndThenExecuteServiceServiceSuccessfully`
