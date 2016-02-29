@@ -1,6 +1,8 @@
 # kombit-service-net
 Sample .Net WCF service and consumer using STS.
 
+Document Reference: D.03.07.00010
+
 ## <a name=“introduction”></a>Introduction
 The following document describes how to configure the .Net-based sample service. After completing this guide, the .Net-based sample service will be configured.This soap service authenticates the caller with a token issued by an STS compliant with the KOMBIT Støttesystemer specification for STS. The service has a simple ping method, that requires no input and which returns a statically configured text message.In the following, an `Anvendersystem` is also referred to as a `service consumer` because an `Anvendersystem` consumes services.It is assumed that the reader is a .Net-developer knowledgeable in the following technologies used to develop this .Net-based sample. This includes:
 

@@ -1,4 +1,7 @@
 # Introduction
+
+Document reference: D.03.07.00011
+
 This is a soap service that simulates processing requests (RST) and sending responses (RSTR) for a WS-Trust call which a service consumer (Anvendersystem) can send.
 
 The service accepts issue requests where the input is a security token request (RST) and will return a response with an security token (RSTR).
