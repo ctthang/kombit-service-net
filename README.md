@@ -20,20 +20,20 @@ To build and configure the sample service, do the following:
 
 1. Either clone the repository <https://github.com/Safewhere/kombit-service-net.git> to `C:\kombit-service-net`, or unpack the provided zip-file `kombit-service-net.zip` to `C:\kombit-service-net`.
 2. Open `C:\kombit-service-net\Kombit.Samples.Service.sln` in Visual Studio, and build the solution.
-3. Make sure an SSL certificate that covers the DNS name `service.projekt-stoettesystemerne.dk` is present in `LocalMachine\My` certificate store.
-4. Open the Hosts-file, and map the DNS name `service.projekt-stoettesystemerne.dk` to localhost (127.0.0.1).
+3. Make sure an SSL certificate that covers the DNS name `service.eksterntest-stoettesystemerne.dk` is present in `LocalMachine\My` certificate store.
+4. Open the Hosts-file, and map the DNS name `service.eksterntest-stoettesystemerne.dk` to localhost (127.0.0.1).
 5. Create the folder `c:\temp` that will be used for logging, and grant `Network Service` full control to the folder.
 6. Create a new IIS web application:
-	1. The `Site name` should be `service.projekt-stoettesystemerne.dk`
+	1. The `Site name` should be `service.eksterntest-stoettesystemerne.dk`
 	2. The `Physical path`should be `C:\kombit-service-net\Kombit.Samples.Service`
 	3. The `Binding type` should be `HTTPS`
-	4. The `Host name` should be `service.projekt-stoettesystemerne.dk`
+	4. The `Host name` should be `service.eksterntest-stoettesystemerne.dk`
 	5. Select an appropriate SSL certificate, that matches the host name chosen in the previous step
 6. Grant the application pool identity for the web application read and execute permissions to C:\kombit-service-net
 7. Import all p12 files located in `C:\kombit-service-net\Certificates` to `LocalMachine\My`:
 8. Grant the application pool identity for the web application read permission to the private key for all certificates imported in the previsoun step.
 9. Import `C:\kombit-service-net\Certificates\StsServiceCertificate.cer` to `LocalMachine\TrustedPeople`
-10. Open a browser and point it to https://service.projekt-stoettesystemerne.dk/
+10. Open a browser and point it to https://service.eksterntest-stoettesystemerne.dk/
 
 The sample service is now build and configured, and ready to be tested.
 
