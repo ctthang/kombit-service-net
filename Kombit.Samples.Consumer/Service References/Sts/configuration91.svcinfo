@@ -719,10 +719,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="MutualCertificateWithMessageSecurityBinding_IWSTrust13Sync1" contract="Sts.IWSTrust13Sync" bindingType="customBinding" address="https://adgangsstyring.projekt-stoettesystemerne.dk/sts/kombit/sts/certificate" bindingConfiguration="MutualCertificateWithMessageSecurityBinding_IWSTrust13Sync1">
+    <endpoint name="MutualCertificateWithMessageSecurityBinding_IWSTrust13Sync1" contract="Sts.IWSTrust13Sync" bindingType="customBinding" address="https://adgangsstyring.eksterntest-stoettesystemerne.dk/sts/kombit/sts/certificate" bindingConfiguration="MutualCertificateWithMessageSecurityBinding_IWSTrust13Sync1">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>https://adgangsstyring.projekt-stoettesystemerne.dk/sts/kombit/sts/certificate</serializedValue>
+          <serializedValue>https://adgangsstyring.eksterntest-stoettesystemerne.dk/sts/kombit/sts/certificate</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
