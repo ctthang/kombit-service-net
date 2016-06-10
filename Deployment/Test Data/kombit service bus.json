@@ -19,133 +19,133 @@
 			"Id" : "8E9CD080-8246-4AA7-A33D-BE9C667510D3",
 			"Anvenderkontekst" : "01234569",
 			"Dataafgraensningsvaerdier" : [{
-					"DataafgraensningstypeId" : "http://adgangsstyring.projekt-stoettesystemerne.dk/constraints/DRV1a",
+					"DataafgraensningstypeId" : "http://adgangsstyring.eksterntest-stoettesystemerne.dk/constraints/DRV1a",
 					"Values" : ["22"]
 				}
 			],
-			"ServiceId" : "https://adgangsstyring.projekt-stoettesystemerne.dk/servicesample/kombit/service",
-			"ServicesystemrolleId" : "https://adgangsstyring.projekt-stoettesystemerne.dk/roles/servicesystemrole/role1",
+			"ServiceId" : "https://adgangsstyring.eksterntest-stoettesystemerne.dk/servicesample/kombit/service",
+			"ServicesystemrolleId" : "https://adgangsstyring.eksterntest-stoettesystemerne.dk/roles/servicesystemrole/role1",
 			"IssuedAnvenderkontekst" : null
 		}, {
 			"Id" : "5B8DB21E-D6CB-4049-A54F-F1D52A0829AA",
 			"Anvenderkontekst" : "01234567",
 			"Dataafgraensningsvaerdier" : [{
-					"DataafgraensningstypeId" : "http://adgangsstyring.projekt-stoettesystemerne.dk/constraints/DRV2a",
+					"DataafgraensningstypeId" : "http://adgangsstyring.eksterntest-stoettesystemerne.dk/constraints/DRV2a",
 					"Values" : ["33", "34"]
 				}
 			],
-			"ServiceId" : "https://adgangsstyring.projekt-stoettesystemerne.dk/servicesample/kombit/service",
-			"ServicesystemrolleId" : "https://adgangsstyring.projekt-stoettesystemerne.dk/roles/servicesystemrole/role2",
+			"ServiceId" : "https://adgangsstyring.eksterntest-stoettesystemerne.dk/servicesample/kombit/service",
+			"ServicesystemrolleId" : "https://adgangsstyring.eksterntest-stoettesystemerne.dk/roles/servicesystemrole/role2",
 			"IssuedAnvenderkontekst" : null
 		}, {
 			"Id" : "8FAEB289-7C47-4E8C-B1E3-984EE65329A7",
 			"Anvenderkontekst" : "01234567",
 			"Dataafgraensningsvaerdier" : [{
-					"DataafgraensningstypeId" : "http://adgangsstyring.projekt-stoettesystemerne.dk/constraints/DRV3b",
+					"DataafgraensningstypeId" : "http://adgangsstyring.eksterntest-stoettesystemerne.dk/constraints/DRV3b",
 					"Values" : ["123"]
 				}
 			],
-			"ServiceId" : "https://adgangsstyring.projekt-stoettesystemerne.dk/servicesample/kombit/service",
-			"ServicesystemrolleId" : "https://adgangsstyring.projekt-stoettesystemerne.dk/roles/servicesystemrole/role3",
+			"ServiceId" : "https://adgangsstyring.eksterntest-stoettesystemerne.dk/servicesample/kombit/service",
+			"ServicesystemrolleId" : "https://adgangsstyring.eksterntest-stoettesystemerne.dk/roles/servicesystemrole/role3",
 			"IssuedAnvenderkontekst" : null
 		}, {
 			"Id" : "258ad12e-28d1-46d7-b128-e917a9515f43",
 			"Anvenderkontekst" : "01234569",
 			"Dataafgraensningsvaerdier" : [{
-					"DataafgraensningstypeId" : "http://adgangsstyring.projekt-stoettesystemerne.dk/constraints/DRV1a",
+					"DataafgraensningstypeId" : "http://adgangsstyring.eksterntest-stoettesystemerne.dk/constraints/DRV1a",
 					"Values" : ["22"]
 				}
 			],
-			"ServiceId" : "https://adgangsstyring.projekt-stoettesystemerne.dk:8181/Service/Service",
-			"ServicesystemrolleId" : "https://adgangsstyring.projekt-stoettesystemerne.dk/roles/servicesystemrole/role1",
+			"ServiceId" : "https://adgangsstyring.eksterntest-stoettesystemerne.dk:8181/Service/Service",
+			"ServicesystemrolleId" : "https://adgangsstyring.eksterntest-stoettesystemerne.dk/roles/servicesystemrole/role1",
 			"IssuedAnvenderkontekst" : null
 		}, {
 			"Id" : "dfe77a86-46ce-45ed-8ebc-76c47900e220",
 			"Anvenderkontekst" : "01234567",
 			"Dataafgraensningsvaerdier" : [{
-					"DataafgraensningstypeId" : "http://adgangsstyring.projekt-stoettesystemerne.dk/constraints/DRV2a",
+					"DataafgraensningstypeId" : "http://adgangsstyring.eksterntest-stoettesystemerne.dk/constraints/DRV2a",
 					"Values" : ["33", "34"]
 				}
 			],
-			"ServiceId" : "https://adgangsstyring.projekt-stoettesystemerne.dk:8181/Service/Service",
-			"ServicesystemrolleId" : "https://adgangsstyring.projekt-stoettesystemerne.dk/roles/servicesystemrole/role2",
+			"ServiceId" : "https://adgangsstyring.eksterntest-stoettesystemerne.dk:8181/Service/Service",
+			"ServicesystemrolleId" : "https://adgangsstyring.eksterntest-stoettesystemerne.dk/roles/servicesystemrole/role2",
 			"IssuedAnvenderkontekst" : null
 		}, {
 			"Id" : "855dc372-71e0-49d0-b517-42ce37bbcb89",
 			"Anvenderkontekst" : "01234567",
 			"Dataafgraensningsvaerdier" : [{
-					"DataafgraensningstypeId" : "http://adgangsstyring.projekt-stoettesystemerne.dk/constraints/DRV3b",
+					"DataafgraensningstypeId" : "http://adgangsstyring.eksterntest-stoettesystemerne.dk/constraints/DRV3b",
 					"Values" : ["123"]
 				}
 			],
-			"ServiceId" : "https://adgangsstyring.projekt-stoettesystemerne.dk:8181/Service/Service",
-			"ServicesystemrolleId" : "https://adgangsstyring.projekt-stoettesystemerne.dk/roles/servicesystemrole/role3",
+			"ServiceId" : "https://adgangsstyring.eksterntest-stoettesystemerne.dk:8181/Service/Service",
+			"ServicesystemrolleId" : "https://adgangsstyring.eksterntest-stoettesystemerne.dk/roles/servicesystemrole/role3",
 			"IssuedAnvenderkontekst" : null
 		},{
 			"Id" : "05e07617-9d2a-4ee7-8378-83c3d60734f5",
 			"Anvenderkontekst" : "01234569",
 			"Dataafgraensningsvaerdier" : [{
-					"DataafgraensningstypeId" : "http://adgangsstyring.projekt-stoettesystemerne.dk/constraints/DRV1a",
+					"DataafgraensningstypeId" : "http://adgangsstyring.eksterntest-stoettesystemerne.dk/constraints/DRV1a",
 					"Values" : ["22"]
 				}
 			],
-			"ServiceId" : "https://service.projekt-stoettesystemerne.dk/kombit/service",
-			"ServicesystemrolleId" : "https://adgangsstyring.projekt-stoettesystemerne.dk/roles/servicesystemrole/role1",
+			"ServiceId" : "https://service.eksterntest-stoettesystemerne.dk/kombit/service",
+			"ServicesystemrolleId" : "https://adgangsstyring.eksterntest-stoettesystemerne.dk/roles/servicesystemrole/role1",
 			"IssuedAnvenderkontekst" : null
 		}, {
 			"Id" : "2daad4e9-274a-4a2f-ad51-4edbb5b37ba1",
 			"Anvenderkontekst" : "01234567",
 			"Dataafgraensningsvaerdier" : [{
-					"DataafgraensningstypeId" : "http://adgangsstyring.projekt-stoettesystemerne.dk/constraints/DRV2a",
+					"DataafgraensningstypeId" : "http://adgangsstyring.eksterntest-stoettesystemerne.dk/constraints/DRV2a",
 					"Values" : ["33", "34"]
 				}
 			],
-			"ServiceId" : "https://service.projekt-stoettesystemerne.dk/kombit/service",
-			"ServicesystemrolleId" : "https://adgangsstyring.projekt-stoettesystemerne.dk/roles/servicesystemrole/role2",
+			"ServiceId" : "https://service.eksterntest-stoettesystemerne.dk/kombit/service",
+			"ServicesystemrolleId" : "https://adgangsstyring.eksterntest-stoettesystemerne.dk/roles/servicesystemrole/role2",
 			"IssuedAnvenderkontekst" : null
 		}, {
 			"Id" : "11731314-25e2-4200-8f7b-d6cfb4b3e37f",
 			"Anvenderkontekst" : "01234567",
 			"Dataafgraensningsvaerdier" : [{
-					"DataafgraensningstypeId" : "http://adgangsstyring.projekt-stoettesystemerne.dk/constraints/DRV3b",
+					"DataafgraensningstypeId" : "http://adgangsstyring.eksterntest-stoettesystemerne.dk/constraints/DRV3b",
 					"Values" : ["123"]
 				}
 			],
-			"ServiceId" : "https://service.projekt-stoettesystemerne.dk/kombit/service",
-			"ServicesystemrolleId" : "https://adgangsstyring.projekt-stoettesystemerne.dk/roles/servicesystemrole/role3",
+			"ServiceId" : "https://service.eksterntest-stoettesystemerne.dk/kombit/service",
+			"ServicesystemrolleId" : "https://adgangsstyring.eksterntest-stoettesystemerne.dk/roles/servicesystemrole/role3",
 			"IssuedAnvenderkontekst" : null
 		},{
 			"Id" : "c6fd69d3-7d36-4cf8-a407-08e422cdb280",
 			"Anvenderkontekst" : "01234569",
 			"Dataafgraensningsvaerdier" : [{
-					"DataafgraensningstypeId" : "http://adgangsstyring.projekt-stoettesystemerne.dk/constraints/DRV1a",
+					"DataafgraensningstypeId" : "http://adgangsstyring.eksterntest-stoettesystemerne.dk/constraints/DRV1a",
 					"Values" : ["22"]
 				}
 			],
-			"ServiceId" : "https://service.projekt-stoettesystemerne.dk:8181/Service/Service",
-			"ServicesystemrolleId" : "https://adgangsstyring.projekt-stoettesystemerne.dk/roles/servicesystemrole/role1",
+			"ServiceId" : "https://service.eksterntest-stoettesystemerne.dk:8181/Service/Service",
+			"ServicesystemrolleId" : "https://adgangsstyring.eksterntest-stoettesystemerne.dk/roles/servicesystemrole/role1",
 			"IssuedAnvenderkontekst" : null
 		}, {
 			"Id" : "9162fa70-cc84-4e87-aeb3-7b2b2e6952be",
 			"Anvenderkontekst" : "01234567",
 			"Dataafgraensningsvaerdier" : [{
-					"DataafgraensningstypeId" : "http://adgangsstyring.projekt-stoettesystemerne.dk/constraints/DRV2a",
+					"DataafgraensningstypeId" : "http://adgangsstyring.eksterntest-stoettesystemerne.dk/constraints/DRV2a",
 					"Values" : ["33", "34"]
 				}
 			],
-			"ServiceId" : "https://service.projekt-stoettesystemerne.dk:8181/Service/Service",
-			"ServicesystemrolleId" : "https://adgangsstyring.projekt-stoettesystemerne.dk/roles/servicesystemrole/role2",
+			"ServiceId" : "https://service.eksterntest-stoettesystemerne.dk:8181/Service/Service",
+			"ServicesystemrolleId" : "https://adgangsstyring.eksterntest-stoettesystemerne.dk/roles/servicesystemrole/role2",
 			"IssuedAnvenderkontekst" : null
 		}, {
 			"Id" : "d2f24952-1efe-4d08-940b-2e064f667ffe",
 			"Anvenderkontekst" : "01234567",
 			"Dataafgraensningsvaerdier" : [{
-					"DataafgraensningstypeId" : "http://adgangsstyring.projekt-stoettesystemerne.dk/constraints/DRV3b",
+					"DataafgraensningstypeId" : "http://adgangsstyring.eksterntest-stoettesystemerne.dk/constraints/DRV3b",
 					"Values" : ["123"]
 				}
 			],
-			"ServiceId" : "https://service.projekt-stoettesystemerne.dk:8181/Service/Service",
-			"ServicesystemrolleId" : "https://adgangsstyring.projekt-stoettesystemerne.dk/roles/servicesystemrole/role3",
+			"ServiceId" : "https://service.eksterntest-stoettesystemerne.dk:8181/Service/Service",
+			"ServicesystemrolleId" : "https://adgangsstyring.eksterntest-stoettesystemerne.dk/roles/servicesystemrole/role3",
 			"IssuedAnvenderkontekst" : null
 		}
 	],
