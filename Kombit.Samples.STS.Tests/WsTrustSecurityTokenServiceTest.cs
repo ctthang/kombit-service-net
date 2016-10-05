@@ -85,28 +85,14 @@ namespace Kombit.Samples.STS.Tests
         public void ShowAppropriateErrorWhenIssueToken()
         {
             ThrowExceptionIfAppliesToIsADummyErrorAddress(Constants.DummyAppliesToError,
-                KombitEventIds.CommonRuntimeError,
-                KombitErrorMessages.CommonRuntimeError);
+                KombitEventIds.ConnectionNotFoundError,
+                KombitErrorMessages.ConnectionNotFoundError);
             ThrowExceptionIfAppliesToIsADummyErrorAddress(Constants.DummyAppliesToError,
-                KombitEventIds.ConnectionResolutionError,
-                KombitErrorMessages.ConnectionResolutionError);
+                KombitEventIds.AuthenticationFailedError,
+                KombitErrorMessages.AuthenticationFailedError);
             ThrowExceptionIfAppliesToIsADummyErrorAddress(Constants.DummyAppliesToError,
-                KombitEventIds.MalformedRequestError,
-                KombitErrorMessages.MalformedRequestError);
-            ThrowExceptionIfAppliesToIsADummyErrorAddress(Constants.DummyAppliesToError,
-                KombitEventIds.PathResolutionError,
-                KombitErrorMessages.PathResolutionError);
-            ThrowExceptionIfAppliesToIsADummyErrorAddress(Constants.DummyAppliesToError,
-                KombitEventIds.AuditUserRequestError,
-                KombitErrorMessages.AuditUserRequestError);
-            ThrowExceptionIfAppliesToIsADummyErrorAddress(Constants.DummyAppliesToError,
-                KombitEventIds.NotSupportedException,
-                KombitErrorMessages.NotSupportedException);
-            ThrowExceptionIfAppliesToIsADummyErrorAddress(Constants.DummyAppliesToError,
-                KombitEventIds.ConfigurationError,
-                KombitErrorMessages.ConfigurationError);
-            ThrowExceptionIfAppliesToIsADummyErrorAddress(Constants.DummyAppliesToError, KombitEventIds.DatabaseError,
-                KombitErrorMessages.DatabaseError);
+                KombitEventIds.CvrIsEmptyError,
+                KombitErrorMessages.CvrIsEmptyError);
         }
 
         /// <summary>

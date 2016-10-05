@@ -40,8 +40,8 @@
     <Reference Include="Kombit.Samples.BasicPrivilegeProfileParser">
       <HintPath>..\packages\Kombit.Samples.BasicPrivilegeProfileParser.1.0.0.0\lib\net45\Kombit.Samples.BasicPrivilegeProfileParser.dll</HintPath>
     </Reference>
-    <Reference Include="Kombit.Samples.Common, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Kombit.Samples.Common.1.0.0.2\lib\net45\Kombit.Samples.Common.dll</HintPath>
+    <Reference Include="Kombit.Samples.Common, Version=1.0.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Kombit.Samples.Common.1.0.0.3\lib\net45\Kombit.Samples.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Owin">

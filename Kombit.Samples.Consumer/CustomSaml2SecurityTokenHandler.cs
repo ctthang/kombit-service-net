@@ -1,8 +1,6 @@
 ﻿using System;
 using System.IdentityModel.Tokens;
 using System.Xml;
-using Kombit.Samples.Common.Binding;
-
 namespace Kombit.Samples.Consumer
 {
     /// <summary>
