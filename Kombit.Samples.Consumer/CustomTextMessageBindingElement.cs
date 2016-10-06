@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ServiceModel.Channels;
 using System.ServiceModel.Description;
+using System.Text;
 
 namespace Kombit.Samples.Consumer
 {
@@ -25,7 +26,7 @@ namespace Kombit.Samples.Consumer
                 throw new ArgumentNullException("messageEncoderFactoryFunc");
 
             this.messageEncoderFactoryFunc = messageEncoderFactoryFunc;
-            wrappedMessageEncodingBindingElement = new TextMessageEncodingBindingElement();
+            wrappedMessageEncodingBindingElement = new TextMessageEncodingBindingElement(MessageVersion.Soap11WSAddressing10, Encoding.UTF8);
         }
 
         /// <summary>
