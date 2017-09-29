@@ -32,7 +32,7 @@ namespace Kombit.Samples.Consumer
 
             using (MemoryStream stream = new MemoryStream())
             {
-                XNamespace ns = "http://schemas.xmlsoap.org/soap/envelope/";
+                XNamespace ns = "http://www.w3.org/2003/05/soap-envelope";
 
                 XElement bodyElement = xmlMessage.Element(ns + "Body");
                 bodyElement.SetAttributeValue("Tampered", "true");

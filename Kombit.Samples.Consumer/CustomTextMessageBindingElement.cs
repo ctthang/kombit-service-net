@@ -26,7 +26,7 @@ namespace Kombit.Samples.Consumer
                 throw new ArgumentNullException("messageEncoderFactoryFunc");
 
             this.messageEncoderFactoryFunc = messageEncoderFactoryFunc;
-            wrappedMessageEncodingBindingElement = new TextMessageEncodingBindingElement(MessageVersion.Soap11WSAddressing10, Encoding.UTF8);
+            wrappedMessageEncodingBindingElement = new TextMessageEncodingBindingElement(MessageVersion.Soap12WSAddressing10, Encoding.UTF8);
         }
 
         /// <summary>
