@@ -4,10 +4,10 @@ Usage: STS public certificate
 
 Certificate: FOCES_valid.p12
 Password: Test1234
-Thumbprint: 15 3e 97 1c 6b ae cc 4e 4e c6 8d 82 69 30 39 01 65 4a 02 a6
+Thumbprint: 2A4D452C55CF56722A785EDF0131C7158FF96ED1
 Usage: The client certificate which is used for negotiating a security token from Identify*STS
 
 Certificate: VOCES_valid.p12
 Password: Test1234
-Thumbprint: 46 78 23 72 45 fe dc 80 59 d1 13 67 59 55 df b8 70 d3 6b f4
+Thumbprint: 80A53737EA01E97794962B849C0F7C8F6017389E
 Usage: The client certificate which is used for negotiating a bootstrap token in normal OBO test or used in OBO proxy test
