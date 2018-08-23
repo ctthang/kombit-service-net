@@ -8,13 +8,13 @@
 ## Service Consumer certificate (1)
 - **Certificate**: `FOCES_valid.p12`
 - **Password**: `Test1234`
-- **Thumbprint**: `15 3E 97 1C 6B AE CC 4E 4E C6 8D 82 69 30 39 01 65 4A 02 A6`
+- **Thumbprint**: `2A 4D 45 2C 55 CF 56 72 2A 78 5E DF 01 31 C7 15 8F F9 6E D1`
 - **Usage**: The client certificate which is used for negotiating a security token from Identify*STS
 
 ## Service Consumer Certificate (2)
 - **Certificate**: `VOCES_valid.p12`
 - **Password**: `Test1234`
-- **Thumbprint**: `46 78 23 72 45 FE DC 80 59 D1 13 67 59 55 DF B8 70 D3 6B F4`
+- **Thumbprint**: `80 A5 37 37 EA 01 E9 77 94 96 2B 84 9C 0F 7C 8F 60 17 38 9E`
 - **Usage**: The client certificate which is used for negotiating a bootstrap token in normal OBO test or used in OBO proxy test
 
 ## Non-authorized Service Consumer Certificate

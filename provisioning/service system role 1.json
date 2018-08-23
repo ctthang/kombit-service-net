@@ -1,0 +1,24 @@
+{
+	"Id" : "https://adgangsstyring.projekt-stoettesystemerne.dk/roles/servicesystemrole/role1",
+	"Version" : "1.0",
+	"Aktiveringstidspunkt" : {
+		"Sluttidspunkt" : "2025-06-30T17:00:00Z",
+		"Starttidspunkt" : "2015-05-31T17:00:00Z"
+	},
+	"Dataafgraensningstyper" : [{
+			"Id" : "http://adgangsstyring.projekt-stoettesystemerne.dk/constraints/DRV1a",
+			"Description" : "UnknownDescription1a",
+			"PresentationName" : "UnknownPresentationName1a",
+			"PresentationPreference" : "Contrainst 1a",
+			"SyntaxDefinition" : "syn1",
+			"ValidationService" : "http://UnknownValidationService1a.co.dk/"
+		}, {
+			"Id" : "http://adgangsstyring.projekt-stoettesystemerne.dk/constraints/DRV1b",
+			"Description" : "UnknownDescription1b",
+			"PresentationName" : "UnknownPresentationName1b",
+			"PresentationPreference" : "Contrainst 1b",
+			"SyntaxDefinition" : "syn1",
+			"ValidationService" : "http://UnknownValidationService1b.co.dk/"
+		}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"Id" : "https://service.projekt-stoettesystemerne.dk/kombit/service",
+	"ServiceType" : "KOMBITser",
+	"ServiceMetadata" : [{
+			"Id" : "Id1",
+			"Aktiveringstidspunkt" : {
+				"Sluttidspunkt" : "2016-06-25T00:00:00Z",
+				"Starttidspunkt" : "2015-06-02T00:00:00Z"
+			},
+			"Identifier" : "https://service.projekt-stoettesystemerne.dk/kombit/service1"
+		}, {
+			"Id" : "Id2",
+			"Aktiveringstidspunkt" : {
+				"Sluttidspunkt" : "2016-06-25T15:20:00Z",
+				"Starttidspunkt" : "2015-06-25T12:20:00Z"
+			},
+			"Identifier" : "https://service.projekt-stoettesystemerne.dk/kombit/service2"
+		}
+	]
+}
