@@ -60,5 +60,10 @@ namespace Kombit.Samples.Service.Code
         {
             get { return ConfigurationManager.AppSettings["ResponseMessage"]; }
         }
+
+        public static string JwtCvr
+        {
+            get { return ConfigurationManager.AppSettings["JwtCvr"]; }
+        }
     }
 }
