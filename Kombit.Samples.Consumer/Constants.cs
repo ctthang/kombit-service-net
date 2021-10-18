@@ -37,36 +37,6 @@ namespace Kombit.Samples.Consumer
         }
 
         /// <summary>
-        /// Indicate sts oauth issue endpoint address
-        /// </summary>
-        public static Uri StsOAuthEndpointUri
-        {
-            get { return new Uri(StsBaseAddress + ConfigurationManager.AppSettings["StsOAuthEndpoint"]); }
-        }
-
-        public static string StsOAuthClientId
-        {
-            get { return ConfigurationManager.AppSettings["StsOAuthClientId"]; }
-        }
-
-        public static string StsOAuthScope
-        {
-            get { return ConfigurationManager.AppSettings["StsOAuthScope"]; }
-        }
-
-        public static string StsOAuthScopeWithObO
-        {
-            get { return ConfigurationManager.AppSettings["StsOAuthScopeWithObO"]; }
-        }
-
-        public static Uri TestRestAPIEndpoint
-        {
-            get
-            {
-                return new Uri(ConfigurationManager.AppSettings["TestRestAPIEndpoint"]);
-            }
-        }
-        /// <summary>
         /// Indicate sts issue endpoint address
         /// </summary>
         public static Uri StsCertificateEndpointUri

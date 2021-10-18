@@ -175,14 +175,10 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Code\Constants.cs" />
     <Compile Include="Code\CustomSaml2SecurityTokenHandler.cs" />
-    <Compile Include="Code\DemoRestApiAuthorizationFilter.cs" />
-    <Compile Include="Code\ErrorResponse.cs" />
-    <Compile Include="Code\JwtHttpAuthenticationHandler.cs" />
     <Compile Include="Code\Service.cs" />
     <Compile Include="Code\LogMessageDispatchMessageInspector.cs" />
     <Compile Include="Code\ServiceServiceHostFactory.cs" />
     <Compile Include="Code\StrTransformedSaml2SecurityToken.cs" />
-    <Compile Include="Controllers\DemoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

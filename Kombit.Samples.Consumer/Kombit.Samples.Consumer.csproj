@@ -124,12 +124,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccessTokenResponse.cs" />
-    <Compile Include="ApiWebRequest.cs" />
     <Compile Include="CustomSaml2SecurityTokenHandler.cs" />
     <Compile Include="ConnectionHelper.cs" />
     <Compile Include="MessageModifier.cs" />
-    <Compile Include="OAuthErrorResponse.cs" />
     <Compile Include="ReplayMessageModifier.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="CustomTextMessageBindingElement.cs" />
@@ -138,7 +135,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="StsOAuthConsumer.cs" />
     <Compile Include="TamperBodyTextMessageEncoder.cs" />
     <Compile Include="CustomTextMessageEncoderFactory.cs" />
     <Compile Include="LogStsMessageClientMessageInspector.cs" />

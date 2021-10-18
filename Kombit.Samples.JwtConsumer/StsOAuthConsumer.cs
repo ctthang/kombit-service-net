@@ -1,16 +1,12 @@
 ﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 
-namespace Kombit.Samples.Consumer
+namespace Kombit.Samples.JwtConsumer
 {
     public class StsOAuthConsumer
     {
@@ -18,7 +14,7 @@ namespace Kombit.Samples.Consumer
         {
             var url = $"{Constants.StsOAuthEndpointUri.AbsoluteUri}?client_id={appliesTo}&grant_type={grantType}&scope={scope}";
             var client = new ApiWebRequest(Constants.ClientCertificate);
-            var httpResponse = client.Post(url, new JObject { });
+            var httpResponse = client.Post(url);
             var responseMessage = httpResponse.Content.ReadAsStringAsync().Result;
             errorResponse = null;
             if (!httpResponse.IsSuccessStatusCode)

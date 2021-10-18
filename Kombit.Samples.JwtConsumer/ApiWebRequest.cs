@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace Kombit.Samples.Consumer
+namespace Kombit.Samples.JwtConsumer
 {
     public class ApiWebRequest : IDisposable
     {
@@ -26,36 +23,13 @@ namespace Kombit.Samples.Consumer
         }
 
         /// <summary>
-        /// Method : GET
-        /// </summary>
-        public HttpResponseMessage Get(string path)
-        {
-            EnsureHttpClient();
-
-            var t = httpClient.GetAsync(path)
-                .ContinueWith(task => ValidateResult(task.Result));
-
-            // HTTP GET
-            var response = t.Result;
-
-            if (!response.IsSuccessStatusCode)
-            {
-                Console.WriteLine("Get fail: path {0}. {1}", path, response.ReasonPhrase);
-            }
-
-            return response;
-        }
-        
-        //1) Uninstall-Package Microsoft.Bcl.Async -Force 
-        //2) Install-Package Microsoft.Bcl.Async -Version 1.0.16
-        /// <summary>
         /// Method : POST
         /// </summary>
-        public HttpResponseMessage Post<T>(string path, T content)
+        public HttpResponseMessage Post(string path)
         {
             EnsureHttpClient();
-
-            var t = httpClient.PostAsJsonAsync(path, content)
+            StringContent httpContent = new StringContent("{}", Encoding.UTF8, "application/json");
+            var t = httpClient.PostAsync(path, httpContent)
                 .ContinueWith(task => ValidateResult(task.Result));
 
             // HTTP POST

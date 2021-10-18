@@ -4,7 +4,7 @@
  <Namespaces>
   <Namespace Name="Kombit.Samples.Consumer">
    <Messages>
-    <Message Id="Kombit" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
+    <Message Id="Kombit" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="Breaking">
      <Issue Name="Namespace" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Kombit' in namespace name 'Kombit.Samples.Consumer'.</Issue>
     </Message>
    </Messages>
@@ -15,149 +15,74 @@
    <Modules>
     <Module Name="kombit.samples.consumer.dll">
      <Messages>
-      <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="NonBreaking">
+      <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="NonBreaking">
        <Issue Name="NoStrongName" Certainty="95" Level="CriticalError">Sign 'Kombit.Samples.Consumer.dll' with a strong name key.</Issue>
       </Message>
-      <Message Id="Kombit" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
+      <Message Id="Kombit" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="Breaking">
        <Issue Name="Assembly" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Kombit' in assembly name 'Kombit.Samples.Consumer.dll'.</Issue>
       </Message>
-      <Message TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="NonBreaking">
+      <Message TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="NonBreaking">
        <Issue Certainty="95" Level="Error">Mark 'Kombit.Samples.Consumer.dll' with CLSCompliant(true) because it exposes externally visible types.</Issue>
       </Message>
      </Messages>
      <Namespaces>
       <Namespace Name="Kombit.Samples.Consumer">
        <Types>
-        <Type Name="AccessTokenResponse" Kind="Class" Accessibility="Public" ExternallyVisible="True">
-         <Members>
-          <Member Name="#TokenType" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
-           <Messages>
-            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="DependsOnFix">
-             <Issue Certainty="95" Level="Warning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="AccessTokenResponse.cs" Line="17">The 'this' parameter (or 'Me' in Visual Basic) of 'AccessTokenResponse.TokenType' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
-            </Message>
-           </Messages>
-          </Member>
-         </Members>
-        </Type>
-        <Type Name="ApiWebRequest" Kind="Class" Accessibility="Public" ExternallyVisible="True">
-         <Messages>
-          <Message Id="Api" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
-           <Issue Name="Type" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Api' in type name 'ApiWebRequest'.</Issue>
-          </Message>
-          <Message TypeName="ImplementIDisposableCorrectly" Category="Microsoft.Design" CheckId="CA1063" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
-           <Issue Name="ProvideDisposeBool" Certainty="95" Level="Error">Provide an overridable implementation of Dispose(bool) on 'ApiWebRequest' or mark the type as sealed. A call to Dispose(false) should only clean up native resources. A call to Dispose(true) should clean up both managed and native resources.</Issue>
-          </Message>
-         </Messages>
-         <Members>
-          <Member Name="#Dispose()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
-           <Messages>
-            <Message TypeName="CallGCSuppressFinalizeCorrectly" Category="Microsoft.Usage" CheckId="CA1816" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="NonBreaking">
-             <Issue Name="NotCalled" Certainty="75" Level="CriticalWarning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="ApiWebRequest.cs" Line="148">Change 'ApiWebRequest.Dispose()' to call 'GC.SuppressFinalize(object)'. This will prevent derived types that introduce a finalizer from needing to re-implement 'IDisposable' to call it.</Issue>
-            </Message>
-            <Message TypeName="ImplementIDisposableCorrectly" Category="Microsoft.Design" CheckId="CA1063" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
-             <Issue Name="DisposeImplementation" Certainty="95" Level="Error" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="ApiWebRequest.cs" Line="148">Modify 'ApiWebRequest.Dispose()' so that it calls Dispose(true), then calls GC.SuppressFinalize on the current object instance ('this' or 'Me' in Visual Basic), and then returns.</Issue>
-            </Message>
-           </Messages>
-          </Member>
-          <Member Name="#EnsureHttpClient()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
-           <Messages>
-            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="DependsOnFix">
-             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="ApiWebRequest.cs" Line="80">In method 'ApiWebRequest.EnsureHttpClient()', call System.IDisposable.Dispose on object 'new WebRequestHandler()' before all references to it are out of scope.</Issue>
-            </Message>
-           </Messages>
-          </Member>
-          <Member Name="#Get(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
-           <Messages>
-            <Message Id="System.Console.WriteLine(System.String,System.Object,System.Object)" TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="DependsOnFix">
-             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="ApiWebRequest.cs" Line="43">Method 'ApiWebRequest.Get(string)' passes a literal string as parameter 'format' of a call to 'Console.WriteLine(string, object, object)'. Retrieve the following string(s) from a resource table instead: "Get fail: path {0}. {1}".</Issue>
-            </Message>
-            <Message TypeName="PassSystemUriObjectsInsteadOfStrings" Category="Microsoft.Usage" CheckId="CA2234" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="NonBreaking">
-             <Issue Certainty="75" Level="Warning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="ApiWebRequest.cs" Line="32">Modify 'ApiWebRequest.Get(string)' to call 'HttpClient.GetAsync(Uri)' instead of 'HttpClient.GetAsync(string)'.</Issue>
-            </Message>
-           </Messages>
-          </Member>
-          <Member Name="#Post`1(System.String,!!0)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
-           <Messages>
-            <Message Id="System.Console.WriteLine(System.String,System.Object,System.Object)" TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="DependsOnFix">
-             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="ApiWebRequest.cs" Line="66">Method 'ApiWebRequest.Post&lt;T&gt;(string, T)' passes a literal string as parameter 'format' of a call to 'Console.WriteLine(string, object, object)'. Retrieve the following string(s) from a resource table instead: "Post fail: path {0}. {1}".</Issue>
-            </Message>
-           </Messages>
-          </Member>
-          <Member Name="#ValidateResult(System.Net.Http.HttpResponseMessage)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
-           <Messages>
-            <Message Id="System.Console.WriteLine(System.String)" TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="DependsOnFix">
-             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="ApiWebRequest.cs" Line="138">Method 'ApiWebRequest.ValidateResult(HttpResponseMessage)' passes a literal string as parameter 'value' of a call to 'Console.WriteLine(string)'. Retrieve the following string(s) from a resource table instead: "\r\nError: Client certificate might probably causing the problem.\r\n- Troublesh...".</Issue>
-             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="ApiWebRequest.cs" Line="121">Method 'ApiWebRequest.ValidateResult(HttpResponseMessage)' passes a literal string as parameter 'value' of a call to 'Console.WriteLine(string)'. Retrieve the following string(s) from a resource table instead: "\r\nError: IIS may ignore or reject client certificate:\r\nTroubleshooting: \r\n...".</Issue>
-            </Message>
-            <Message Id="CurrentUser" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="DependsOnFix">
-             <Issue Certainty="75" Level="Warning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="ApiWebRequest.cs" Line="138">Correct the spelling of the unrecognized token 'CurrentUser' in the literal '"\r\nError: Client certificate might probably causing the problem.\r\n- Troublesh..."'.</Issue>
-            </Message>
-            <Message Id="LocalMachine" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="DependsOnFix">
-             <Issue Certainty="75" Level="Warning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="ApiWebRequest.cs" Line="138">Correct the spelling of the unrecognized token 'LocalMachine' in the literal '"\r\nError: Client certificate might probably causing the problem.\r\n- Troublesh..."'.</Issue>
-             <Issue Certainty="75" Level="Warning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="ApiWebRequest.cs" Line="138">Correct the spelling of the unrecognized token 'LocalMachine' in the literal '"\r\nError: Client certificate might probably causing the problem.\r\n- Troublesh..."'.</Issue>
-            </Message>
-            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="NonBreaking">
-             <Issue Certainty="95" Level="Warning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="ApiWebRequest.cs" Line="104">The 'this' parameter (or 'Me' in Visual Basic) of 'ApiWebRequest.ValidateResult(HttpResponseMessage)' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
-            </Message>
-           </Messages>
-          </Member>
-         </Members>
-        </Type>
         <Type Name="ConnectionHelper" Kind="Class" Accessibility="Public" ExternallyVisible="True">
          <Messages>
-          <Message TypeName="StaticHolderTypesShouldNotHaveConstructors" Category="Microsoft.Design" CheckId="CA1053" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
+          <Message TypeName="StaticHolderTypesShouldNotHaveConstructors" Category="Microsoft.Design" CheckId="CA1053" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="Breaking">
            <Issue Name="CSharp2_0" Certainty="90" Level="Error">Because type 'ConnectionHelper' contains only 'static' members, mark it as 'static' to prevent the compiler from adding a default public constructor.</Issue>
           </Message>
          </Messages>
          <Members>
           <Member Name="#GenerateServiceChannel(System.IdentityModel.Tokens.SecurityToken)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="DependsOnFix">
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="DependsOnFix">
              <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="ConnectionHelper.cs" Line="87">In method 'ConnectionHelper.GenerateServiceChannel(SecurityToken)', call System.IDisposable.Dispose on object 'factory' before all references to it are out of scope.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#GenerateStsCertificateClientChannel(System.Security.Cryptography.X509Certificates.X509Certificate2,System.Func`2&lt;System.ServiceModel.Channels.Message,System.ServiceModel.Channels.Message&gt;,System.Func`1&lt;System.ServiceModel.Channels.MessageEncodingBindingElement&gt;,System.Int32)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="AvoidExcessiveClassCoupling" Category="Microsoft.Maintainability" CheckId="CA1506" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
+            <Message TypeName="AvoidExcessiveClassCoupling" Category="Microsoft.Maintainability" CheckId="CA1506" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="Breaking">
              <Issue Name="Method" Certainty="75" Level="Warning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="ConnectionHelper.cs" Line="122">'ConnectionHelper.GenerateStsCertificateClientChannel(X509Certificate2, Func&lt;Message, Message&gt;, Func&lt;MessageEncodingBindingElement&gt;, int)' is coupled with 31 different types from 10 different namespaces. Rewrite or refactor the method to decrease its class coupling, or consider moving the method to one of the other types it is tightly coupled with. A class coupling above 40 indicates poor maintainability, a class coupling between 40 and 30 indicates moderate maintainability, and a class coupling below 30 indicates good maintainability.</Issue>
             </Message>
-            <Message TypeName="DefaultParametersShouldNotBeUsed" Category="Microsoft.Design" CheckId="CA1026" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
+            <Message TypeName="DefaultParametersShouldNotBeUsed" Category="Microsoft.Design" CheckId="CA1026" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="Breaking">
              <Issue Certainty="75" Level="Error" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="ConnectionHelper.cs" Line="122">Replace method 'ConnectionHelper.GenerateStsCertificateClientChannel(X509Certificate2, Func&lt;Message, Message&gt;, Func&lt;MessageEncodingBindingElement&gt;, int)' with an overload that supplies all default arguments.</Issue>
             </Message>
-            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="DependsOnFix">
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="DependsOnFix">
              <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="ConnectionHelper.cs" Line="133">In method 'ConnectionHelper.GenerateStsCertificateClientChannel(X509Certificate2, Func&lt;Message, Message&gt;, Func&lt;MessageEncodingBindingElement&gt;, int)', call System.IDisposable.Dispose on object 'factory' before all references to it are out of scope.</Issue>
             </Message>
-            <Message Id="Sts" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
+            <Message Id="Sts" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="ConnectionHelper.cs" Line="122">Correct the spelling of 'Sts' in member name 'ConnectionHelper.GenerateStsCertificateClientChannel(X509Certificate2, Func&lt;Message, Message&gt;, Func&lt;MessageEncodingBindingElement&gt;, int)' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
             </Message>
-            <Message Id="messesag" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
+            <Message Id="messesag" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="Breaking">
              <Issue Name="MemberParameter" Certainty="75" Level="CriticalWarning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="ConnectionHelper.cs" Line="122">In method 'ConnectionHelper.GenerateStsCertificateClientChannel(X509Certificate2, Func&lt;Message, Message&gt;, Func&lt;MessageEncodingBindingElement&gt;, int)', correct the spelling of 'messesag' in parameter name 'messesagModifier' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#SendRequestSecurityTokenRequest(System.String,System.IdentityModel.Tokens.SecurityTokenElement,System.Security.Cryptography.X509Certificates.X509Certificate2,System.Func`2&lt;System.ServiceModel.Channels.Message,System.ServiceModel.Channels.Message&gt;,System.Func`1&lt;System.ServiceModel.Channels.MessageEncodingBindingElement&gt;,System.Int32)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="DefaultParametersShouldNotBeUsed" Category="Microsoft.Design" CheckId="CA1026" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
+            <Message TypeName="DefaultParametersShouldNotBeUsed" Category="Microsoft.Design" CheckId="CA1026" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="Breaking">
              <Issue Certainty="75" Level="Error" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="ConnectionHelper.cs" Line="30">Replace method 'ConnectionHelper.SendRequestSecurityTokenRequest(string, SecurityTokenElement, X509Certificate2, Func&lt;Message, Message&gt;, Func&lt;MessageEncodingBindingElement&gt;, int)' with an overload that supplies all default arguments.</Issue>
             </Message>
-            <Message Id="messesag" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
+            <Message Id="messesag" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="Breaking">
              <Issue Name="MemberParameter" Certainty="75" Level="CriticalWarning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="ConnectionHelper.cs" Line="30">In method 'ConnectionHelper.SendRequestSecurityTokenRequest(string, SecurityTokenElement, X509Certificate2, Func&lt;Message, Message&gt;, Func&lt;MessageEncodingBindingElement&gt;, int)', correct the spelling of 'messesag' in parameter name 'messesagModifier' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#SendRequestSecurityTokenRequest(System.String,System.IdentityModel.Tokens.SecurityTokenElement,System.Security.Cryptography.X509Certificates.X509Certificate2,System.String,System.Func`2&lt;System.ServiceModel.Channels.Message,System.ServiceModel.Channels.Message&gt;,System.Func`1&lt;System.ServiceModel.Channels.MessageEncodingBindingElement&gt;,System.Int32)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="DefaultParametersShouldNotBeUsed" Category="Microsoft.Design" CheckId="CA1026" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
+            <Message TypeName="DefaultParametersShouldNotBeUsed" Category="Microsoft.Design" CheckId="CA1026" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="Breaking">
              <Issue Certainty="75" Level="Error" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="ConnectionHelper.cs" Line="38">Replace method 'ConnectionHelper.SendRequestSecurityTokenRequest(string, SecurityTokenElement, X509Certificate2, string, Func&lt;Message, Message&gt;, Func&lt;MessageEncodingBindingElement&gt;, int)' with an overload that supplies all default arguments.</Issue>
             </Message>
-            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="DependsOnFix">
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="DependsOnFix">
              <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="ConnectionHelper.cs" Line="39">In method 'ConnectionHelper.SendRequestSecurityTokenRequest(string, SecurityTokenElement, X509Certificate2, string, Func&lt;Message, Message&gt;, Func&lt;MessageEncodingBindingElement&gt;, int)', call System.IDisposable.Dispose on object 'new X509SecurityToken(clientCertificate)' before all references to it are out of scope.</Issue>
             </Message>
-            <Message Id="cvr" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
+            <Message Id="cvr" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="Breaking">
              <Issue Name="MemberParameter" Certainty="75" Level="CriticalWarning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="ConnectionHelper.cs" Line="38">In method 'ConnectionHelper.SendRequestSecurityTokenRequest(string, SecurityTokenElement, X509Certificate2, string, Func&lt;Message, Message&gt;, Func&lt;MessageEncodingBindingElement&gt;, int)', correct the spelling of 'cvr' in parameter name 'cvr' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
             </Message>
-            <Message Id="messesag" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
+            <Message Id="messesag" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="Breaking">
              <Issue Name="MemberParameter" Certainty="75" Level="CriticalWarning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="ConnectionHelper.cs" Line="38">In method 'ConnectionHelper.SendRequestSecurityTokenRequest(string, SecurityTokenElement, X509Certificate2, string, Func&lt;Message, Message&gt;, Func&lt;MessageEncodingBindingElement&gt;, int)', correct the spelling of 'messesag' in parameter name 'messesagModifier' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
             </Message>
            </Messages>
@@ -168,25 +93,25 @@
          <Members>
           <Member Name="#AnvenderContext" Kind="Property" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="Anvender" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
-             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Constants.cs" Line="177">Correct the spelling of 'Anvender' in member name 'Constants.AnvenderContext' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            <Message Id="Anvender" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Constants.cs" Line="147">Correct the spelling of 'Anvender' in member name 'Constants.AnvenderContext' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#BootstraptokenServiceBaseAddress" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="Bootstraptoken" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
+            <Message Id="Bootstraptoken" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Bootstraptoken' in member name 'Constants.BootstraptokenServiceBaseAddress' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
             </Message>
-            <Message TypeName="NonConstantFieldsShouldNotBeVisible" Category="Microsoft.Usage" CheckId="CA2211" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
+            <Message TypeName="NonConstantFieldsShouldNotBeVisible" Category="Microsoft.Usage" CheckId="CA2211" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="Breaking">
              <Issue Certainty="90" Level="Warning">Consider making 'Constants.BootstraptokenServiceBaseAddress' non-public or a constant.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#BppValue" Kind="Property" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="Bpp" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
-             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Constants.cs" Line="182">Correct the spelling of 'Bpp' in member name 'Constants.BppValue' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            <Message Id="Bpp" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Constants.cs" Line="152">Correct the spelling of 'Bpp' in member name 'Constants.BppValue' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
             </Message>
            </Messages>
           </Member>
@@ -194,8 +119,8 @@
            <Accessors>
             <Accessor Name="#get_EnableSoapMessageLog()" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
              <Messages>
-              <Message Id="System.Convert.ToBoolean(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="NonBreaking">
-               <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Constants.cs" Line="192">Because the behavior of 'Convert.ToBoolean(string)' could vary based on the current user's locale settings, replace this call in 'Constants.EnableSoapMessageLog.get()' with a call to 'Convert.ToBoolean(string, IFormatProvider)'. If the result of 'Convert.ToBoolean(string, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+              <Message Id="System.Convert.ToBoolean(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="NonBreaking">
+               <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Constants.cs" Line="162">Because the behavior of 'Convert.ToBoolean(string)' could vary based on the current user's locale settings, replace this call in 'Constants.EnableSoapMessageLog.get()' with a call to 'Convert.ToBoolean(string, IFormatProvider)'. If the result of 'Convert.ToBoolean(string, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
               </Message>
              </Messages>
             </Accessor>
@@ -203,99 +128,49 @@
           </Member>
           <Member Name="#ServiceBaseAddress" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="NonConstantFieldsShouldNotBeVisible" Category="Microsoft.Usage" CheckId="CA2211" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
+            <Message TypeName="NonConstantFieldsShouldNotBeVisible" Category="Microsoft.Usage" CheckId="CA2211" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="Breaking">
              <Issue Certainty="90" Level="Warning">Consider making 'Constants.ServiceBaseAddress' non-public or a constant.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#StsBaseAddress" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="Sts" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
+            <Message Id="Sts" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Sts' in member name 'Constants.StsBaseAddress' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
             </Message>
-            <Message TypeName="NonConstantFieldsShouldNotBeVisible" Category="Microsoft.Usage" CheckId="CA2211" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
+            <Message TypeName="NonConstantFieldsShouldNotBeVisible" Category="Microsoft.Usage" CheckId="CA2211" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="Breaking">
              <Issue Certainty="90" Level="Warning">Consider making 'Constants.StsBaseAddress' non-public or a constant.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#StsCertificateEndpointUri" Kind="Property" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="Sts" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
-             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Constants.cs" Line="74">Correct the spelling of 'Sts' in member name 'Constants.StsCertificateEndpointUri' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            <Message Id="Sts" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Constants.cs" Line="44">Correct the spelling of 'Sts' in member name 'Constants.StsCertificateEndpointUri' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#StsMexEndpointUri" Kind="Property" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="Mex" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
-             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Constants.cs" Line="82">Correct the spelling of 'Mex' in member name 'Constants.StsMexEndpointUri' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            <Message Id="Mex" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Constants.cs" Line="52">Correct the spelling of 'Mex' in member name 'Constants.StsMexEndpointUri' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
             </Message>
-            <Message Id="Sts" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
-             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Constants.cs" Line="82">Correct the spelling of 'Sts' in member name 'Constants.StsMexEndpointUri' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
-            </Message>
-           </Messages>
-          </Member>
-          <Member Name="#StsOAuthClientId" Kind="Property" Static="True" Accessibility="Public" ExternallyVisible="True">
-           <Messages>
-            <Message Id="Auth" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
-             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Constants.cs" Line="49">Correct the spelling of 'Auth' in member name 'Constants.StsOAuthClientId' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
-            </Message>
-            <Message Id="Sts" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
-             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Constants.cs" Line="49">Correct the spelling of 'Sts' in member name 'Constants.StsOAuthClientId' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
-            </Message>
-           </Messages>
-          </Member>
-          <Member Name="#StsOAuthEndpointUri" Kind="Property" Static="True" Accessibility="Public" ExternallyVisible="True">
-           <Messages>
-            <Message Id="Auth" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
-             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Constants.cs" Line="44">Correct the spelling of 'Auth' in member name 'Constants.StsOAuthEndpointUri' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
-            </Message>
-            <Message Id="Sts" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
-             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Constants.cs" Line="44">Correct the spelling of 'Sts' in member name 'Constants.StsOAuthEndpointUri' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
-            </Message>
-           </Messages>
-          </Member>
-          <Member Name="#StsOAuthScope" Kind="Property" Static="True" Accessibility="Public" ExternallyVisible="True">
-           <Messages>
-            <Message Id="Auth" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
-             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Constants.cs" Line="54">Correct the spelling of 'Auth' in member name 'Constants.StsOAuthScope' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
-            </Message>
-            <Message Id="Sts" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
-             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Constants.cs" Line="54">Correct the spelling of 'Sts' in member name 'Constants.StsOAuthScope' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
-            </Message>
-           </Messages>
-          </Member>
-          <Member Name="#StsOAuthScopeWithObO" Kind="Property" Static="True" Accessibility="Public" ExternallyVisible="True">
-           <Messages>
-            <Message Id="Ob" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
-             <Issue Name="Member" Certainty="85" Level="Error" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Constants.cs" Line="59">Correct the casing of 'Ob' in member name 'Constants.StsOAuthScopeWithObO' by changing it to 'OB'.</Issue>
-            </Message>
-            <Message Id="Auth" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
-             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Constants.cs" Line="59">Correct the spelling of 'Auth' in member name 'Constants.StsOAuthScopeWithObO' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
-            </Message>
-            <Message Id="Sts" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
-             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Constants.cs" Line="59">Correct the spelling of 'Sts' in member name 'Constants.StsOAuthScopeWithObO' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            <Message Id="Sts" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Constants.cs" Line="52">Correct the spelling of 'Sts' in member name 'Constants.StsMexEndpointUri' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#StsServiceCertificate" Kind="Property" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="Sts" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
-             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Constants.cs" Line="91">Correct the spelling of 'Sts' in member name 'Constants.StsServiceCertificate' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            <Message Id="Sts" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Constants.cs" Line="61">Correct the spelling of 'Sts' in member name 'Constants.StsServiceCertificate' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#StsServiceEndpointIdentity" Kind="Property" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="Sts" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
-             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Constants.cs" Line="102">Correct the spelling of 'Sts' in member name 'Constants.StsServiceEndpointIdentity' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
-            </Message>
-           </Messages>
-          </Member>
-          <Member Name="#TestRestAPIEndpoint" Kind="Property" Static="True" Accessibility="Public" ExternallyVisible="True">
-           <Messages>
-            <Message Id="API" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
-             <Issue Name="Member" Certainty="85" Level="Error" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Constants.cs" Line="65">Correct the casing of 'API' in member name 'Constants.TestRestAPIEndpoint' by changing it to 'Api'.</Issue>
+            <Message Id="Sts" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Constants.cs" Line="72">Correct the spelling of 'Sts' in member name 'Constants.StsServiceEndpointIdentity' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
             </Message>
            </Messages>
           </Member>
@@ -303,31 +178,31 @@
         </Type>
         <Type Name="Consumer" Kind="Class" Accessibility="Public" ExternallyVisible="True">
          <Messages>
-          <Message TypeName="TypeNamesShouldNotMatchNamespaces" Category="Microsoft.Naming" CheckId="CA1724" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
+          <Message TypeName="TypeNamesShouldNotMatchNamespaces" Category="Microsoft.Naming" CheckId="CA1724" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="Breaking">
            <Issue Certainty="95" Level="Error">The type name 'Consumer' conflicts in whole or in part with the namespace name 'Kombit.Samples.Consumer'. Change either name to eliminate the conflict.</Issue>
           </Message>
          </Messages>
          <Members>
           <Member Name="#CanRetrieveMetadataFromMexEndpoint()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="Mex" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
+            <Message Id="Mex" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Consumer.cs" Line="108">Correct the spelling of 'Mex' in member name 'Consumer.CanRetrieveMetadataFromMexEndpoint()' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
             </Message>
-            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="DependsOnFix">
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="DependsOnFix">
              <Issue Certainty="95" Level="Warning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Consumer.cs" Line="108">The 'this' parameter (or 'Me' in Visual Basic) of 'Consumer.CanRetrieveMetadataFromMexEndpoint()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#GenerateBootstrapToken()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="NonBreaking">
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="NonBreaking">
              <Issue Certainty="95" Level="Warning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Consumer.cs" Line="361">The 'this' parameter (or 'Me' in Visual Basic) of 'Consumer.GenerateBootstrapToken()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#ModifyMessageBody(System.ServiceModel.Channels.Message)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="DependsOnFix">
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="DependsOnFix">
              <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Consumer.cs" Line="387">In method 'Consumer.ModifyMessageBody(Message)', object 'ms' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'ms' before all references to it are out of scope.</Issue>
              <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Consumer.cs" Line="396">In method 'Consumer.ModifyMessageBody(Message)', object 'newMessage' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'newMessage' before all references to it are out of scope.</Issue>
             </Message>
@@ -335,124 +210,124 @@
           </Member>
           <Member Name="#ReplayRstWillReturnErrorResponse()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="Rst" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
+            <Message Id="Rst" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Consumer.cs" Line="206">Correct the spelling of 'Rst' in member name 'Consumer.ReplayRstWillReturnErrorResponse()' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
             </Message>
-            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="DependsOnFix">
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="DependsOnFix">
              <Issue Certainty="95" Level="Warning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Consumer.cs" Line="206">The 'this' parameter (or 'Me' in Visual Basic) of 'Consumer.ReplayRstWillReturnErrorResponse()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#SendExpiredRstWillReturnErrorResponse()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="Rst" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
+            <Message Id="Rst" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Consumer.cs" Line="244">Correct the spelling of 'Rst' in member name 'Consumer.SendExpiredRstWillReturnErrorResponse()' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
             </Message>
-            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="DependsOnFix">
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="DependsOnFix">
              <Issue Certainty="95" Level="Warning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Consumer.cs" Line="244">The 'this' parameter (or 'Me' in Visual Basic) of 'Consumer.SendExpiredRstWillReturnErrorResponse()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#SendIssueRequestWhichWillBeFailedBecauseOfAuthentication()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="DependsOnFix">
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="DependsOnFix">
              <Issue Certainty="95" Level="Warning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Consumer.cs" Line="63">The 'this' parameter (or 'Me' in Visual Basic) of 'Consumer.SendIssueRequestWhichWillBeFailedBecauseOfAuthentication()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#SendIssueRequestWhichWillBeFailedBecauseOfInvaidRst()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="Invaid" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
+            <Message Id="Invaid" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Consumer.cs" Line="86">Correct the spelling of 'Invaid' in member name 'Consumer.SendIssueRequestWhichWillBeFailedBecauseOfInvaidRst()' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
             </Message>
-            <Message Id="Rst" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
+            <Message Id="Rst" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Consumer.cs" Line="86">Correct the spelling of 'Rst' in member name 'Consumer.SendIssueRequestWhichWillBeFailedBecauseOfInvaidRst()' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
             </Message>
-            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="DependsOnFix">
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="DependsOnFix">
              <Issue Certainty="95" Level="Warning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Consumer.cs" Line="86">The 'this' parameter (or 'Me' in Visual Basic) of 'Consumer.SendIssueRequestWhichWillBeFailedBecauseOfInvaidRst()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#SendIssueRequestWhichWillReceiveConnectionNotFoundError()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="DependsOnFix">
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="DependsOnFix">
              <Issue Certainty="95" Level="Warning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Consumer.cs" Line="41">The 'this' parameter (or 'Me' in Visual Basic) of 'Consumer.SendIssueRequestWhichWillReceiveConnectionNotFoundError()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#SendRstAndThenExecuteServiceServiceSuccessfully()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="Rst" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
+            <Message Id="Rst" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Consumer.cs" Line="122">Correct the spelling of 'Rst' in member name 'Consumer.SendRstAndThenExecuteServiceServiceSuccessfully()' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
             </Message>
-            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="DependsOnFix">
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="DependsOnFix">
              <Issue Certainty="95" Level="Warning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Consumer.cs" Line="122">The 'this' parameter (or 'Me' in Visual Basic) of 'Consumer.SendRstAndThenExecuteServiceServiceSuccessfully()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
             </Message>
-            <Message Id="System.String.IndexOf(System.String,System.StringComparison)" TypeName="UseOrdinalStringComparison" Category="Microsoft.Globalization" CheckId="CA1309" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="NonBreaking">
+            <Message Id="System.String.IndexOf(System.String,System.StringComparison)" TypeName="UseOrdinalStringComparison" Category="Microsoft.Globalization" CheckId="CA1309" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="NonBreaking">
              <Issue Name="StringComparison" Certainty="75" Level="Error" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Consumer.cs" Line="148">'Consumer.SendRstAndThenExecuteServiceServiceSuccessfully()' passes 'StringComparison.InvariantCultureIgnoreCase' as the 'StringComparison' parameter to 'string.IndexOf(string, StringComparison)'. To perform a non-linguistic comparison, specify 'StringComparison.Ordinal' or 'StringComparison.OrdinalIgnoreCase' instead.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#SendRstTwiceWithDifferentMessagesWillBeAccepted()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="Rst" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
+            <Message Id="Rst" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Consumer.cs" Line="188">Correct the spelling of 'Rst' in member name 'Consumer.SendRstTwiceWithDifferentMessagesWillBeAccepted()' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
             </Message>
-            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="DependsOnFix">
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="DependsOnFix">
              <Issue Certainty="95" Level="Warning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Consumer.cs" Line="188">The 'this' parameter (or 'Me' in Visual Basic) of 'Consumer.SendRstTwiceWithDifferentMessagesWillBeAccepted()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#SendRstWithInvalidSignatureWillReturnErrorResponse()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="Rst" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
+            <Message Id="Rst" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Consumer.cs" Line="170">Correct the spelling of 'Rst' in member name 'Consumer.SendRstWithInvalidSignatureWillReturnErrorResponse()' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
             </Message>
-            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="DependsOnFix">
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="DependsOnFix">
              <Issue Certainty="95" Level="Warning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Consumer.cs" Line="170">The 'this' parameter (or 'Me' in Visual Basic) of 'Consumer.SendRstWithInvalidSignatureWillReturnErrorResponse()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#SendRstWithNormalOnBehalfOfSuccessfully()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="Rst" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
+            <Message Id="Rst" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Consumer.cs" Line="285">Correct the spelling of 'Rst' in member name 'Consumer.SendRstWithNormalOnBehalfOfSuccessfully()' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#SendRstWithProxyOnBehalfOfSuccessfully()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="DependsOnFix">
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="DependsOnFix">
              <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Consumer.cs" Line="264">In method 'Consumer.SendRstWithProxyOnBehalfOfSuccessfully()', call System.IDisposable.Dispose on object 'new X509SecurityToken(Constants.AValidOnBehalfOfCertificate)' before all references to it are out of scope.</Issue>
             </Message>
-            <Message Id="Rst" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
+            <Message Id="Rst" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Consumer.cs" Line="263">Correct the spelling of 'Rst' in member name 'Consumer.SendRstWithProxyOnBehalfOfSuccessfully()' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
             </Message>
-            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="DependsOnFix">
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="DependsOnFix">
              <Issue Certainty="95" Level="Warning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Consumer.cs" Line="263">The 'this' parameter (or 'Me' in Visual Basic) of 'Consumer.SendRstWithProxyOnBehalfOfSuccessfully()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#SendRstWithValidTimestampWillNotThrowError()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="Rst" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
+            <Message Id="Rst" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Consumer.cs" Line="228">Correct the spelling of 'Rst' in member name 'Consumer.SendRstWithValidTimestampWillNotThrowError()' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
             </Message>
-            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="DependsOnFix">
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="DependsOnFix">
              <Issue Certainty="95" Level="Warning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Consumer.cs" Line="228">The 'this' parameter (or 'Me' in Visual Basic) of 'Consumer.SendRstWithValidTimestampWillNotThrowError()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#SendRstWithWrongFormatWillReturnErrorResponse()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="Rst" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
+            <Message Id="Rst" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Consumer.cs" Line="157">Correct the spelling of 'Rst' in member name 'Consumer.SendRstWithWrongFormatWillReturnErrorResponse()' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#ValidateIssuedToken(System.IdentityModel.Tokens.SecurityToken,System.String,System.Collections.Generic.IList`1&lt;System.IdentityModel.Tokens.Saml2Attribute&gt;)" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="DependsOnFix">
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="DependsOnFix">
              <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="Consumer.cs" Line="317">In method 'Consumer.ValidateIssuedToken(SecurityToken, string, IList&lt;Saml2Attribute&gt;)', call System.IDisposable.Dispose on object 'new StringReader(genericToken.TokenXml.OuterXml)' before all references to it are out of scope.</Issue>
             </Message>
            </Messages>
@@ -463,7 +338,7 @@
          <Members>
           <Member Name="#ApplyClientBehavior(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Dispatcher.ClientRuntime)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="1" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="DependsOnFix">
+            <Message Id="1" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="DependsOnFix">
              <Issue Certainty="75" Level="Warning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="LogServiceMessageClientMessageInspector.cs" Line="94">In externally visible method 'HookLogServiceMessageBehavior.ApplyClientBehavior(ServiceEndpoint, ClientRuntime)', validate parameter 'clientRuntime' before using it.</Issue>
             </Message>
            </Messages>
@@ -472,21 +347,21 @@
         </Type>
         <Type Name="HookLogStsMessageBehavior" Kind="Class" Accessibility="Public" ExternallyVisible="True">
          <Messages>
-          <Message Id="Sts" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
+          <Message Id="Sts" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="Breaking">
            <Issue Name="Type" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Sts' in type name 'HookLogStsMessageBehavior'.</Issue>
           </Message>
          </Messages>
          <Members>
           <Member Name="#.ctor(System.Func`2&lt;System.ServiceModel.Channels.Message,System.ServiceModel.Channels.Message&gt;)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="messesag" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
+            <Message Id="messesag" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="Breaking">
              <Issue Name="MemberParameter" Certainty="75" Level="CriticalWarning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="LogStsMessageClientMessageInspector.cs" Line="81">In method 'HookLogStsMessageBehavior.HookLogStsMessageBehavior(Func&lt;Message, Message&gt;)', correct the spelling of 'messesag' in parameter name 'messesagModifier' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#ApplyClientBehavior(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Dispatcher.ClientRuntime)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="1" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="DependsOnFix">
+            <Message Id="1" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="DependsOnFix">
              <Issue Certainty="75" Level="Warning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="LogStsMessageClientMessageInspector.cs" Line="119">In externally visible method 'HookLogStsMessageBehavior.ApplyClientBehavior(ServiceEndpoint, ClientRuntime)', validate parameter 'clientRuntime' before using it.</Issue>
             </Message>
            </Messages>
@@ -497,20 +372,20 @@
          <Members>
           <Member Name="#AfterReceiveReply(System.ServiceModel.Channels.Message&amp;,System.Object)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="System.String.Format(System.String,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="NonBreaking">
+            <Message Id="System.String.Format(System.String,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="NonBreaking">
              <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="LogServiceMessageClientMessageInspector.cs" Line="50">Because the behavior of 'string.Format(string, object)' could vary based on the current user's locale settings, replace this call in 'LogServiceMessageClientMessageInspector.AfterReceiveReply(ref Message, object)' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
             </Message>
-            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="DependsOnFix">
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="DependsOnFix">
              <Issue Name="Reassigned" Certainty="75" Level="Warning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="LogServiceMessageClientMessageInspector.cs" Line="52">In externally visible method 'LogServiceMessageClientMessageInspector.AfterReceiveReply(ref Message, object)', validate local variable ''(*reply)'', which was reassigned from parameter 'reply', before using it.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#BeforeSendRequest(System.ServiceModel.Channels.Message&amp;,System.ServiceModel.IClientChannel)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="System.String.Format(System.String,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="NonBreaking">
+            <Message Id="System.String.Format(System.String,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="NonBreaking">
              <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="LogServiceMessageClientMessageInspector.cs" Line="36">Because the behavior of 'string.Format(string, object)' could vary based on the current user's locale settings, replace this call in 'LogServiceMessageClientMessageInspector.BeforeSendRequest(ref Message, IClientChannel)' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
             </Message>
-            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="DependsOnFix">
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="DependsOnFix">
              <Issue Name="Reassigned" Certainty="75" Level="Warning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="LogServiceMessageClientMessageInspector.cs" Line="37">In externally visible method 'LogServiceMessageClientMessageInspector.BeforeSendRequest(ref Message, IClientChannel)', validate local variable ''(*request)'', which was reassigned from parameter 'request', before using it.</Issue>
             </Message>
            </Messages>
@@ -519,151 +394,52 @@
         </Type>
         <Type Name="LogStsMessageClientMessageInspector" Kind="Class" Accessibility="Public" ExternallyVisible="True">
          <Messages>
-          <Message Id="Sts" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
+          <Message Id="Sts" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="Breaking">
            <Issue Name="Type" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Sts' in type name 'LogStsMessageClientMessageInspector'.</Issue>
           </Message>
          </Messages>
          <Members>
           <Member Name="#.ctor(System.Func`2&lt;System.ServiceModel.Channels.Message,System.ServiceModel.Channels.Message&gt;)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="messesag" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
+            <Message Id="messesag" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="Breaking">
              <Issue Name="MemberParameter" Certainty="75" Level="CriticalWarning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="LogStsMessageClientMessageInspector.cs" Line="17">In method 'LogStsMessageClientMessageInspector.LogStsMessageClientMessageInspector(Func&lt;Message, Message&gt;)', correct the spelling of 'messesag' in parameter name 'messesagModifier' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#AfterReceiveReply(System.ServiceModel.Channels.Message&amp;,System.Object)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="System.String.Format(System.String,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="NonBreaking">
+            <Message Id="System.String.Format(System.String,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="NonBreaking">
              <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="LogStsMessageClientMessageInspector.cs" Line="65">Because the behavior of 'string.Format(string, object)' could vary based on the current user's locale settings, replace this call in 'LogStsMessageClientMessageInspector.AfterReceiveReply(ref Message, object)' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
             </Message>
-            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="DependsOnFix">
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="DependsOnFix">
              <Issue Name="Reassigned" Certainty="75" Level="Warning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="LogStsMessageClientMessageInspector.cs" Line="66">In externally visible method 'LogStsMessageClientMessageInspector.AfterReceiveReply(ref Message, object)', validate local variable ''(*reply)'', which was reassigned from parameter 'reply', before using it.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#BeforeSendRequest(System.ServiceModel.Channels.Message&amp;,System.ServiceModel.IClientChannel)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="System.String.Format(System.String,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="NonBreaking">
+            <Message Id="System.String.Format(System.String,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="NonBreaking">
              <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="LogStsMessageClientMessageInspector.cs" Line="41">Because the behavior of 'string.Format(string, object)' could vary based on the current user's locale settings, replace this call in 'LogStsMessageClientMessageInspector.BeforeSendRequest(ref Message, IClientChannel)' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
              <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="LogStsMessageClientMessageInspector.cs" Line="49">Because the behavior of 'string.Format(string, object)' could vary based on the current user's locale settings, replace this call in 'LogStsMessageClientMessageInspector.BeforeSendRequest(ref Message, IClientChannel)' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
             </Message>
-            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="DependsOnFix">
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="DependsOnFix">
              <Issue Name="Reassigned" Certainty="75" Level="Warning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="LogStsMessageClientMessageInspector.cs" Line="42">In externally visible method 'LogStsMessageClientMessageInspector.BeforeSendRequest(ref Message, IClientChannel)', validate local variable ''(*request)'', which was reassigned from parameter 'request', before using it.</Issue>
             </Message>
            </Messages>
           </Member>
          </Members>
         </Type>
-        <Type Name="OAuthErrorResponse" Kind="Class" Accessibility="Public" ExternallyVisible="True">
-         <Messages>
-          <Message Id="Auth" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
-           <Issue Name="Type" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Auth' in type name 'OAuthErrorResponse'.</Issue>
-          </Message>
-         </Messages>
-        </Type>
         <Type Name="StrReferenceSaml2SecurityTokenHandler" Kind="Class" Accessibility="Public" ExternallyVisible="True">
          <Messages>
-          <Message Id="Str" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
+          <Message Id="Str" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="Breaking">
            <Issue Name="Type" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Str' in type name 'StrReferenceSaml2SecurityTokenHandler'.</Issue>
           </Message>
          </Messages>
          <Members>
           <Member Name="#WriteKeyIdentifierClause(System.Xml.XmlWriter,System.IdentityModel.Tokens.SecurityKeyIdentifierClause)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="System.String.StartsWith(System.String)" TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="NonBreaking">
+            <Message Id="System.String.StartsWith(System.String)" TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="NonBreaking">
              <Issue Certainty="95" Level="Error" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="CustomSaml2SecurityTokenHandler.cs" Line="33">Because the behavior of 'string.StartsWith(string)' could vary based on the current user's locale settings, replace this call in 'StrReferenceSaml2SecurityTokenHandler.WriteKeyIdentifierClause(XmlWriter, SecurityKeyIdentifierClause)' with a call to 'string.StartsWith(string, StringComparison)'. If the result of 'string.StartsWith(string, StringComparison)' will be displayed to the user, such as when sorting a list of items for display in a list box, specify 'StringComparison.CurrentCulture' or 'StringComparison.CurrentCultureIgnoreCase' as the 'StringComparison' parameter. If comparing case-insensitive identifiers, such as file paths, environment variables, or registry keys and values, specify 'StringComparison.OrdinalIgnoreCase'. Otherwise, if comparing case-sensitive identifiers, specify 'StringComparison.Ordinal'.</Issue>
-            </Message>
-           </Messages>
-          </Member>
-         </Members>
-        </Type>
-        <Type Name="StsOAuthConsumer" Kind="Class" Accessibility="Public" ExternallyVisible="True">
-         <Messages>
-          <Message Id="Auth" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
-           <Issue Name="Type" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Auth' in type name 'StsOAuthConsumer'.</Issue>
-          </Message>
-          <Message Id="Sts" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
-           <Issue Name="Type" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Sts' in type name 'StsOAuthConsumer'.</Issue>
-          </Message>
-         </Messages>
-         <Members>
-          <Member Name="#GetTokenInfo(System.String)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
-           <Messages>
-            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="DependsOnFix">
-             <Issue Certainty="95" Level="Warning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="StsOAuthConsumer.cs" Line="115">The 'this' parameter (or 'Me' in Visual Basic) of 'StsOAuthConsumer.GetTokenInfo(string)' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
-            </Message>
-           </Messages>
-          </Member>
-          <Member Name="#SendOAuthObORequestSuccessfully()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
-           <Messages>
-            <Message Id="Ob" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
-             <Issue Name="Member" Certainty="85" Level="Error" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="StsOAuthConsumer.cs" Line="48">Correct the casing of 'Ob' in member name 'StsOAuthConsumer.SendOAuthObORequestSuccessfully()' by changing it to 'OB'.</Issue>
-            </Message>
-            <Message Id="Auth" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
-             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="StsOAuthConsumer.cs" Line="48">Correct the spelling of 'Auth' in member name 'StsOAuthConsumer.SendOAuthObORequestSuccessfully()' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
-            </Message>
-           </Messages>
-          </Member>
-          <Member Name="#SendOAuthRequestAndCallRESTAPISuccessfully()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
-           <Messages>
-            <Message Id="RESTAPI" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
-             <Issue Name="Member" Certainty="85" Level="Error" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="StsOAuthConsumer.cs" Line="58">Correct the casing of 'RESTAPI' in member name 'StsOAuthConsumer.SendOAuthRequestAndCallRESTAPISuccessfully()' by changing it to 'Restapi'.</Issue>
-            </Message>
-            <Message Id="Auth" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
-             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="StsOAuthConsumer.cs" Line="58">Correct the spelling of 'Auth' in member name 'StsOAuthConsumer.SendOAuthRequestAndCallRESTAPISuccessfully()' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
-            </Message>
-            <Message Id="Xunit.Assert.Contains(System.String,System.String)" TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="NonBreaking">
-             <Issue Certainty="95" Level="Error" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="StsOAuthConsumer.cs" Line="73">Because the behavior of 'Assert.Contains(string, string)' could vary based on the current user's locale settings, replace this call in 'StsOAuthConsumer.SendOAuthRequestAndCallRESTAPISuccessfully()' with a call to 'Assert.Contains(string, string, StringComparison)'. If the result of 'Assert.Contains(string, string, StringComparison)' will be displayed to the user, such as when sorting a list of items for display in a list box, specify 'StringComparison.CurrentCulture' or 'StringComparison.CurrentCultureIgnoreCase' as the 'StringComparison' parameter. If comparing case-insensitive identifiers, such as file paths, environment variables, or registry keys and values, specify 'StringComparison.OrdinalIgnoreCase'. Otherwise, if comparing case-sensitive identifiers, specify 'StringComparison.Ordinal'.</Issue>
-            </Message>
-           </Messages>
-          </Member>
-          <Member Name="#SendOAuthRequestInvalidClientIdError()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
-           <Messages>
-            <Message Id="Auth" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
-             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="StsOAuthConsumer.cs" Line="79">Correct the spelling of 'Auth' in member name 'StsOAuthConsumer.SendOAuthRequestInvalidClientIdError()' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
-            </Message>
-           </Messages>
-          </Member>
-          <Member Name="#SendOAuthRequestInvalidScopeError(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
-           <Messages>
-            <Message Id="Auth" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
-             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="StsOAuthConsumer.cs" Line="91">Correct the spelling of 'Auth' in member name 'StsOAuthConsumer.SendOAuthRequestInvalidScopeError(string)' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
-            </Message>
-           </Messages>
-          </Member>
-          <Member Name="#SendOAuthRequestSuccessfully()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
-           <Messages>
-            <Message Id="Auth" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
-             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="StsOAuthConsumer.cs" Line="38">Correct the spelling of 'Auth' in member name 'StsOAuthConsumer.SendOAuthRequestSuccessfully()' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
-            </Message>
-           </Messages>
-          </Member>
-          <Member Name="#SendRESTOAuthRequest(System.String,System.String,Kombit.Samples.Consumer.OAuthErrorResponse&amp;,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
-           <Messages>
-            <Message Id="2#" TypeName="AvoidOutParameters" Category="Microsoft.Design" CheckId="CA1021" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
-             <Issue Certainty="50" Level="Warning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="StsOAuthConsumer.cs" Line="18">Consider a design that does not require that 'errorResponse' be an out parameter.</Issue>
-            </Message>
-            <Message TypeName="DefaultParametersShouldNotBeUsed" Category="Microsoft.Design" CheckId="CA1026" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
-             <Issue Certainty="75" Level="Error" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="StsOAuthConsumer.cs" Line="18">Replace method 'StsOAuthConsumer.SendRESTOAuthRequest(string, string, out OAuthErrorResponse, string)' with an overload that supplies all default arguments.</Issue>
-            </Message>
-            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="DependsOnFix">
-             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="StsOAuthConsumer.cs" Line="20">In method 'StsOAuthConsumer.SendRESTOAuthRequest(string, string, out OAuthErrorResponse, string)', call System.IDisposable.Dispose on object 'client' before all references to it are out of scope.</Issue>
-            </Message>
-            <Message Id="RESTO" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
-             <Issue Name="Member" Certainty="85" Level="Error" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="StsOAuthConsumer.cs" Line="18">Correct the casing of 'RESTO' in member name 'StsOAuthConsumer.SendRESTOAuthRequest(string, string, out OAuthErrorResponse, string)' by changing it to 'Resto'.</Issue>
-            </Message>
-            <Message Id="Auth" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
-             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="StsOAuthConsumer.cs" Line="18">Correct the spelling of 'Auth' in member name 'StsOAuthConsumer.SendRESTOAuthRequest(string, string, out OAuthErrorResponse, string)' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
-            </Message>
-            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="DependsOnFix">
-             <Issue Certainty="95" Level="Warning" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="StsOAuthConsumer.cs" Line="18">The 'this' parameter (or 'Me' in Visual Basic) of 'StsOAuthConsumer.SendRESTOAuthRequest(string, string, out OAuthErrorResponse, string)' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
-            </Message>
-           </Messages>
-          </Member>
-          <Member Name="#ValidateToken(Kombit.Samples.Consumer.AccessTokenResponse,System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
-           <Messages>
-            <Message Id="Xunit.Assert.Contains(System.String,System.String)" TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="NonBreaking">
-             <Issue Certainty="95" Level="Error" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="StsOAuthConsumer.cs" Line="109">Because the behavior of 'Assert.Contains(string, string)' could vary based on the current user's locale settings, replace this call in 'StsOAuthConsumer.ValidateToken(AccessTokenResponse, string)' with a call to 'Assert.Contains(string, string, StringComparison)'. If the result of 'Assert.Contains(string, string, StringComparison)' will be displayed to the user, such as when sorting a list of items for display in a list box, specify 'StringComparison.CurrentCulture' or 'StringComparison.CurrentCultureIgnoreCase' as the 'StringComparison' parameter. If comparing case-insensitive identifiers, such as file paths, environment variables, or registry keys and values, specify 'StringComparison.OrdinalIgnoreCase'. Otherwise, if comparing case-sensitive identifiers, specify 'StringComparison.Ordinal'.</Issue>
             </Message>
            </Messages>
           </Member>
@@ -673,7 +449,7 @@
          <Members>
           <Member Name="#.ctor(Kombit.Samples.Consumer.CustomTextMessageEncoderFactory,System.ServiceModel.Channels.MessageEncoder,System.Func`4&lt;System.ArraySegment`1&lt;System.Byte&gt;,System.ServiceModel.Channels.BufferManager,System.Int32,System.ArraySegment`1&lt;System.Byte&gt;&gt;)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Status="Active" Created="2021-10-18 07:10:51Z" FixCategory="Breaking">
+            <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Status="Active" Created="2021-10-18 08:37:43Z" FixCategory="Breaking">
              <Issue Certainty="95" Level="CriticalError" Path="E:\Github\kombit-service-net\Kombit.Samples.Consumer" File="TamperBodyTextMessageEncoder.cs" Line="17">Consider a design where 'TamperBodyTextMessageEncoder.TamperBodyTextMessageEncoder(CustomTextMessageEncoderFactory, MessageEncoder, Func&lt;ArraySegment&lt;byte&gt;, BufferManager, int, ArraySegment&lt;byte&gt;&gt;)' doesn't nest generic type 'Func&lt;ArraySegment&lt;byte&gt;, BufferManager, int, ArraySegment&lt;byte&gt;&gt;'.</Issue>
             </Message>
            </Messages>
@@ -708,26 +484,6 @@
    <MessageLevel Certainty="90">Warning</MessageLevel>
    <File Name="maintainabilityrules.dll" Version="16.0.0.0" />
   </Rule>
-  <Rule TypeName="AvoidOutParameters" Category="Microsoft.Design" CheckId="CA1021">
-   <Name>Avoid out parameters</Name>
-   <Description>Using out parameters might indicate a design flaw. Although there are legitimate times to use out parameters, their use frequently indicates a design that does not conform to the design guidelines for managed code.</Description>
-   <Resolution Name="Default">Consider a design that does not require that {0} be an out parameter.</Resolution>
-   <Owner />
-   <Url>http://msdn.microsoft.com/library/ms182131.aspx</Url>
-   <Email>[none]</Email>
-   <MessageLevel Certainty="50">Warning</MessageLevel>
-   <File Name="designrules.dll" Version="16.0.0.0" />
-  </Rule>
-  <Rule TypeName="CallGCSuppressFinalizeCorrectly" Category="Microsoft.Usage" CheckId="CA1816">
-   <Name>Call GC.SuppressFinalize correctly</Name>
-   <Description>Call GC.SuppressFinalize to suppress finalization of your instance once Dispose has been called. Objects that implement IDisposable should call SuppressFinalize from the IDisposable.Dispose method to prevent the garbage collector from calling Object.Finalize on an object that does not require it.</Description>
-   <Resolution Name="NotCalled">Change {0} to call {1}. This will prevent derived types that introduce a finalizer from needing to re-implement 'IDisposable' to call it.</Resolution>
-   <Owner />
-   <Url>http://msdn.microsoft.com/library/ms182269.aspx</Url>
-   <Email>[none]</Email>
-   <MessageLevel Certainty="75">CriticalWarning</MessageLevel>
-   <File Name="usagerules.dll" Version="16.0.0.0" />
-  </Rule>
   <Rule TypeName="DefaultParametersShouldNotBeUsed" Category="Microsoft.Design" CheckId="CA1026">
    <Name>Default parameters should not be used</Name>
    <Description>Some programming languages do not support default parameters. Replace default parameters with method overloads that supply the default argument.</Description>
@@ -749,16 +505,6 @@
    <MessageLevel Certainty="75">Warning</MessageLevel>
    <File Name="dataflowrules.dll" Version="16.0.0.0" />
   </Rule>
-  <Rule TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303">
-   <Name>Do not pass literals as localized parameters</Name>
-   <Description>Literal strings that are embedded in source code are difficult to localize. Avoid passing literal strings as arguments in circumstances where a localized string is generally expected.</Description>
-   <Resolution Name="KnownValue">Method {0} passes a literal string as parameter '{1}' of a call to {2}. Retrieve the following string(s) from a resource table instead: {3}.</Resolution>
-   <Owner>RuleOwner</Owner>
-   <Url>http://msdn.microsoft.com/library/ms182187.aspx</Url>
-   <Email />
-   <MessageLevel Certainty="75">Warning</MessageLevel>
-   <File Name="dataflowrules.dll" Version="16.0.0.0" />
-  </Rule>
   <Rule TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006">
    <Name>Do not nest generic types in member signatures</Name>
    <Description>Avoid API that require users to instantiate a generic type with another generic type as type argument. The syntax gets too complex.</Description>
@@ -768,16 +514,6 @@
    <Email>[none]</Email>
    <MessageLevel Certainty="95">CriticalError</MessageLevel>
    <File Name="designrules.dll" Version="16.0.0.0" />
-  </Rule>
-  <Rule TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709">
-   <Name>Identifiers should be cased correctly</Name>
-   <Description>Type, namespace, and member identifiers are Pascal-cased. Parameter identifiers are camel-cased. Two letter acronyms within these identifiers should be upper-cased, for example, use System.IO instead of System.Io. Acronyms of three or more letters should be Pascal-cased, for example, use System.Xml instead of System.XML. The pascal-casing convention capitalizes the first letter of each word, as in BackColor. The camel-casing convention formats the first letter of the first word in lowercase and capitalizes the first letter of all subsequent words, as in backgroundColor. Although it may be common practice for some two letter acronyms to not be fully capitalized, violations of this rule should not be excluded for this reason. For example, 'DbConnection', is common but incorrect; use DBConnection. A violation of this rule might be required for compatibility with existing, non-managed symbol schemes. In general, however, these symbols should not be visible outside the assembly that uses them.</Description>
-   <Resolution Name="Member">Correct the casing of '{0}' in member name {1} by changing it to '{2}'.</Resolution>
-   <Owner />
-   <Url>http://msdn.microsoft.com/library/ms182240.aspx</Url>
-   <Email>[none]</Email>
-   <MessageLevel Certainty="85">Error</MessageLevel>
-   <File Name="namingrules.dll" Version="16.0.0.0" />
   </Rule>
   <Rule TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704">
    <Name>Identifiers should be spelled correctly</Name>
@@ -792,27 +528,6 @@
    <Email>[none]</Email>
    <MessageLevel Certainty="75">CriticalWarning</MessageLevel>
    <File Name="namingrules.dll" Version="16.0.0.0" />
-  </Rule>
-  <Rule TypeName="ImplementIDisposableCorrectly" Category="Microsoft.Design" CheckId="CA1063">
-   <Name>Implement IDisposable correctly</Name>
-   <Description>All IDisposable types should implement the Dispose pattern correctly.</Description>
-   <Resolution Name="DisposeImplementation">Modify {0} so that it calls Dispose(true), then calls GC.SuppressFinalize on the current object instance ('this' or 'Me' in Visual Basic), and then returns.</Resolution>
-   <Resolution Name="ProvideDisposeBool">Provide an overridable implementation of Dispose(bool) on {0} or mark the type as sealed. A call to Dispose(false) should only clean up native resources. A call to Dispose(true) should clean up both managed and native resources.</Resolution>
-   <Owner />
-   <Url>http://msdn.microsoft.com/library/ms244737.aspx</Url>
-   <Email>[none]</Email>
-   <MessageLevel Certainty="95">Error</MessageLevel>
-   <File Name="designrules.dll" Version="16.0.0.0" />
-  </Rule>
-  <Rule TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204">
-   <Name>Literals should be spelled correctly</Name>
-   <Description>This rule parses the literal string into words, tokenizing compound words, and checks the spelling of each word/token.</Description>
-   <Resolution Name="Default">Correct the spelling of the unrecognized token '{0}' in the literal '{1}'.</Resolution>
-   <Owner>RuleOwner</Owner>
-   <Url>http://msdn.microsoft.com/library/bb264488.aspx</Url>
-   <Email />
-   <MessageLevel Certainty="75">Warning</MessageLevel>
-   <File Name="dataflowrules.dll" Version="16.0.0.0" />
   </Rule>
   <Rule TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014">
    <Name>Mark assemblies with CLSCompliantAttribute</Name>
@@ -842,16 +557,6 @@
    <Url>http://msdn.microsoft.com/library/ms182353.aspx</Url>
    <Email>[none]</Email>
    <MessageLevel Certainty="90">Warning</MessageLevel>
-   <File Name="usagerules.dll" Version="16.0.0.0" />
-  </Rule>
-  <Rule TypeName="PassSystemUriObjectsInsteadOfStrings" Category="Microsoft.Usage" CheckId="CA2234">
-   <Name>Pass System.Uri objects instead of strings</Name>
-   <Description>If there are two overloads one taking System.Uri and one taking System.String, library code should never call the string-based overload.</Description>
-   <Resolution Name="Default">Modify {0} to call {1} instead of {2}.</Resolution>
-   <Owner />
-   <Url>http://msdn.microsoft.com/library/ms182360.aspx</Url>
-   <Email>[none]</Email>
-   <MessageLevel Certainty="75">Warning</MessageLevel>
    <File Name="usagerules.dll" Version="16.0.0.0" />
   </Rule>
   <Rule TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305">

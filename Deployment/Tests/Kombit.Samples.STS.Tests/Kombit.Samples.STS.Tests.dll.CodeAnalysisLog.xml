@@ -4,10 +4,10 @@
  <Namespaces>
   <Namespace Name="Kombit.Samples.STS.Tests">
    <Messages>
-    <Message Id="STS" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2021-10-15 06:47:14Z" FixCategory="Breaking">
+    <Message Id="STS" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2021-10-18 08:37:44Z" FixCategory="Breaking">
      <Issue Name="Namespace" Certainty="85" Level="Error">Correct the casing of 'STS' in namespace name 'Kombit.Samples.STS.Tests' by changing it to 'Sts'.</Issue>
     </Message>
-    <Message Id="Kombit" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-15 06:47:14Z" FixCategory="Breaking">
+    <Message Id="Kombit" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 08:37:44Z" FixCategory="Breaking">
      <Issue Name="Namespace" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Kombit' in namespace name 'Kombit.Samples.STS.Tests'.</Issue>
     </Message>
    </Messages>
@@ -18,16 +18,16 @@
    <Modules>
     <Module Name="kombit.samples.sts.tests.dll">
      <Messages>
-      <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Status="Active" Created="2021-10-15 06:47:14Z" FixCategory="NonBreaking">
+      <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Status="Active" Created="2021-10-18 08:37:44Z" FixCategory="NonBreaking">
        <Issue Name="NoStrongName" Certainty="95" Level="CriticalError">Sign 'Kombit.Samples.STS.Tests.dll' with a strong name key.</Issue>
       </Message>
-      <Message Id="STS" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2021-10-15 06:47:14Z" FixCategory="Breaking">
+      <Message Id="STS" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2021-10-18 08:37:44Z" FixCategory="Breaking">
        <Issue Name="Assembly" Certainty="85" Level="Error">Correct the casing of 'STS' in assembly name 'Kombit.Samples.STS.Tests.dll' by changing it to 'Sts'.</Issue>
       </Message>
-      <Message Id="Kombit" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-15 06:47:14Z" FixCategory="Breaking">
+      <Message Id="Kombit" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 08:37:44Z" FixCategory="Breaking">
        <Issue Name="Assembly" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Kombit' in assembly name 'Kombit.Samples.STS.Tests.dll'.</Issue>
       </Message>
-      <Message TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014" Status="Active" Created="2021-10-15 06:47:14Z" FixCategory="NonBreaking">
+      <Message TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014" Status="Active" Created="2021-10-18 08:37:44Z" FixCategory="NonBreaking">
        <Issue Certainty="95" Level="Error">Mark 'Kombit.Samples.STS.Tests.dll' with CLSCompliant(true) because it exposes externally visible types.</Issue>
       </Message>
      </Messages>
@@ -36,38 +36,38 @@
        <Types>
         <Type Name="StsFixture" Kind="Class" Accessibility="Public" ExternallyVisible="True">
          <Messages>
-          <Message Id="Sts" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-15 06:47:14Z" FixCategory="Breaking">
+          <Message Id="Sts" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 08:37:44Z" FixCategory="Breaking">
            <Issue Name="Type" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Sts' in type name 'StsFixture'.</Issue>
           </Message>
-          <Message TypeName="IdentifiersShouldHaveCorrectSuffix" Category="Microsoft.Naming" CheckId="CA1710" Status="Active" Created="2021-10-15 06:47:14Z" FixCategory="Breaking">
+          <Message TypeName="IdentifiersShouldHaveCorrectSuffix" Category="Microsoft.Naming" CheckId="CA1710" Status="Active" Created="2021-10-18 08:37:44Z" FixCategory="Breaking">
            <Issue Certainty="95" Level="Error">Rename 'StsFixture' to end in 'Collection'.</Issue>
           </Message>
          </Messages>
          <Members>
           <Member Name="#Freeze`1()" Kind="Method" Static="False" Accessibility="Assembly" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2021-10-15 06:47:14Z" FixCategory="NonBreaking">
+            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2021-10-18 08:37:44Z" FixCategory="NonBreaking">
              <Issue Certainty="75" Level="Warning" Path="E:\Github\kombit-service-net\Kombit.Samples.STS.Tests" File="StsFixture.cs" Line="42">'StsFixture.Freeze&lt;T&gt;()' appears to have no upstream public or protected callers.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#FreezeMany`1()" Kind="Method" Static="False" Accessibility="Assembly" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2021-10-15 06:47:14Z" FixCategory="NonBreaking">
+            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2021-10-18 08:37:44Z" FixCategory="NonBreaking">
              <Issue Certainty="75" Level="Warning" Path="E:\Github\kombit-service-net\Kombit.Samples.STS.Tests" File="StsFixture.cs" Line="30">'StsFixture.FreezeMany&lt;T&gt;()' appears to have no upstream public or protected callers.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#SetupMoq`1(System.Action`1&lt;Moq.Mock`1&lt;!!0&gt;&gt;)" Kind="Method" Static="False" Accessibility="Assembly" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2021-10-15 06:47:14Z" FixCategory="NonBreaking">
+            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2021-10-18 08:37:44Z" FixCategory="NonBreaking">
              <Issue Certainty="75" Level="Warning" Path="E:\Github\kombit-service-net\Kombit.Samples.STS.Tests" File="StsFixture.cs" Line="55">'StsFixture.SetupMoq&lt;T&gt;(Action&lt;Mock&lt;T&gt;&gt;)' appears to have no upstream public or protected callers.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#WithCertificateStuff()" Kind="Method" Static="False" Accessibility="Assembly" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2021-10-15 06:47:14Z" FixCategory="NonBreaking">
+            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2021-10-18 08:37:44Z" FixCategory="NonBreaking">
              <Issue Certainty="75" Level="Warning" Path="E:\Github\kombit-service-net\Kombit.Samples.STS.Tests" File="StsFixture.cs" Line="71">'StsFixture.WithCertificateStuff()' appears to have no upstream public or protected callers.</Issue>
             </Message>
            </Messages>
@@ -76,34 +76,34 @@
         </Type>
         <Type Name="WsTrustSecurityTokenServiceTest" Kind="Class" Accessibility="Public" ExternallyVisible="True">
          <Messages>
-          <Message Id="Ws" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2021-10-15 06:47:14Z" FixCategory="Breaking">
+          <Message Id="Ws" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2021-10-18 08:37:44Z" FixCategory="Breaking">
            <Issue Name="Type" Certainty="85" Level="Error">Correct the casing of 'Ws' in type name 'WsTrustSecurityTokenServiceTest' by changing it to 'WS'.</Issue>
           </Message>
-          <Message Id="Ws" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-15 06:47:14Z" FixCategory="Breaking">
+          <Message Id="Ws" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 08:37:44Z" FixCategory="Breaking">
            <Issue Name="Type" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Ws' in type name 'WsTrustSecurityTokenServiceTest'.</Issue>
           </Message>
          </Messages>
          <Members>
           <Member Name="#GetOutputClaimsIdentityCorrectly()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2021-10-15 06:47:14Z" FixCategory="DependsOnFix">
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2021-10-18 08:37:44Z" FixCategory="DependsOnFix">
              <Issue Certainty="95" Level="Warning" Path="E:\Github\kombit-service-net\Kombit.Samples.STS.Tests" File="WsTrustSecurityTokenServiceTest.cs" Line="49">The 'this' parameter (or 'Me' in Visual Basic) of 'WsTrustSecurityTokenServiceTest.GetOutputClaimsIdentityCorrectly()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#GetScopeCorrectly()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2021-10-15 06:47:14Z" FixCategory="DependsOnFix">
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2021-10-18 08:37:44Z" FixCategory="DependsOnFix">
              <Issue Certainty="95" Level="Warning" Path="E:\Github\kombit-service-net\Kombit.Samples.STS.Tests" File="WsTrustSecurityTokenServiceTest.cs" Line="25">The 'this' parameter (or 'Me' in Visual Basic) of 'WsTrustSecurityTokenServiceTest.GetScopeCorrectly()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#ThrowExceptionIfAppliesToIsADummyErrorAddress(System.String,System.Int32,System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2021-10-15 06:47:14Z" FixCategory="NonBreaking">
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2021-10-18 08:37:44Z" FixCategory="NonBreaking">
              <Issue Certainty="95" Level="Warning" Path="E:\Github\kombit-service-net\Kombit.Samples.STS.Tests" File="WsTrustSecurityTokenServiceTest.cs" Line="106">The 'this' parameter (or 'Me' in Visual Basic) of 'WsTrustSecurityTokenServiceTest.ThrowExceptionIfAppliesToIsADummyErrorAddress(string, int, string)' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
             </Message>
-            <Message Id="System.Int32.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2021-10-15 06:47:14Z" FixCategory="NonBreaking">
+            <Message Id="System.Int32.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2021-10-18 08:37:44Z" FixCategory="NonBreaking">
              <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="E:\Github\kombit-service-net\Kombit.Samples.STS.Tests" File="WsTrustSecurityTokenServiceTest.cs" Line="110">Because the behavior of 'int.ToString()' could vary based on the current user's locale settings, replace this call in 'WsTrustSecurityTokenServiceTest.ThrowExceptionIfAppliesToIsADummyErrorAddress(string, int, string)' with a call to 'int.ToString(IFormatProvider)'. If the result of 'int.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
             </Message>
            </Messages>
@@ -112,17 +112,17 @@
         </Type>
         <Type Name="WsTrustServiceConfigurationTest" Kind="Class" Accessibility="Public" ExternallyVisible="True">
          <Messages>
-          <Message Id="Ws" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2021-10-15 06:47:14Z" FixCategory="Breaking">
+          <Message Id="Ws" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2021-10-18 08:37:44Z" FixCategory="Breaking">
            <Issue Name="Type" Certainty="85" Level="Error">Correct the casing of 'Ws' in type name 'WsTrustServiceConfigurationTest' by changing it to 'WS'.</Issue>
           </Message>
-          <Message Id="Ws" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-15 06:47:14Z" FixCategory="Breaking">
+          <Message Id="Ws" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2021-10-18 08:37:44Z" FixCategory="Breaking">
            <Issue Name="Type" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Ws' in type name 'WsTrustServiceConfigurationTest'.</Issue>
           </Message>
          </Messages>
          <Members>
           <Member Name="#ConfigurationIsSetupCorrectly()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2021-10-15 06:47:14Z" FixCategory="DependsOnFix">
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2021-10-18 08:37:44Z" FixCategory="DependsOnFix">
              <Issue Certainty="95" Level="Warning" Path="E:\Github\kombit-service-net\Kombit.Samples.STS.Tests" File="WsTrustServiceConfigurationTest.cs" Line="17">The 'this' parameter (or 'Me' in Visual Basic) of 'WsTrustServiceConfigurationTest.ConfigurationIsSetupCorrectly()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
             </Message>
            </Messages>

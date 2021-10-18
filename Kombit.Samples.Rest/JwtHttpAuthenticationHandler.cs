@@ -12,7 +12,7 @@ using System.Configuration;
 using System.Security.Cryptography.X509Certificates;
 using Kombit.Samples.Common;
 
-namespace Kombit.Samples.Service.Code
+namespace Kombit.Samples.Rest
 {
     public class JwtHttpAuthenticationHandler : DelegatingHandler
     {
@@ -87,7 +87,7 @@ namespace Kombit.Samples.Service.Code
             var tokenHandler = CreateJwtSecurityTokenHandler();
             var tokenValidationParameters = new TokenValidationParameters
             {
-                ValidIssuer = ConfigurationManager.AppSettings["JwtIssuer"],
+                ValidIssuer = Constants.JwtIssuer,
                 ValidateAudience = false,
                 IssuerSigningKey = new X509SecurityKey(JwtSigningCertificate)
             };
@@ -106,9 +106,7 @@ namespace Kombit.Samples.Service.Code
         {
             get
             {
-                string certificateThumbprint =
-                    ConfigurationManager.AppSettings["JwtSigningCertificate"];
-                return CertificateLoader.LoadCertificateFromMyStore(certificateThumbprint);
+                return CertificateLoader.LoadCertificateFromMyStore(Constants.JwtSigningCertificate);
             }
         }
 

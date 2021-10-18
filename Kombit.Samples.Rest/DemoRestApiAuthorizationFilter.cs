@@ -10,7 +10,7 @@ using System.Web;
 using System.Web.Http.Controllers;
 using System.Web.Http.Filters;
 
-namespace Kombit.Samples.Service.Code
+namespace Kombit.Samples.Rest
 {
     /// <summary>
     /// This demo authorization filter will veriry the Cvr number from the Access token against the configured value
