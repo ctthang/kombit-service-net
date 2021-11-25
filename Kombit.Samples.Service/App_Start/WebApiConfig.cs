@@ -1,5 +1,6 @@
 ﻿#region
 
+using Kombit.Samples.Service.Code;
 using System.Web.Http;
 
 #endregion
