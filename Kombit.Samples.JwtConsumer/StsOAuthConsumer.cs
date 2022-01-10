@@ -57,9 +57,17 @@ namespace Kombit.Samples.JwtConsumer
             //Verify the issued token responsed from STS service
             Assert.True(token != null);
             var accessToken = token.AccessToken;
-            using (HttpClient client = new HttpClient())
+            var handler = new WebRequestHandler
             {
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",
+                ClientCertificateOptions = ClientCertificateOption.Manual,
+                UseProxy = false,
+                ServerCertificateValidationCallback = delegate { return true; }
+            };
+            handler.ClientCertificates.Add(Constants.ClientCertificate);
+
+            using (HttpClient client = new HttpClient(handler))
+            {
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Holder-of-key",
                         accessToken);
 
                 var responseMessage = client.GetAsync(Constants.TestRestAPIEndpoint);
@@ -67,6 +75,35 @@ namespace Kombit.Samples.JwtConsumer
                 var result = responseMessage.Result.Content.ReadAsStringAsync().Result;
 
                 Assert.Contains("Congratulations!", result);
+            }
+        }
+
+        [Fact]
+        public void SendOAuthRequestAndCallRESTAPIFailedBecauseOfWrongClientCertificateX5t()
+        {
+            var token = SendRESTOAuthRequest(Constants.StsOAuthClientId, Constants.StsOAuthScope, out _);
+
+            //Verify the issued token responsed from STS service
+            Assert.True(token != null);
+            var accessToken = token.AccessToken;
+            var handler = new WebRequestHandler
+            {
+                ClientCertificateOptions = ClientCertificateOption.Manual,
+                UseProxy = false,
+                ServerCertificateValidationCallback = delegate { return true; }
+            };
+            handler.ClientCertificates.Add(Constants.ClientCertificate2); // use different client cert compare with the one to request STS
+
+            using (HttpClient client = new HttpClient(handler))
+            {
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Holder-of-key",
+                        accessToken);
+
+                var responseMessage = client.GetAsync(Constants.TestRestAPIEndpoint);
+                var responseMessageResult = responseMessage.Result;
+                Assert.Equal(401, (int)responseMessageResult.StatusCode);
+                var result = responseMessage.Result.Content.ReadAsStringAsync().Result;
+                Assert.Contains("Security Token Invalid", result);
             }
         }
 
@@ -94,7 +131,7 @@ namespace Kombit.Samples.JwtConsumer
 
         private Dictionary<string, string> ValidateToken(AccessTokenResponse tokenResponse, string scope)
         {
-            Assert.Equal("bearer", tokenResponse.TokenType);
+            Assert.Equal("Holder-of-key", tokenResponse.TokenType);
             var claims = GetTokenInfo(tokenResponse.AccessToken);
 
             Assert.NotNull(claims["cvr"]);
