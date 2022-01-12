@@ -93,7 +93,7 @@ namespace Kombit.Samples.Rest
             };
 
             SecurityToken securityToken;
-            var claimsPrincipal = tokenHandler.ValidateToken(request.Headers.Authorization.Parameter, tokenValidationParameters, out securityToken);
+            var claimsPrincipal = tokenHandler.ValidateToken(request, tokenValidationParameters, out securityToken);
             if (claimsPrincipal == null)
             {
                 throw new SecurityTokenValidationException("claimsPrincipal or accessToken is invalid");
@@ -106,13 +106,13 @@ namespace Kombit.Samples.Rest
         {
             get
             {
-                return CertificateLoader.LoadCertificateFromMyStore(Constants.JwtSigningCertificate);
+                return CertificateLoader.LoadCertificateFromTrustedPeopleStore(Constants.JwtSigningCertificate);
             }
         }
 
-        protected virtual JwtSecurityTokenHandler CreateJwtSecurityTokenHandler()
+        protected virtual ConfirmationJwtSecurityTokenHandler CreateJwtSecurityTokenHandler()
         {
-            return new JwtSecurityTokenHandler();
+            return new ConfirmationJwtSecurityTokenHandler();
         }
 
         protected virtual void SetPrincipal(HttpRequestMessage request, ClaimsPrincipal principal)

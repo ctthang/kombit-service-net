@@ -12,9 +12,8 @@ namespace Kombit.Samples.JwtConsumer
         [JsonProperty(PropertyName = "access_token")]
         public string AccessToken { get; set; }
 
-        // https://datatracker.ietf.org/doc/html/rfc6749#section-7.1
         [JsonProperty(PropertyName = "token_type")]
-        public string TokenType { get { return "bearer"; } }
+        public string TokenType { get; set; }
 
         // The lifetime in seconds of the access token.
         [JsonProperty(PropertyName = "expires_in")]

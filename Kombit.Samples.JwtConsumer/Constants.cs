@@ -51,5 +51,14 @@ namespace Kombit.Samples.JwtConsumer
                 return CertificateLoader.LoadCertificateFromMyStore(certificateThumbprint);
             }
         }
+
+        public static X509Certificate2 ClientCertificate2
+        {
+            get
+            {
+                string certificateThumbprint = ConfigurationManager.AppSettings["AValidClientCertificateThumbprint2"];
+                return CertificateLoader.LoadCertificateFromMyStore(certificateThumbprint);
+            }
+        }
     }
 }

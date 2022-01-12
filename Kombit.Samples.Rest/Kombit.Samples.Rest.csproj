@@ -109,6 +109,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="ConfirmationJwtSecurityTokenHandler.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Controllers\DemoController.cs" />
     <Compile Include="DemoRestApiAuthorizationFilter.cs" />
