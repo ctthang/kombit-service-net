@@ -114,10 +114,10 @@ namespace Kombit.Samples.JwtConsumer
 
             //Verify the error responsed from STS service
             Assert.NotNull(errorResponse);
-            Assert.Equal("invalid_client", errorResponse.Error);
+            Assert.Equal("invalid_request", errorResponse.Error);
         }
 
-        [Theory(DisplayName = "Invalid scope")]
+        [Theory(DisplayName = "Wrong scope - return invalid_request error")]
         [InlineData("entityid:,anvenderkontekst:12345678")]
         [InlineData("entityid:https://test.service.com/serviceid.svc,anvenderkontekst:")]
         public void SendOAuthRequestInvalidScopeError(string scope)
@@ -126,7 +126,7 @@ namespace Kombit.Samples.JwtConsumer
 
             //Verify the error responsed from STS service
             Assert.NotNull(errorResponse);
-            Assert.Equal("invalid_scope", errorResponse.Error);
+            Assert.Equal("invalid_request", errorResponse.Error);
         }
 
         private Dictionary<string, string> ValidateToken(AccessTokenResponse tokenResponse, string scope)
