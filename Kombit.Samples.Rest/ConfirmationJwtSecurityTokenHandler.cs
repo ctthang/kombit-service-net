@@ -1,4 +1,5 @@
 ﻿using Microsoft.IdentityModel.Tokens;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -28,8 +29,8 @@ namespace Kombit.Samples.Rest
 
             var token = request.Headers.Authorization.Parameter;
             var claimsPrincipal = ValidateToken(token, validationParameters, out validatedToken);
-            var x5tS256 = claimsPrincipal.Claims.FirstOrDefault(c => c.Type == "x5t#S256");
-            if (x5tS256 != null)
+            var confirmationClaim = claimsPrincipal.Claims.FirstOrDefault(c => c.Type == "cnf");
+            if (confirmationClaim != null)
             {
                 var clientCertificate = request.GetClientCertificate();
                 if (clientCertificate == null)
@@ -37,12 +38,16 @@ namespace Kombit.Samples.Rest
                     throw new ArgumentException("Client certificate is null");
                 }
 
+                var claimJObjectValue = JObject.Parse(confirmationClaim.Value);
+                var x5tS256Value = claimJObjectValue.SelectToken("x5t#S256").ToString();
+
                 var hashedThumbprint = Base64UrlEncoder.Encode(clientCertificate.GetCertHash(HashAlgorithmName.SHA256));
-                if (hashedThumbprint != x5tS256.Value)
+                if (hashedThumbprint != x5tS256Value)
                 {
                     throw new SecurityTokenValidationException("Failed to validate the confirmatin claim.");
                 }
             }
+
             return claimsPrincipal;
         }
     }
