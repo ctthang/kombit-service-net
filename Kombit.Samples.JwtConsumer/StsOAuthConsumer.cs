@@ -4,6 +4,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Text;
 using Xunit;
 
 namespace Kombit.Samples.JwtConsumer
@@ -12,9 +13,16 @@ namespace Kombit.Samples.JwtConsumer
     {
         public AccessTokenResponse SendRESTOAuthRequest(string appliesTo, string scope, out OAuthErrorResponse errorResponse, string grantType = "client_credentials")
         {
-            var url = $"{Constants.StsOAuthEndpointUri.AbsoluteUri}?client_id={appliesTo}&grant_type={grantType}&scope={scope}";
+            var url = $"{Constants.StsOAuthEndpointUri.AbsoluteUri}";
             var client = new ApiWebRequest(Constants.ClientCertificate);
-            var httpResponse = client.Post(url);
+            string json = JsonConvert.SerializeObject(new
+            {
+                client_id = appliesTo,
+                grant_type = grantType,
+                scope = scope
+            });
+            StringContent httpContent = new StringContent(json, Encoding.UTF8, "application/json");
+            var httpResponse = client.Post(url, httpContent);
             var responseMessage = httpResponse.Content.ReadAsStringAsync().Result;
             errorResponse = null;
             if (!httpResponse.IsSuccessStatusCode)

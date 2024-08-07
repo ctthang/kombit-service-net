@@ -25,10 +25,9 @@ namespace Kombit.Samples.JwtConsumer
         /// <summary>
         /// Method : POST
         /// </summary>
-        public HttpResponseMessage Post(string path)
+        public HttpResponseMessage Post(string path, StringContent httpContent)
         {
             EnsureHttpClient();
-            StringContent httpContent = new StringContent("{}", Encoding.UTF8, "application/json");
             var t = httpClient.PostAsync(path, httpContent)
                 .ContinueWith(task => ValidateResult(task.Result));
 
